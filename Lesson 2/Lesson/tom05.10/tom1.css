@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .flex {
     display: flex;
 }
@@ -44,11 +49,11 @@
     transition: 1s;
 }
 
-#toggle:checked {
+/* #toggle:checked {
     position: fixed;
     z-index: 10;
     transition: 1s;
-}
+} */
 
 .toggle-label {
     cursor: pointer;
@@ -78,7 +83,7 @@
 .overlay-navbar>:first-child>:nth-child(2) {
     border-top: 1px solid grey;
     gap: 16px;
-    padding: 16px 0px;
+    padding: 16px 16px;
     color: #4B5563;
     font-size: 16px;
 }
