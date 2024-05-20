@@ -8,6 +8,8 @@
 // }
 // const x = calcArea(40, 10, 10)
 // console.log(x)
+
+
 function oloh(a) {
     if (a % 2 == 0) {
         return "tegsh"
