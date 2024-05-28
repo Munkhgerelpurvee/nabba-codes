@@ -67,9 +67,34 @@
 // console.log(even(a));
 
 // gertei hiine
-const a = [1, 5, 6, 7, 67869, 10];
+// const a = [10, 5, 6, 7, 67869, 10];
+// const b = [80, 900, 300, 980, 50];
+// function max(toonuud) {
+//     let ihtoo = toonuud[0]
+//     for (let i = 1; i < toonuud.length; i++) {
+//         if (ihtoo < toonuud[i]) {
+//             ihtoo = toonuud[i]
+//         }
+//         // console.log(ihtoo)
+//         // console.log(toonuud[i])
+//     } return ihtoo
+// }
+// const result = max(b);
+// console.log(result); //67869
 
-function max(arr) { }
+// array function ashiglaj hiih 
 
-const result = max(a);
-console.log(result); //67869
+// const a = [10, 5, 6, 7, 67869, 10];
+
+// const max = (arr) => {
+
+//     let maxnum = arr[0];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > maxnum) {
+//             maxnum = arr[i]
+//         }
+//     }
+//     return maxnum
+// }
+// const result = max(a)
+// console.log(result)
