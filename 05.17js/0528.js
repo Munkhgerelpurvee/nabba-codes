@@ -190,30 +190,18 @@
 // console.log(result);
 
 // 6. Өгөгдсөн массивийн сөрөг тоонуудыг зүүн талд нь байрлуул
-const b = [10, 11, -10, 12, 13, 14, -15];
-function reverse(toonuud) {
-    let reverseindex = [];
-    for (let i = 0; i < toonuud.length; i++) {
-        if (toonuud[i] < 0) {
-            reverseindex.push(toonuud[i])
-        }
-    }
-    for (let i = 0; i < toonuud.length; i++) {
-        if (toonuud[i] > 0) {
-            reverseindex.push(toonuud[i])
-        }
-    }
-    return reverseindex
-}
-const result = reverse(b);
-console.log(result);
-
-// 1. Өгөгдсөн Массивийн элэментүүдийг эсрэг дарааллаар буцаа
-// const b = [10, 11, 12, 13, 14];
+// const b = [10, 11, -10, 12, 13, 14, -15];
 // function reverse(toonuud) {
 //     let reverseindex = [];
-//     for (let i = toonuud.length - 1; i >= 0; i--) {
-//         reverseindex.push(toonuud[i])
+//     for (let i = 0; i < toonuud.length; i++) {
+//         if (toonuud[i] < 0) {
+//             reverseindex.push(toonuud[i])
+//         }
+//     }
+//     for (let i = 0; i < toonuud.length; i++) {
+//         if (toonuud[i] > 0) {
+//             reverseindex.push(toonuud[i])
+//         }
 //     }
 //     return reverseindex
 // }
@@ -221,4 +209,19 @@ console.log(result);
 // console.log(result);
 
 
+
 // 7. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв.Тэр тоог оl
+// 3. Өгөгдсөн массивийн бүх хосыг хэвлэ
+const b = [10, 11, 12, 13, 14, 15];
+function reverse(toonuud) {
+    let hosbutsaah = [];
+
+    for (let i = 0; i < toonuud.length; i++) {
+        for (let g = i + 1; g < toonuud.length; g++) {
+            hosbutsaah.push([toonuud[i], toonuud[g]])
+        }
+    }
+    return hosbutsaah
+}
+const result = reverse(b);
+console.log(result);
