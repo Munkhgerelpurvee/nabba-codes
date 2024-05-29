@@ -98,3 +98,20 @@
 // }
 // const result = max(a)
 // console.log(result)
+
+// prime number oloh 
+
+const a = (11);
+const prime = (number) => {
+    if ((number < 2)) {
+        return false
+    }
+
+    for (let i = 2; i < Math.sqrt(number); i++) {
+        if (number % i == 0) {
+            return false
+        }
+    } return true
+}
+const result = prime(a)
+console.log(result)
