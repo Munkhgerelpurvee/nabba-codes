@@ -190,11 +190,18 @@
 // console.log(result);
 
 // 6. Өгөгдсөн массивийн сөрөг тоонуудыг зүүн талд нь байрлуул
-const b = [10, 11, 12, 13, 14];
+const b = [10, 11, -10, 12, 13, 14, -15];
 function reverse(toonuud) {
     let reverseindex = [];
-    for (let i = toonuud.length - 1; i >= 0; i--) {
-        reverseindex.push(toonuud[i])
+    for (let i = 0; i < toonuud.length; i++) {
+        if (toonuud[i] < 0) {
+            reverseindex.push(toonuud[i])
+        }
+    }
+    for (let i = 0; i < toonuud.length; i++) {
+        if (toonuud[i] > 0) {
+            reverseindex.push(toonuud[i])
+        }
     }
     return reverseindex
 }
