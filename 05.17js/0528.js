@@ -172,8 +172,8 @@
 
 
 // 5. Өгөгдсөн 2 массивийн огтлолцлыг ол
-// const a = [10, 11345, 1242, 14, 9, 21240, 1423, 3];
-// const b = [11, 10, 12, 14, 9, 20, 3];
+// const a = [10, 11, 13, 14, 15];
+// const b = [10, 11, 12, 13, 14, 15];
 // function reverse(toonuud, target) {
 //     let hosbutsaah = [];
 
@@ -208,20 +208,116 @@
 // const result = reverse(b);
 // console.log(result);
 
+// 6. Өгөгдсөн массивийн сөрөг тоонуудыг зүүн талд нь байрлуул/ zow arga n
+
+// function rearrange(num) {
+//     let j = 0;
+//     for (let i = 0; i < a.length; i++) {
+//         if (num[i] < 0) {
+//             let temp = num[j];
+//             num[j] = num[i]
+//             num[i] = temp;
+//             j++;
+//         }
+//     }
+//     return num;
+// }
+
+// const a = [200, -1, 45, -23, 90, -500, -1];
+// const result = rearrange(a);
+// console.log(result);
 
 
-// 7. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв.Тэр тоог оl
-// 3. Өгөгдсөн массивийн бүх хосыг хэвлэ
-const b = [10, 11, 12, 13, 14, 15];
-function reverse(toonuud) {
-    let hosbutsaah = [];
 
-    for (let i = 0; i < toonuud.length; i++) {
-        for (let g = i + 1; g < toonuud.length; g++) {
-            hosbutsaah.push([toonuud[i], toonuud[g]])
-        }
-    }
-    return hosbutsaah
-}
-const result = reverse(b);
-console.log(result);
+// // 7. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв.Тэр тоог оl
+// // include ashiglaj olj baigaa arga
+// const a = [16, 10, 11, 13, 14, 15];
+// const min = (arr) => {
+//     let minnum = arr[0];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] < minnum) {
+//             minnum = arr[i]
+//         }
+//     }
+//     return minnum
+// }
+// const max = (arr) => {
+
+//     let maxnum = arr[0];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > maxnum) {
+//             maxnum = arr[i]
+//         }
+//     }
+//     return maxnum
+// }
+
+// function rearrange(arr) {
+//     let j = max(arr);
+//     let g = min(arr);
+//     let k = [];
+//     for (let i = g; i < j; i++) {
+//         if (!a.includes(i)) {
+//             k.push(i)
+//         }
+//     }
+//     return k
+// }
+// const result = rearrange(a);
+// console.log(result);
+
+// // 7. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв.Тэр тоог оl
+// // include ashiglahgvi olj baigaa arga
+// const a = [16, 10, 11, 13, 14, 15];
+// const min = (arr) => {
+//     let minnum = arr[0];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] < minnum) {
+//             minnum = arr[i]
+//         }
+//     }
+//     return minnum
+// }
+// const max = (arr) => {
+
+//     let maxnum = arr[0];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > maxnum) {
+//             maxnum = arr[i]
+//         }
+//     }
+//     return maxnum
+// }
+// function rearrange(arr) {
+//     let j = max(arr);
+//     let g = min(arr);
+//     let k = [];
+//     for (let i = g; i < j; i++) {
+//         k.push(g++);
+//     }
+//     return k
+// }
+// const result = rearrange(a);
+
+// // baihgvi toog oloh
+// const d = a;
+// const f = result;
+// function reverse(toonuud, target) {
+
+
+//     for (let i = 0; i < target.length; i++) {
+//         let isFound = false;
+
+//         for (let g = 0; g < toonuud.length; g++) {
+//             if (target[i] === toonuud[g]) {
+//                 isFound = true
+//             }
+//         }
+
+//         if (!isFound) return target[i]
+//     }
+
+// }
+// const result1 = reverse(d, f);
+// console.log(result1);
+

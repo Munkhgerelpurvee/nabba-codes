@@ -84,34 +84,34 @@
 
 // array function ashiglaj hiih 
 
-// const a = [10, 5, 6, 7, 67869, 10];
+const a = [10, 5, 6, 7, 67869, 10];
 
-// const max = (arr) => {
+const max = (arr) => {
 
-//     let maxnum = arr[0];
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i] > maxnum) {
-//             maxnum = arr[i]
-//         }
-//     }
-//     return maxnum
-// }
-// const result = max(a)
-// console.log(result)
+    let maxnum = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > maxnum) {
+            maxnum = arr[i]
+        }
+    }
+    return maxnum
+}
+const result = max(a)
+console.log(result)
 
 // prime number oloh 
 
-const a = (11);
-const prime = (number) => {
-    if ((number < 2)) {
-        return false
-    }
+// const a = (11);
+// const prime = (number) => {
+//     if ((number < 2)) {
+//         return false
+//     }
 
-    for (let i = 2; i < Math.sqrt(number); i++) {
-        if (number % i == 0) {
-            return false
-        }
-    } return true
-}
-const result = prime(a)
-console.log(result)
+//     for (let i = 2; i < Math.sqrt(number); i++) {
+//         if (number % i == 0) {
+//             return false
+//         }
+//     } return true
+// }
+// const result = prime(a)
+// console.log(result)
