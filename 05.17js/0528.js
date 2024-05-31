@@ -303,17 +303,13 @@
 // const d = a;
 // const f = result;
 // function reverse(toonuud, target) {
-
-
 //     for (let i = 0; i < target.length; i++) {
 //         let isFound = false;
-
 //         for (let g = 0; g < toonuud.length; g++) {
 //             if (target[i] === toonuud[g]) {
 //                 isFound = true
 //             }
 //         }
-
 //         if (!isFound) return target[i]
 //     }
 
@@ -321,3 +317,6 @@
 // const result1 = reverse(d, f);
 // console.log(result1);
 
+// // 7. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв.Тэр тоог оl
+// // BAGSHIIN ZAAJ OGSON ARGA
+const a = [16, 10, 11, 13, 14, 15];
