@@ -199,11 +199,17 @@
 // number = 2 // true
 // number = 15 // false
 
-function oloh(a) {
-    if (a < 2) {
-        return "false"
+const a = (10);
+const prime = (number) => {
+    if ((number < 2)) {
+        return false
     }
 
+    for (let i = 2; i < Math.sqrt(number); i++) {
+        if (number % i == 0) {
+            return false
+        }
+    } return true
 }
-const x = oloh(2020)
-console.log(x)
+const result = prime(a)
+console.log(result)

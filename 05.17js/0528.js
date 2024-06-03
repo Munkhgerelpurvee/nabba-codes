@@ -30,10 +30,10 @@
 //     let count = {};
 //     for (let i = 0; i < arr.length; i++) {
 //         // const num = arr[i]
-//         if (count[arr[i]] !== undefined) {
-//             count[arr[i]]++;
+//         if (count[arr[i]] == undefined) {
+//             count[arr[i]] = 1
 //         } else {
-//             count[arr[i]] = 1;
+//             count[arr[i]]++;
 //         }
 //     }
 //     return count
@@ -82,7 +82,7 @@
 //     } return bagatoo
 // }
 // const result = min(a);
-// console.log(result); 
+// console.log(result);
 
 // 4 Өгөгдсөн массивын хамгийн их элемент хэд дэх нь вэ ? Хэрэв хамгийн их элементийн тоо 1 - ээс олон бол бага дугаарыг нь хэвлэнэ.
 
@@ -122,7 +122,6 @@
 //             butsaah.push(toonuud[i])
 //         }
 //     }
-
 //     if (toonuud[0] > toonuud[1]) {
 //         butsaah.push(toonuud[0])
 //     }
@@ -319,4 +318,4 @@
 
 // // 7. Дараалсан тоонуудаас бүрдэх массив өгөгдөх байсан боловч 1 тоо нь дутуу байв.Тэр тоог оl
 // // BAGSHIIN ZAAJ OGSON ARGA
-const a = [16, 10, 11, 13, 14, 15];
+// const a = [16, 10, 11, 13, 14, 15];

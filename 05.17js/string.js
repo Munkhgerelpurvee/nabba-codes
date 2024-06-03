@@ -78,7 +78,7 @@
 
 // dasgal5
 
-// let Challenge = "Gerelee arhinaasaa garaachee icheechee";
+// let Challenge = "arhinaasaa garaachee icheechee";
 // console.log(Challenge.length);
 // // console.log(Challenge.toUpperCase());
 // // console.log(Challenge.toLowerCase());

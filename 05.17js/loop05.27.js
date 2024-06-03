@@ -43,7 +43,7 @@
 
 // loop ogogdson arreyg jagsaalt bolgon tvvnii urtaar utga bolgon hewlej ogoh
 // const a = [1, 5, 2, 7, 45];
-// const b = [ 1,2,4]
+// const b = [1, 2, 4]
 // function printArr(arr) {
 //     for (let i = 0; i < arr.length; i++) {
 //         console.log(arr[i]);
@@ -66,7 +66,8 @@
 // }
 // console.log(even(a));
 
-// gertei hiine
+// 
+
 // const a = [10, 5, 6, 7, 67869, 10];
 // const b = [80, 900, 300, 980, 50];
 // function max(toonuud) {
@@ -84,20 +85,20 @@
 
 // array function ashiglaj hiih 
 
-const a = [10, 5, 6, 7, 67869, 10];
+// const a = [10, 5, 6, 7, 67869, 10];
 
-const max = (arr) => {
+// const max = (arr) => {
 
-    let maxnum = arr[0];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > maxnum) {
-            maxnum = arr[i]
-        }
-    }
-    return maxnum
-}
-const result = max(a)
-console.log(result)
+//     let maxnum = arr[0];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > maxnum) {
+//             maxnum = arr[i]
+//         }
+//     }
+//     return maxnum
+// }
+// const result = max(a)
+// console.log(result)
 
 // prime number oloh 
 
