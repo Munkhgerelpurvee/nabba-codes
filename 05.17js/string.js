@@ -157,12 +157,12 @@
 // let z = 15000 * 12;
 // console.log(x + y + z)
 
-const now = new Date();
-let year = now.getFullYear();
-let month = now.getMonth() + 1;
-let date = now.getDate();
-let hour = now.getHours();
-let minute = now.getMinutes();
-let sec = now.getSeconds();
-console.log("Яг одоо цаг", year, "оны", month + "-р сарын", date + "-ны өдрийн", hour, "цаг", minute, "минут ", sec, "секунд болж байна.")
+// const now = new Date();
+// let year = now.getFullYear();
+// let month = now.getMonth() + 1;
+// let date = now.getDate();
+// let hour = now.getHours();
+// let minute = now.getMinutes();
+// let sec = now.getSeconds();
+// console.log("Яг одоо цаг", year, "оны", month + "-р сарын", date + "-ны өдрийн", hour, "цаг", minute, "минут ", sec, "секунд болж байна.")
 
