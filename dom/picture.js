@@ -1,4 +1,4 @@
-const imgs = document.querySelectorAll(".img")
+const imgs = document.querySelector(".img-container")
 const btn1 = document.querySelector(".btn1")
 btn1.addEventListener("click", () => {
     imgs.style.border = "5px solid green";
