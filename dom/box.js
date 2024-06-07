@@ -1,7 +1,7 @@
-const a = document.querySelectorAll(".box");
+const boxes = document.querySelectorAll(".box");
 
 let turn = 0;
-a.forEach((box) => {
+boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (box.textContent === "" && turn === 0) {
             box.textContent = "X";
@@ -16,7 +16,7 @@ a.forEach((box) => {
 
 const b = document.querySelector("#restart");
 b.addEventListener("click", () => {
-    a.forEach((box) => {
+    boxes.forEach((box) => {
         box.textContent = "";
     });
     turn = 0;
