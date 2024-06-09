@@ -1,16 +1,39 @@
-const imgs = document.querySelectorAll("img")
-const btn1 = document.querySelector(".btn1")
-imgs.style.transform = "translatex(0px)";
+const imgContainer = document.querySelector('.img-container');
+const images = document.querySelectorAll('.img-container img');
+const btnPre = document.querySelector('.btn1');
+const btnNext = document.querySelector('.btn2');
 
-console.log(imgs)
+let index = 0;
 
+function showImage(index) {
+    images.forEach((img, i) => {
+        if (i === index) {
+            img.style.transform = 'translateX(0)';
+        } else if (i < index) {
+            img.style.transform = 'translateX(-400px)';
+        } else {
+            img.style.transform = 'translateX(400px)';
+        }
+    });
+}
 
-btn1.addEventListener("click", () => {
-    imgs.style.border = "5px solid green";
-    // imgs.style.transform = "translatex(-400px)";
-})
-const btn2 = document.querySelector(".btn2")
-btn2.addEventListener("click", () => {
-    imgs.style.border = "5px solid red";
-    imgs.style.transform = "translatex(400px)";
-})
+btnNext.addEventListener('click', () => {
+    if (index < images.length - 1) {
+        index++;
+    } else {
+        index = 0; // Optionally, wrap around to the first image
+    }
+    showImage(index);
+});
+
+btnPre.addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+    } else {
+        index = images.length - 1; // Optionally, wrap around to the last image
+    }
+    showImage(index);
+});
+
+// Initialize the first image view
+showImage(index);

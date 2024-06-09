@@ -8,42 +8,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
     gap: 20px;
+    margin-top: 50px;
 }
 
 .img-container {
     width: 400px;
     height: 400px;
-    /* overflow: hidden; */
-    display: flex;
+    overflow: hidden;
     position: relative;
-    transition: 1s;
 }
 
-.img-container>img {
+.img-container img {
     width: 400px;
     height: 400px;
+    display: block;
     position: absolute;
-    transition: 1s;
+    transition: transform 1s;
 }
 
-.img-container>:first-child {
-    left: 0px;
-}
-
-.img-container>:nth-child(2) {
-    left: 400px;
-}
-
-.img-container>:nth-child(3) {
-    left: 800px;
-}
-
-.img-container>:last-child {
-    left: 1200px;
-}
-
-button {
-    z-index: 5;
+.img-container img:not(:first-child) {
+    transform: translateX(400px);
 }
