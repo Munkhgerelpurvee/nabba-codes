@@ -15,18 +15,24 @@
 .img-container {
     width: 400px;
     height: 400px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 
 .img-container img {
     width: 400px;
     height: 400px;
-    display: block;
     position: absolute;
     transition: transform 1s;
 }
 
 .img-container img:not(:first-child) {
     transform: translateX(400px);
+}
+.btn1{
+    z-index: 5;
+}
+
+.btn2{
+    z-index: 5;
 }
