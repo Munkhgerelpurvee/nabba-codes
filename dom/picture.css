@@ -25,15 +25,9 @@
     position: absolute;
     transition: transform 1s;
 }
-
-.img-container img:not(:first-child, :nth-child(2)) {
+.img-container img:not(:first-child) {
     transform: translateX(400px);
 }
-
-.img-container>:first-child {
-    transform: translateX(-400px);
-}
-
 .btn1 {
     z-index: 5;
 }

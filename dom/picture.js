@@ -4,7 +4,7 @@ const btnNext = document.querySelector('.btn2');
 const indi = document.querySelectorAll('.circle-container>.circle');
 const imagecontainer = document.querySelector('.img-container');
 
-let index = 1;
+let index = 0;
 
 function showImage(index) {
     images.forEach((img, i) => {
