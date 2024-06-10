@@ -1,9 +1,10 @@
-const imgContainer = document.querySelector('.img-container');
-const images = document.querySelectorAll('.img-container img');
+const images = document.querySelectorAll('.img-container>img');
 const btnPre = document.querySelector('.btn1');
 const btnNext = document.querySelector('.btn2');
+const indi = document.querySelectorAll('.circle-container>.circle');
+const imagecontainer = document.querySelector('.img-container');
 
-let index = 0;
+let index = 1;
 
 function showImage(index) {
     images.forEach((img, i) => {
@@ -16,24 +17,47 @@ function showImage(index) {
         }
     });
 }
-
+function showIndi(index) {
+    indi.forEach((circle, i) => {
+        if (i === index) {
+            circle.style.backgroundColor = "aqua";
+        } else {
+            circle.style.backgroundColor = "grey";
+        }
+    });
+}
 btnNext.addEventListener('click', () => {
     if (index < images.length - 1) {
         index++;
     } else {
-        index = 0; // Optionally, wrap around to the first image
+        index = 0
     }
     showImage(index);
+    showIndi(index)
 });
 
 btnPre.addEventListener('click', () => {
     if (index > 0) {
         index--;
     } else {
-        index = images.length - 1; // Optionally, wrap around to the last image
+        index = images.length - 1
     }
     showImage(index);
+    showIndi(index)
 });
 
-// Initialize the first image view
-showImage(index);
+// imagecontainer.addEventListener("transitionend", () => {
+//     if (index = images.length - 1) {
+//         index = 1;
+//         images.style.Transition = 'none';
+//     }
+// });
+
+// imagecontainer.addEventListener("transitionend", () => {
+//     if (index = 0) {
+//         index = images.length - 1;
+//         images.style.Transition = 'none';
+//     }
+//     showImage(index)
+// });
+

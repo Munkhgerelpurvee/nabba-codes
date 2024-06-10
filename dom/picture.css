@@ -15,24 +15,50 @@
 .img-container {
     width: 400px;
     height: 400px;
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative;
 }
 
-.img-container img {
+.img-container>img {
     width: 400px;
     height: 400px;
     position: absolute;
     transition: transform 1s;
 }
 
-.img-container img:not(:first-child) {
+.img-container img:not(:first-child, :nth-child(2)) {
     transform: translateX(400px);
 }
-.btn1{
+
+.img-container>:first-child {
+    transform: translateX(-400px);
+}
+
+.btn1 {
     z-index: 5;
 }
 
-.btn2{
+.btn2 {
     z-index: 5;
+}
+
+.circle {
+    height: 25px;
+    width: 25px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 1s;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.circle-container>:first-child {
+    background-color: aqua;
 }
