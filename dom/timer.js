@@ -5,17 +5,24 @@ const resetbtn = document.querySelector('.resetbtn');
 
 let count = 0.0;
 let id;
+let a = true;
 
 startbtn.addEventListener('click', () => {
-    id = setInterval(() => {
-        count += 0.1;
-        timer.textContent = count.toFixed(2);
-    }, 100)
+    if (a == true) {
+        id = setInterval(() => {
+            count += 0.1;
+            timer.textContent = count.toFixed(2);
+        }, 100)
+        a = false
+    }
+
 });
 stopbtn.addEventListener('click', () => {
+    a = true
     clearInterval(id);
 });
 resetbtn.addEventListener('click', () => {
+    a = true
     clearInterval(id);
     timer.textContent = '0.0';
     count = 0;
