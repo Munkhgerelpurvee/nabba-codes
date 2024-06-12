@@ -158,6 +158,20 @@ body {
 
 }
 
+#signup:hover {
+    background-color: white;
+    color: cornflowerblue;
+}
+
+#signin:hover {
+    background-color: white;
+    color: dodgerblue;
+}
+
+#sign2 {
+    z-index: 2;
+}
+
 #signup-tap {
     top: 200px;
 

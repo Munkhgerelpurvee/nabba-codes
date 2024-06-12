@@ -6,7 +6,7 @@ const container3 = document.querySelector('#signin-tab');
 const container4 = document.querySelector('#signup-tab');
 
 signupbtn.addEventListener('click', () => {
-    // container1.classList.add("zindex1")
+    container1.classList.add("zindex1")
     // container2.classList.add("zindex2")
 
     container4.classList.add("move1")
@@ -16,9 +16,9 @@ signupbtn.addEventListener('click', () => {
 });
 
 signinbtn.addEventListener('click', () => {
-    // container1.classList.remove("zindex1")
-    // container1.classList.add("zindex2")
-    // container1.classList.remove("zindex2")
+    container1.classList.remove("zindex1")
+    container1.classList.add("zindex2")
+    container1.classList.remove("zindex2")
     // container2.classList.remove("zindex2")
     // container2.classList.add("zindex1")
     // container2.classList.remove("zindex1")
