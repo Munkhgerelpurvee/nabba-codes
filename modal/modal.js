@@ -6,7 +6,6 @@ const titleInput = document.querySelector('.titleInput')
 const descInput = document.querySelector('.descInput')
 const form = document.querySelector('form')
 const cards = document.querySelector('.cards')
-const cardexitBtn = document.querySelector('#cardexitBtn')
 
 
 openmodelbtn.addEventListener('click', () => {
@@ -36,8 +35,10 @@ form.addEventListener("submit", (event) => {
     cards.innerHTML += card;
     container.classList.remove("active");
 
+    const cardexitBtn = cards.querySelector('#cardexitBtn');
+    cardexitBtn.addEventListener('click', () => {
+        cardexitBtn.style.backgroundColor = "red";
+    });
+
 });
 
-cardexitBtn.addEventListener('click', () => {
-    container.style.backgroundColor = "red"
-});
