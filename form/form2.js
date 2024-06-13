@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const registerBtn = document.querySelector('.register');
 const loginBtn = document.querySelector('.login');
 
+
 registerBtn.addEventListener('click', () => {
     container.classList.add("active");
 });
@@ -9,3 +10,4 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
+
