@@ -7,10 +7,8 @@ const descInput = document.querySelector('.descInput')
 const form = document.querySelector('form')
 const cards = document.querySelector('.cards')
 
-
 openmodelbtn.addEventListener('click', () => {
     container.classList.add("active");
-
 });
 
 exitBtn.addEventListener('click', () => {
@@ -23,22 +21,24 @@ const cardtemplate = (title, desc) => {
     <h1>${title}</h1>
     <p>${desc}</p>
     </div>
-    <div id="cardexitBtn"><i class="fa-solid fa-x"></i></div>
-    </div>`
+    <div class="cardexitBtn"><i class="fa-solid fa-x"></i></div>
+    </div>`;
 };
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     const title = titleInput.value;
     const desc = descInput.value;
-    const card = cardtemplate(title, desc)
+
+    const card = cardtemplate(title, desc);
     cards.innerHTML += card;
     container.classList.remove("active");
 
-    const cardexitBtn = cards.querySelector('#cardexitBtn');
-    cardexitBtn.addEventListener('click', () => {
-        cardexitBtn.style.backgroundColor = "red";
+    // Now, after adding the card, you can catch the cardexitBtn
+    const cardexitBtns = document.querySelectorAll('.cardexitBtn');
+    cardexitBtns.forEach(cardexitBtn => {
+        cardexitBtn.addEventListener('click', () => {
+            cardexitBtn.parentElement.remove(); // Remove the parent card
+        });
     });
-
-});
-
+}); 
