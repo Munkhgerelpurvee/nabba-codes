@@ -34,11 +34,10 @@ form.addEventListener("submit", (event) => {
     cards.innerHTML += card;
     container.classList.remove("active");
 
-    // Now, after adding the card, you can catch the cardexitBtn
     const cardexitBtns = document.querySelectorAll('.cardexitBtn');
     cardexitBtns.forEach(cardexitBtn => {
         cardexitBtn.addEventListener('click', () => {
-            cardexitBtn.parentElement.remove(); // Remove the parent card
+            cardexitBtn.parentElement.remove();
         });
     });
 }); 
