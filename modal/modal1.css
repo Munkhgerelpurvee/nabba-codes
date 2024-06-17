@@ -50,7 +50,7 @@ form .modal-header {
 }
 
 input {
-    max-width: 500px;
+    max-width: 200px;
     width: 100%;
     padding: 8px;
     border: 1px solid #ddd;
@@ -59,7 +59,7 @@ input {
 }
 
 textarea {
-    max-width: 500px;
+    max-width: 200px;
     width: 100%;
     padding: 8px;
     border: 1px solid #ddd;
@@ -79,7 +79,7 @@ button {
 }
 
 .open-modal-btn {
-    width: 300px;
+    width: 200px;
 }
 
 .open {
@@ -102,7 +102,7 @@ button {
 }
 
 .cards {
-    width: 600px;
+    width: 300px;
     border-radius: 8px;
     background-color: white;
     padding: 24px;
@@ -130,4 +130,10 @@ button {
     border-radius: 50%;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }

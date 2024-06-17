@@ -10,8 +10,23 @@
 
 <body>
     <button class="open-modal-btn">Open Modal</button>
-
-    <div class="cards">
+    <div class="container">
+        <div>
+            <h1>To Do</h1>
+            <div class="cards" id="todo"></div>
+        </div>
+        <div>
+            <h1>In Progress</h1>
+            <div class="cards" id="inprogress"></div>
+        </div>
+        <div>
+            <h1>Done</h1>
+            <div class="cards" id="done"></div>
+        </div>
+        <div>
+            <h1>Block</h1>
+            <div class="cards" id="block"></div>
+        </div>
     </div>
 
     <div class="modal-container">
@@ -19,18 +34,26 @@
             <form>
                 <div class="modal-header">
                     <h1>Hi 👋, I am a Modal</h1>
-
                     <div class="modal-close-btn">X</div>
                 </div>
 
                 <label for="title">Title</label>
-
                 <input id="title" name="title" />
 
                 <label for="descripiton">Description</label>
+                <textarea id="descripiton" name="descripiton" rows="3"></textarea>
 
-                <textarea id="descripiton" name="descripiton" rows="4"></textarea>
-
+                <select name="rank" id="rank">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <select name="choose" id="choose">
+                    <option value="To do">To do</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Done">Done</option>
+                    <option value="Block">Block</option>
+                </select>
                 <button type="submit">Create</button>
             </form>
         </div>

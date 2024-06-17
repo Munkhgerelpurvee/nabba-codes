@@ -1,13 +1,17 @@
-const modal = document.querySelector(".modal-container");
+const form = document.querySelector("form");
+const titleInput = document.querySelector("input");
+const descriptionInput = document.querySelector("textarea");
+
 const openModalBtn = document.querySelector(".open-modal-btn");
 const closeModalBtn = document.querySelector(".modal-close-btn");
-const form = document.querySelector("form");
+const modal = document.querySelector(".modal-container");
+const rankSelect = document.querySelector("#rank");
+const chooseInput = document.querySelector("#choose");
+const checkboxInput = document.querySelector(".checkbox");
 
-const cards = document.querySelector(".cards");
 
-const titleInput = document.querySelector("input");
-const descInput = document.querySelector("textarea");
 
+let index = 0;
 
 openModalBtn.addEventListener("click", () => {
     modal.classList.add("open");
@@ -17,55 +21,112 @@ closeModalBtn.addEventListener("click", () => {
     modal.classList.remove("open");
 });
 
-const cardTemplate = (title, description) => {
+const cardTemplate = (title, description, id, rank, choose) => {
     return `
     <div class="card">
       <div>
+        <input type="checkbox" id="checkbox-${id}" onchange="switchItem(${id})">
         <h1>${title}</h1>
         <p>${description}</p>
+        <div>
+        Rank: ${rank}
+        </div>
+        <div>
+        Status: ${choose}
+        </div>
       </div>
-      <div class="remove-btn">
+      <div onclick="deleteItem(${id})">
         X
       </div>
     </div>
   `;
 };
 
-let data = [
-    {
-        title: "Hello",
-        description: "Hiii",
-    }
-]
+// const cards = document.querySelector(".cards");
+const todocard = document.querySelector("#todo");
+const inprogresscard = document.querySelector("#inprogress");
+const donecard = document.querySelector("#done");
+const blockcard = document.querySelector("#block");
 
+// State
+let data = [];
+
+
+// Set State
 const setData = (arr) => {
     data = arr;
+    sortData();
     render();
+};
+
+const sortData = () => {
+    data.sort((a, b) => {
+        const rankOrder = { "High": 3, "Medium": 2, "Low": 1 };
+        return rankOrder[b.rank] - rankOrder[a.rank];
+    });
 }
+// Render
 const render = () => {
-    cards.innerHTML = "";
+    todocard.innerHTML = "";
+    inprogresscard.innerHTML = "";
+    donecard.innerHTML = "";
+    blockcard.innerHTML = "";
 
     data.forEach((item) => {
-        cards.innerHTML += cardTemplate(item.title, item.description);
-    })
-}
+        if (item.choose === "To do") {
+            todocard.innerHTML += cardTemplate(item.title, item.description, item.id, item.rank, item.choose);
+        } else if (item.choose === "In Progress") {
+            inprogresscard.innerHTML += cardTemplate(item.title, item.description, item.id, item.rank, item.choose);
+        } else if (item.choose === "Done") {
+            donecard.innerHTML += cardTemplate(item.title, item.description, item.id, item.rank, item.choose);
+        } else if (item.choose === "Block") {
+            blockcard.innerHTML += cardTemplate(item.title, item.description, item.id, item.rank, item.choose);
+        }
+    });
+};
+
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const title = titleInput.value;
-    const description = descInput.value;
+    const description = descriptionInput.value;
+    const rank = rankSelect.value;
+    const choose = chooseInput.value;
+
 
     const newData = [
         ...data,
         {
+            id: index,
             title: title,
             description: description,
-        }
-    ]
+            rank: rank,
+            choose: choose,
+        },
+    ];
+
+    index++;
+
     setData(newData);
-    console.log(data)
 
     modal.classList.remove("open");
 });
+
+
+const deleteItem = (id) => {
+    const newData = [...data].filter((item) => item.id !== id);
+    setData(newData);
+};
+
+const switchItem = (id) => {
+    const newData = data.map((item) => {
+        if (item.id === id) {
+            return { ...item, choose: "Done" }
+        }
+        return item;
+    })
+    setData(newData)
+};
+
 render();
