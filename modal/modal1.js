@@ -25,7 +25,7 @@ const cardTemplate = (title, description, id, rank, choose) => {
     return `
     <div class="card">
       <div>
-        <input type="checkbox" id="checkbox-${id}" onchange="switchItem(${id})">
+        <input class="checkbox" type="checkbox" id="${id}" onchange="switchItem(${id})">
         <h1>${title}</h1>
         <p>${description}</p>
         <div>
@@ -121,8 +121,9 @@ const deleteItem = (id) => {
 
 const switchItem = (id) => {
     const newData = data.map((item) => {
+
         if (item.id === id) {
-            return { ...item, choose: "Done" }
+            return { ...item, choose: "Done", }
         }
         return item;
     })
