@@ -45,19 +45,3 @@ btnPre.addEventListener('click', () => {
     showImage(index);
     showIndi(index)
 });
-
-// imagecontainer.addEventListener("transitionend", () => {
-//     if (index = images.length - 1) {
-//         index = 1;
-//         images.style.Transition = 'none';
-//     }
-// });
-
-// imagecontainer.addEventListener("transitionend", () => {
-//     if (index = 0) {
-//         index = images.length - 1;
-//         images.style.Transition = 'none';
-//     }
-//     showImage(index)
-// });
-

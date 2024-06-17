@@ -24,19 +24,14 @@ closeModalBtn.addEventListener("click", () => {
 const cardTemplate = (title, description, id, rank, choose) => {
     return `
     <div class="card">
+      <input class="checkbox" type="checkbox" id="${id}" onchange="switchItem(${id})">
       <div>
-        <input class="checkbox" type="checkbox" id="${id}" onchange="switchItem(${id})">
         <h1>${title}</h1>
         <p>${description}</p>
-        <div>
-        Rank: ${rank}
-        </div>
-        <div>
-        Status: ${choose}
-        </div>
+        <div>Rank: ${rank}</div>
       </div>
       <div onclick="deleteItem(${id})">
-        X
+        <i class="fa-solid fa-trash" style="color: #ce1c1c;"></i>
       </div>
     </div>
   `;
