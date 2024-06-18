@@ -8,6 +8,10 @@ const modal = document.querySelector(".modal-container");
 const rankSelect = document.querySelector("#rank");
 const chooseInput = document.querySelector("#choose");
 const checkboxInput = document.querySelector(".checkbox");
+const numberInprogressInput = document.querySelector(".number-inprogress");
+const numberTodoInput = document.querySelector(".number-todo");
+const numberDoneInput = document.querySelector(".number-done");
+const numberBlockInput = document.querySelector(".number-block");
 
 
 
@@ -20,18 +24,19 @@ openModalBtn.addEventListener("click", () => {
 closeModalBtn.addEventListener("click", () => {
     modal.classList.remove("open");
 });
-
+//cardTemplate card dotorh utguudiig orj ogj baigaaa. zaaj ogson utguud newdata-aas utguudiig 
+//shinechlej awch bga utguud gej bodjiinaa
 const cardTemplate = (title, description, id, rank, choose) => {
     return `
     <div class="card">
-      <input class="checkbox" type="checkbox" id="${id}" onchange="switchItem(${id})">
+      <input class="checkbox" ${choose === "Done" ? "checked" : ""} type="checkbox" id="${id}" onchange="switchItem(${id})">
       <div>
-        <h1>${title}</h1>
+        <h1 style="">${title}</h1>
         <p>${description}</p>
         <div>Rank: ${rank}</div>
       </div>
       <div onclick="deleteItem(${id})">
-        <i class="fa-solid fa-trash" style="color: #ce1c1c;"></i>
+        <i class="fa-solid fa-trash" style="color: #ce1c1c; cursor: pointer;"></i>
       </div>
     </div>
   `;
@@ -52,6 +57,7 @@ const setData = (arr) => {
     data = arr;
     sortData();
     render();
+
 };
 
 const sortData = () => {
@@ -67,18 +73,31 @@ const render = () => {
     donecard.innerHTML = "";
     blockcard.innerHTML = "";
 
+    numberTodoInput.innerHTML = "0";
+    numberInprogressInput.innerHTML = "0";
+    numberDoneInput.innerHTML = "0";
+    numberBlockInput.innerHTML = "0";
+
     data.forEach((item) => {
         if (item.choose === "To do") {
+            numberTodoInput.innerHTML++;
+            console.log(numberTodoInput.innerHTML)
             todocard.innerHTML += cardTemplate(item.title, item.description, item.id, item.rank, item.choose);
         } else if (item.choose === "In Progress") {
+            numberInprogressInput.innerHTML++;
             inprogresscard.innerHTML += cardTemplate(item.title, item.description, item.id, item.rank, item.choose);
         } else if (item.choose === "Done") {
+            numberDoneInput.innerHTML++;
+            console.log("numbesasd", numberDoneInput.innerHTML)
             donecard.innerHTML += cardTemplate(item.title, item.description, item.id, item.rank, item.choose);
         } else if (item.choose === "Block") {
+            numberBlockInput.innerHTML++;
             blockcard.innerHTML += cardTemplate(item.title, item.description, item.id, item.rank, item.choose);
         }
+
     });
 };
+
 
 
 form.addEventListener("submit", (event) => {

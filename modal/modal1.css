@@ -3,16 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container-inner>:first-child{
+
+.container-inner>:first-child {
     display: flex;
     align-items: center;
 }
-.flex{
+
+.flex {
     display: flex;
 }
-.column{
+
+.column {
     flex-direction: column;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -21,21 +25,24 @@ body {
     padding: 32px;
     gap: 24px;
 }
-.out-container{
+
+.out-container {
     display: flex;
     gap: 24px;
     flex-direction: column;
 }
+
 .container {
     display: flex;
     gap: 10px;
     justify-content: center;
 }
+
 .container>div {
     width: 25%;
     min-height: 500px;
     max-height: fit-content;
-    background-color:rgba(16, 16, 16, 1);
+    background-color: rgba(16, 16, 16, 1);
     border-radius: 5px;
     border: 1px solid white;
     padding: 20px;
@@ -43,16 +50,19 @@ body {
     flex-direction: column;
     gap: 20px;
 }
-.container-inner{
+
+.container-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 }
-.container>div>div{
+
+.container>div>div {
     color: #fff;
 }
-.open-modal-btn-container{
+
+.open-modal-btn-container {
     display: flex;
     align-items: flex-end;
     justify-content: end;
@@ -150,11 +160,13 @@ button {
     width: 300px;
     border-radius: 8px;
     background-color: white;
-    padding: 24px;
     gap: 16px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 8px;
 }
 
 .card {
@@ -162,15 +174,39 @@ button {
     align-items: center;
     justify-content: space-between;
     border-radius: 4px;
-    padding: 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
+    padding: 8px;
+    background-color: greenyellow;
+
 }
-.card>:nth-child(2){
+
+.card>:nth-child(2) {
     width: 80%;
-    border: 1px solid black;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
 }
-.checkbox{
+
+.card>:nth-child(2)>:first-child {
+    width: 100%;
+    padding: 10px;
+    color: green;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.card>:nth-child(2)> :nth-child(2) {
+    width: 100%;
+    padding: 10px;
+    color: black;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.checkbox {
     width: 1.3em;
     height: 1.3em;
     background-color: white;
@@ -181,7 +217,8 @@ button {
     outline: none;
     cursor: pointer;
 }
-.checkbox:checked {
-    background-color: gray;
-}
 
+.checkbox:checked {
+    background-color: green;
+    cursor: pointer;
+}

@@ -4,32 +4,38 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
-.out-container{
+
+.out-container {
     width: 90%;
     margin: auto;
     padding: 20px;
 }
-.flex{
+
+.flex {
     display: flex;
 }
-.column{
+
+.column {
     flex-direction: column;
 }
-.navbar{
+
+.navbar {
     justify-content: space-between;
 }
-.navbar>:nth-child(2)>div>div{
+
+.navbar>:nth-child(2)>:first-child>div {
     display: flex;
     font-size: 16px;
     gap: 4px;
     color: rgba(40, 40, 42, 1);
     align-items: center;
 }
-.navbar>:nth-child(2)>div :hover{
+
+.navbar>:nth-child(2)>div :hover {
     color: rgba(170, 113, 74, 1);
 }
 
-.login{
+.login {
     padding: 4px 20px;
     color: rgba(170, 113, 74, 1);
     border: 1px solid rgba(170, 113, 74, 1);
@@ -37,18 +43,22 @@
     display: flex;
     align-items: center;
 }
-.login:hover{
+
+.login:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
-.signup{
+
+.signup {
     padding: 4px 20px 4px 20px;
     border: 1px solid rgba(170, 113, 74, 1);
-    background-color:rgba(170, 113, 74, 1) ;
+    background-color: rgba(170, 113, 74, 1);
     border-radius: 15px;
     color: white;
     display: flex;
     align-items: center;
 }
-.signup:hover{
+
+.signup:hover {
     background-color: rgba(0, 0, 0, 0.7);
+
 }
