@@ -6,7 +6,7 @@ import { BiLogoGmail } from "react-icons/bi";
 
 export const Landig = () => {
     return (
-        <div className="w-[90%] m-auto flex items-center h-max py-[96px] gap-[48px]">
+        <div className="w-[90%] m-auto flex flex-col-reverse  lg:flex lg:flex-row items-center h-max py-[96px] gap-[48px]">
             <div className="flex-1 flex flex-col gap-[48px]">
                 <div className="flex flex-col gap-[8px]">
                     <h1 className="text-4xl font-extrabold">Hi, I’m NABA 👋</h1>
@@ -25,9 +25,9 @@ export const Landig = () => {
                     </div>
                 </div>
                 <div className="flex gap-[8px] items-center">
-                < FaFacebookSquare className="w-[24px] h-[24px]" />
-                < FaInstagram className="w-[24px] h-[24px]" />
-                < BiLogoGmail className="w-[24px] h-[24px]" />
+                    < FaFacebookSquare className="w-[24px] h-[24px]" />
+                    < FaInstagram className="w-[24px] h-[24px]" />
+                    < BiLogoGmail className="w-[24px] h-[24px]" />
                 </div>
             </div>
             <div className="flex flex-1 items-center justify-center">
