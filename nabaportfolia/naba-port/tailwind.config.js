@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        'custom': '20px 20px #e0e0e0',
-        'about':'-20px 20px #e0e0e0',
+        custom: "20px 20px #e0e0e0",
+        about: "-20px 20px #e0e0e0",
+        about1: "-200px 0px #e0e0e0",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
