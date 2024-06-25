@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 import { Part6Card } from "./Part6-card";
 
-const data = [{ title: "dhed", src: "Picture.png", reverse: false }, { title: "fjhgjh", src: "Picture2.png", reverse: true }, { title: "hgfruyg", src: "Picture3.png", reverse: false }]
+const data = [{ title: "UBCab", src: "Picture.png", reverse: false }, { title: "MonitorHub", src: "Picture2.png", reverse: true }, { title: "iToim", src: "Picture3.png", reverse: false }]
 
 export const Part6 = () => {
     return (

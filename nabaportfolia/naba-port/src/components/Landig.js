@@ -30,7 +30,7 @@ export const Landig = () => {
                 </div>
             </div>
             <div className="flex flex-1 items-center justify-center">
-                <img className="w-[320px] h-[320px] rounded-[20px]" src="/me.jpg" />
+                <img className="shadow-custom w-[320px] h-[320px] rounded-[20px]" src="/me.jpg" />
             </div>
         </div>
     )

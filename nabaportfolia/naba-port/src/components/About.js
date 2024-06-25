@@ -10,7 +10,7 @@ export const About = () => {
 
         <div className="flex flex-col lg:flex lg:flex-row ">
           <div className="flex flex-1 items-center justify-center">
-            <img className="w-[360px] h-[360px] rounded-[20px]" src="/self.jpg" />
+            <img className="shadow-about w-[360px] h-[360px] rounded-[20px]" src="/self.jpg" />
           </div>
           <div className="flex-1 gap-[16px] flex flex-col ">
             <div className="text-3xl font-semibold">Curious about me? Here you have it:</div>
@@ -27,6 +27,7 @@ export const About = () => {
         </div>
       </div>
     </div>
+    
 
   )
 }
