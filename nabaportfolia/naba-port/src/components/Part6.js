@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 import { Part6Card } from "./Part6-card";
 
-// const data = [{ title: "dhed", src: "Picture.png" }, { title: "fjhgjh", src: "Picture2.png" }, { title: "hgfruyg", src: "Picture3.png" }]
+const data = [{ title: "dhed", src: "Picture.png", reverse: false }, { title: "fjhgjh", src: "Picture2.png", reverse: true }, { title: "hgfruyg", src: "Picture3.png", reverse: false }]
 
 export const Part6 = () => {
     return (
@@ -15,12 +15,12 @@ export const Part6 = () => {
                 </div>
 
             </div>
-            {/* {data.map((item) => (
-                <Part6Card title={item.title} src={item.src} reverse />
-            ))} */}
-            <Part6Card title="UBCab" src="Picture.png" />
+            {data.map((item,) => (
+                <Part6Card title={item.title} src={item.src} reverse={item.reverse} />
+            ))}
+            {/* <Part6Card title="UBCab" src="Picture.png" />
             <Part6Card title="Mentorhub" src="Picture2.png" reverse />
-            <Part6Card title="iToim" src="Picture3.png" />
+            <Part6Card title="iToim" src="Picture3.png" /> */}
         </div>
 
     )

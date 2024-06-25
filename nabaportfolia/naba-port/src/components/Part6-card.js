@@ -30,7 +30,7 @@ const data = [{
 ]
 export const Part6Card = (props) => {
     return (
-        <div className={`flex flex-col lg:flex lg:flex-row shadow-xl rounded - [20px] ${props.reverse ? "flex-row-reverse " : ""}`} >
+        <div className={`flex flex-col lg:flex lg:flex-row shadow-xl rounded - [20px] ${props.reverse ? "lg:flex-row-reverse " : ""}`} >
             <div className="flex flex-1 items-center justify-center bg-[#F3F4F6] px-[48px] py - [48px] rounded - [20px] ">
                 < img className="w-[480px] h-[384px] rounded-[20px]" src={props.src} />
             </div >

@@ -8,9 +8,10 @@ import { Part6 } from "../components/Part6";
 import { Part7 } from "../components/Part7";
 import { Part8 } from "../components/Part8";
 
+
 export default function Home() {
   return (
-    <main className="flex flex-col w-[100%] items-center m-auto">
+    <main className="flex flex-col w-[1440px] items-center m-auto">
       <Navbar />
       <Landig />
       <About />
@@ -19,6 +20,7 @@ export default function Home() {
       <Part6 />
       <Part7 />
       <Part8 />
+
 
 
     </main>
