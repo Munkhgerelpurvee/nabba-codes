@@ -10,7 +10,7 @@ module.exports = {
       boxShadow: {
         custom: "20px 20px #e0e0e0",
         about: "-20px 20px #e0e0e0",
-        about1: "-200px 0px #e0e0e0",
+        about1: "-200px 0px 80px #e0e0e0",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -20,4 +20,5 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: "class",
 };

@@ -16,32 +16,35 @@ import { StorybookIcon } from "@/assets/icons/storybook";
 import { GitIcon } from "@/assets/icons/git";
 
 export const Part4 = () => {
-    return (
-        <div className="w-[90%] m-auto flex flex-col gap-[24px]  h-max rounded-[20px] py-[96px]">
-            <div className=" flex items-center m-auto">
-                <Button value="Skills" />
-            </div>
-            <div className="flex ">
-                <div className="flex m-auto items-center justify-center">  The skills, tools and technologies I am really good at:</div>
-            </div>
-            <div className=" flex gap-[64px] flex-wrap justify-center">
-                <JavaIcon />
-                <TypescriptIcon />
-                <ReactIcon />
-                <NextIcon />
-                <NodeIcon />
-                <ExpressIcon />
-                <NestIcon />
-                <SocketIcon />
-                <ReactIcon />
-                <MongoDB />
-                <SassIcon />
-                <TailwindIcon />
-                <FigmaIcon />
-                <CybpressIcon />
-                <StorybookIcon />
-                <GitIcon />
-            </div>
+  return (
+    <div className="w-[90%] m-auto flex flex-col gap-[24px]  h-max rounded-[20px] py-[96px]">
+      <div className=" flex items-center m-auto">
+        <Button value="Skills" />
+      </div>
+      <div className="flex ">
+        <div className="flex m-auto items-center justify-center dark:text-[#F9FAFB]">
+          {" "}
+          The skills, tools and technologies I am really good at:
         </div>
-    )
-}
+      </div>
+      <div className=" flex gap-[64px] flex-wrap justify-center">
+        <JavaIcon />
+        <TypescriptIcon />
+        <ReactIcon />
+        <NextIcon />
+        <NodeIcon />
+        <ExpressIcon />
+        <NestIcon />
+        <SocketIcon />
+        <ReactIcon />
+        <MongoDB />
+        <SassIcon />
+        <TailwindIcon />
+        <FigmaIcon />
+        <CybpressIcon />
+        <StorybookIcon />
+        <GitIcon />
+      </div>
+    </div>
+  );
+};
