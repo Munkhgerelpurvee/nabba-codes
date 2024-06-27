@@ -15,7 +15,7 @@ export const About = () => {
               src="/self.jpg"
             />
           </div>
-          <div className="flex-1 gap-[16px] flex flex-col dark:text-[#F9FAFB] ">
+          <div className="flex-1 gap-[16px] flex flex-col dark:text-[#F9FAFB] text-justify">
             <div className="text-3xl font-semibold dark:text-[#F9FAFB]">
               Curious about me? Here you have it:
             </div>

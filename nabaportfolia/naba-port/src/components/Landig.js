@@ -12,7 +12,7 @@ export const Landig = () => {
           <h1 className="text-4xl font-extrabold dark:text-[#F9FAFB]">
             Сайн уу, Наба байна 👋
           </h1>
-          <div className="text-gray-500 dark:text-[#F9FAFB]">
+          <div className="text-gray-500 dark:text-[#F9FAFB] text-justify">
             {" "}
             Би 2021 онд МУИС-ыг Санхүү Менежмент мэргэжлээр 2021 оны 5 сараас
             2024 оны 4 сар хүртэлх хугацаанд Зээлийн эдийн засагч, Онлайн

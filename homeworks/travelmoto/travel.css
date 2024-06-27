@@ -14,4 +14,10 @@ body {
   height: 100vh;
   object-fit: fill;
   position: absolute;
+  z-index: 1;
+}
+.container1-text {
+  position: relative;
+  color: #ffffff;
+  z-index: 5;
 }

@@ -18,8 +18,7 @@ export default function Home() {
   };
   return (
     <div className={isDark ? "dark" : ""}>
-      <button onClick={handleClick}>Click</button>
-      <main className="flex flex-col w-[520px] lg:w-[1280px] items-center m-auto overflow-hidden bg-white dark:bg-[#030712]">
+      <main className="flex flex-col min-w-[520px] lg:max-w-[1440px] items-center m-auto overflow-hidden bg-white dark:bg-[#030712]">
         <Navbar toggleDarkMode={handleClick} isDark={isDark} />
         <Landig />
         <About />

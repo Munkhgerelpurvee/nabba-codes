@@ -53,7 +53,11 @@ export const Navbar = ({ toggleDarkMode, isDark }) => {
         <div className="flex items-center justify-between pt-[16px] text-[#4B5563]">
           <div className="dark:text-white">Switch Theme</div>
           <button onClick={toggleDarkMode}>
-            {isDark ? <SunIcon /> : <MoonIcon />}
+            {isDark ? (
+              <SunIcon color={isDark ? "#D1D5DB" : "black"} />
+            ) : (
+              <MoonIcon />
+            )}
           </button>
         </div>
         <div className="pt-[16px]">
