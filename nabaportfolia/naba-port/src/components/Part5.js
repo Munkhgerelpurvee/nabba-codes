@@ -23,7 +23,7 @@ export const Part5 = () => {
             <div className="font-semibold text-xl flex justify-center">
               Sr. Frontend Developer
             </div>
-            <ul className="list-disc flex flex-col gap-[4px]  ">
+            <ul className="list-disc flex flex-col gap-[4px]">
               <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
               <li>Ut pretium arcu et massa semper, id fringilla leo semper.</li>
               <li>Sed quis justo ac magna.</li>
