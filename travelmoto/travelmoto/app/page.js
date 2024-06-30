@@ -10,10 +10,13 @@ import { Part8 } from "./components/Part8";
 import { Part9 } from "./components/Part9";
 import { Part10 } from "./components/Part10";
 import { Part11 } from "./components/Part11";
+import { Part12 } from "./components/Part12";
+import { Part13 } from "./components/Part13";
+import { Part14 } from "./components/Part14";
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <div className="bg-gray-600">
       <div className="flex w-[1512px] m-auto flex-col items-center justify-center ">
         <Part1 />
         <Part2 />
@@ -26,6 +29,10 @@ export default function Home() {
         <Part9 />
         <Part10 />
         <Part11 />
+        <Part12 />
+        <Part13 />
+        <Part2 />
+        <Part14 />
       </div>
     </div>
     
