@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 
-export const Tcard = ({ img, title, description, tags }) => {
+export const Part1Card = ({ img, title, description, tags }) => {
   return (
     <div className="w-[293px] h-[320px] rounded-md relative">
       <img src={img} className="rounded-md w-[100%] h-[100%] object-cover" />
