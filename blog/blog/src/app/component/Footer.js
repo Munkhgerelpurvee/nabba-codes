@@ -6,8 +6,8 @@ import { Twitter } from "../assets/twit";
 
 export const Footer = () => {
   return (
-    <div className="flex w-[1220px] flex-col m-auto pt-[64px] pb-[75px] gap-[25px] ">
-      <div className="flex gap-[20px]">
+    <div className="flex lg:w-[1220px] w-[390px] flex-col m-auto pt-[64px] pb-[75px] gap-[25px] ">
+      <div className="flex lg:flex-row flex-col gap-[20px]">
         <div className="flex flex-1 flex-col gap-[12px]">
           <div className="text-[18px] text-[#181A2A] font-semibold">About</div>
           <div className="text-[18px] text-[#696A75] font-normal">
@@ -20,7 +20,7 @@ export const Footer = () => {
             <div>Phone : 880 123 456 789</div>
           </div>
         </div>
-        <div className="flex flex-1 flex-col gap-[8px] text-[16px] items-center text-[#3B3C4A] font-normal">
+        <div className="flex flex-1 lg:flex-col gap-[8px] text-[16px] items-center text-[#3B3C4A] font-normal">
           <div>Home</div>
           <div>Blog</div>
           <div>Contact</div>
@@ -41,7 +41,7 @@ export const Footer = () => {
         </div>
       </div>
       <div
-        className="flex justify-between border-t-2 border-gray-200ls
+        className="lg:flex lg:flex-row flex flex-col gap-[64px]  justify-between border-t-2 border-gray-200ls
          pt-[12px]"
       >
         <div className="flex gap-[10px]">
@@ -56,7 +56,7 @@ export const Footer = () => {
             <div>© All Rights Reserved.</div>
           </div>
         </div>
-        <div className="flex gap-[32px] items-center">
+        <div className="lg:flex lg:flex-row flex flex-col gap-[32px]">
           <div>Terms of Use</div>
           <div>Privacy Policy</div>
           <div>Cookie Policy</div>

@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <main className="flex flex-col m-auto bg-white  w-[100%]">
       <Header />
-      <Part1 />
+      <Part1 data={articles} />
       <Part2 data={articles} />
       <Part3 data={articles} />
       <Footer />
