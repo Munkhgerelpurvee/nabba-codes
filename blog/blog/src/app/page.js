@@ -7,6 +7,7 @@ import { Part2 } from "./component/Part2";
 
 import { useEffect, useState } from "react";
 import { Part3 } from "./component/Part3";
+import { AllBlogs } from "./component/AllBlog";
 
 const getArticle = async () => {
   const res = await fetch("https://dev.to/api/articles");
@@ -27,11 +28,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col m-auto bg-white  w-[100%]">
+    <main className="flex flex-col m-auto bg-white  w-full">
       <Header />
       <Part1 data={articles} />
       <Part2 data={articles} />
       <Part3 data={articles} />
+      <AllBlogs />
       <Footer />
     </main>
   );

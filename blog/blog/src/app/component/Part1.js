@@ -1,37 +1,51 @@
+"use client";
+
 import { Left } from "../assets/left";
 import { Right } from "../assets/right";
+import { Part1Card } from "./Part1Card";
+import { useEffect, useState } from "react";
 
-export const Part1 = () => {
+const itemsPerPage = 4;
+
+export const Part1 = ({ data }) => {
+  const [startIndex, setStartIndex] = useState(0);
+
+  const handlePrevClick = () => {
+    setStartIndex((prev) => (prev === 0 ? 0 : prev - 1));
+  };
+
+  const handleNextClick = () => {
+    setStartIndex((prev) => (prev === itemsPerPage - 1 ? 0 : prev + 1));
+  };
+
   return (
     <div className="lg:w-[1220px] w-[390px] flex flex-col gap-[11px] m-auto">
-      <div className="lg:w-[1220px] w-[390px] h-[600px] relative m-auto">
-        <img
-          src="/Image1.png"
-          className=" w-[100%] h-[100%] object-cover rounded-md "
-        />
-        <div className="absolute flex flex-col gap-[24px] bg-[#FFFFFF] py-[40px] shadow-md rounded-md	bottom-[13px] lg:left-[11px] left-[5%] lg:w-[598px] w-[90%] lg:h-[252px] justify-evenly">
-          <div className="px-[50px]">
-            <div className="px-[10px] py-[4px] w-fit bg-[#4B6BFB] text-center rounded-md text-[#FFFFFF] text-[14px] font-medium">
-              Technology
-            </div>
-
-            <div className="text-[36px] font-semibold text-[#181A2A] lg:w-[400px] w-fit">
-              Grid system for better Design User Interface
-            </div>
-
-            <div className="text-[16px] font-normal text-[#97989F]">
-              August 20, 2022
-            </div>
-          </div>
+      <div className="overflow-hidden w-full">
+        <div
+          className={`flex duration-1000`}
+          style={{
+            width: `${itemsPerPage * 100}%`,
+            transform: `translateX(${(-startIndex * 100) / itemsPerPage}%)`,
+          }}
+        >
+          {data.slice(0, itemsPerPage).map((item, index) => (
+            <Part1Card
+              // key={index}
+              img={item.cover_image}
+              title={item.title}
+              description={item.description}
+              tags={item.tag_list}
+            />
+          ))}
         </div>
       </div>
-      <div className="flex lg:justify-end justify-center gap-[9px] ">
-        <div>
+      <div className="flex lg:justify-end justify-center gap-[9px]">
+        <button onClick={handlePrevClick}>
           <Left />
-        </div>
-        <div>
+        </button>
+        <button onClick={handleNextClick}>
           <Right />
-        </div>
+        </button>
       </div>
     </div>
   );
