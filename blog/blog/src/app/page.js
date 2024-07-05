@@ -32,7 +32,7 @@ export default function Home() {
       <Header />
       <Part1 data={articles} />
       <Part2 data={articles} />
-      <Part3 data={articles} />
+      {/* <Part3 data={articles} /> */}
       <AllBlogs />
       <Footer />
     </main>

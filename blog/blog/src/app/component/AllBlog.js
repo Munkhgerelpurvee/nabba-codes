@@ -54,7 +54,7 @@ export const AllBlogs = () => {
   }, [category, perPage]);
 
   return (
-    <div className="flex flex-col gap-8 lg:w-[1100px] m-auto py-8">
+    <div className="flex flex-col gap-8 lg:w-[1220px] m-auto py-8">
       <h1 className="font-bold text-2xl">All Blog Post</h1>
 
       <div className="flex gap-5">
