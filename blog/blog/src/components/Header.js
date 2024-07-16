@@ -1,6 +1,6 @@
-import { Logo } from "../assets/logo";
-import { NavList } from "../assets/navlist";
-import { SearchIcon } from "../assets/searchicon";
+import { SearchIcon } from "@/assets/searchicon";
+import { Logo } from "@/assets/logo";
+import { NavList } from "@/assets/navlist";
 
 export const Header = () => {
   return (

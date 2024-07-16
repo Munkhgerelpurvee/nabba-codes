@@ -1,8 +1,8 @@
-import { Fb } from "../assets/fb";
-import { In } from "../assets/in";
-import { Insta } from "../assets/inst";
-import { Logo } from "../assets/logo";
-import { Twitter } from "../assets/twit";
+import { Fb } from "@/assets/fb";
+import { In } from "@/assets/in";
+import { Insta } from "@/assets/inst";
+import { Logo } from "@/assets/logo";
+import { Twitter } from "@/assets/twit";
 
 export const Footer = () => {
   return (

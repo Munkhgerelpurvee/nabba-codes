@@ -1,13 +1,13 @@
 "use client";
 
-import { Footer } from "./component/Footer";
-import { Header } from "./component/Header";
-import { Part1 } from "./component/Part1";
-import { Part2 } from "./component/Part2";
+import { Part1 } from "@/components/Part1";
+import { Part2 } from "@/components/Part2";
 
 import { useEffect, useState } from "react";
-import { Part3 } from "./component/Part3";
-import { AllBlogs } from "./component/AllBlog";
+import { Part3 } from "@/components/Part3";
+import { AllBlogs } from "@/components/AllBlog";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 const getArticle = async () => {
   const res = await fetch("https://dev.to/api/articles");

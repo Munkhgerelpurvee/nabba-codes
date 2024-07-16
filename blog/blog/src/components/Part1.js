@@ -1,7 +1,7 @@
 "use client";
 
-import { Left } from "../assets/left";
-import { Right } from "../assets/right";
+import { Left } from "@/assets/left";
+import { Right } from "@/assets/right";
 import { Part1Card } from "./Part1Card";
 import { useEffect, useState } from "react";
 
