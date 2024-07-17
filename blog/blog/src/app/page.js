@@ -9,6 +9,7 @@ import { AllBlogs } from "@/components/AllBlog";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Contact";
+import { Error } from "@/components/Error";
 
 const getArticle = async () => {
   const res = await fetch("https://dev.to/api/articles");

@@ -4,6 +4,7 @@ import { Left } from "@/assets/left";
 import { Right } from "@/assets/right";
 import { Part1Card } from "./Part1Card";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const itemsPerPage = 4;
 
@@ -29,13 +30,15 @@ export const Part1 = ({ data }) => {
           }}
         >
           {data.slice(0, itemsPerPage).map((item, index) => (
-            <Part1Card
-              // key={index}
-              img={item.cover_image}
-              title={item.title}
-              description={item.description}
-              tags={item.tag_list}
-            />
+            <Link key={item.id} href={`/blogs/${item.id}`}>
+              <Part1Card
+                // key={index}
+                img={item.cover_image}
+                title={item.title}
+                description={item.description}
+                tags={item.tag_list}
+              />
+            </Link>
           ))}
         </div>
       </div>

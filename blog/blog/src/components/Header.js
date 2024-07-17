@@ -7,9 +7,11 @@ export const Header = () => {
   return (
     <div className="flex lg:w-[1220px] w-[390px] items-center justify-between m-auto pt-[32px] pb-[32px]">
       <div className="flex gap-[8px]">
-        <div>
-          <Logo width={30.76} height={26} />
-        </div>
+        <Link href={`/404`}>
+          <div>
+            <Logo width={30.76} height={26} />
+          </div>
+        </Link>
         <div className="flex items-center">
           <div className="text-[#141624] text-[24px]">Meta</div>
           <div className="text-[#141624] text-[24px] font-bold">Blog</div>

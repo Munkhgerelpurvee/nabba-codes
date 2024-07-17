@@ -1,4 +1,5 @@
 import { Tcard } from "./Tcard";
+import Link from "next/link";
 
 export const Part2 = ({ data }) => {
   return (
@@ -7,12 +8,14 @@ export const Part2 = ({ data }) => {
       <div className="overflow-x-scroll w-[100%]">
         <div className="flex w-fit gap-[20px]">
           {data.slice(1, 12).map((item) => (
-            <Tcard
-              img={item.cover_image}
-              title={item.title}
-              description={item.description}
-              tags={item.tag_list}
-            />
+            <Link key={item.id} href={`/blogs/${item.id}`}>
+              <Tcard
+                img={item.cover_image}
+                title={item.title}
+                description={item.description}
+                tags={item.tag_list}
+              />
+            </Link>
           ))}
         </div>
       </div>

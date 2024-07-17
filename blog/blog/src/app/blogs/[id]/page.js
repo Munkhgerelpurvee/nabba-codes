@@ -20,8 +20,7 @@ const PerBlogPage = () => {
   }, []);
 
   const now = data?.published_at;
-  const image =
-    "https://plus.unsplash.com/premium_photo-1673306778968-5aab577a7365?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fHww";
+  const image = "https://s3.zerochan.net/240/37/35/3974287.avif";
   return (
     <>
       <Header />
