@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 
 const categories = [
@@ -15,16 +15,16 @@ const categories = [
   "Programming",
 ];
 
-export const AllBlogs = () => {
+export const AllBlogs1 = () => {
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
 
   const [category, setCategory] = useState("All");
-  const [perPage, setPerPage] = useState(9);
+  const [perPage, setPerPage] = useState(12);
 
   const handleCategory = (category) => {
     setCategory(category);
-    setPerPage(9);
+    setPerPage(12);
   };
 
   const handleLoadMore = () => {
@@ -54,36 +54,11 @@ export const AllBlogs = () => {
 
     getData();
   }, [category, perPage]);
-
   const image =
     "https://plus.unsplash.com/premium_photo-1673306778968-5aab577a7365?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fHww";
-
   return (
     <div className="flex flex-col gap-8 lg:w-[1220px] m-auto py-8">
       <h1 className="font-bold text-2xl">All Blog Post</h1>
-
-      <div className="flex gap-5 justify-between ">
-        <div className="flex gap-5">
-          {categories.map((item) => (
-            <button
-              key={item}
-              className="px-2 py-1 bg-gray-200 dark:bg-slate-800 rounded-md text-[#495057] text-[12px] items-center"
-              style={{
-                color: category === item ? "#4B6BFB" : "",
-              }}
-              onClick={() => handleCategory(item)}
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-        <Link href={`/blogs`}>
-          {" "}
-          <div className="flex items-center text-[#495057] text-[12px] font-bold ">
-            View All
-          </div>
-        </Link>
-      </div>
 
       <div className="w-full grid grid-cols-3 gap-[24px]">
         {blogs.map((blog) => (
@@ -115,7 +90,7 @@ const BlogCard = ({ image, title, date, tags }) => {
       <img src={image} alt="image" className="aspect-[2/1] w-full rounded-md" />
 
       <div className="py-2 flex flex-col gap-4">
-        <div className="flex gap-2 flex-wrap ">
+        <div className="flex gap-2 flex-wrap">
           {tags.map((tag) => (
             <BlogTag key={tag} tag={tag} />
           ))}
@@ -123,7 +98,9 @@ const BlogCard = ({ image, title, date, tags }) => {
 
         <h3 className="font-semibold text-2xl">{title}</h3>
 
-        {date && <div>{format(date, "MMMM dd, yyyy")}</div>}
+        <p className="text-gray-500">
+          {date && <div>{format(date, "MMMM dd, yyyy")}</div>}
+        </p>
       </div>
     </div>
   );

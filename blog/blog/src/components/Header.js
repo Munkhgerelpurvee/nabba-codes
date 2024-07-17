@@ -1,6 +1,7 @@
 import { SearchIcon } from "@/assets/searchicon";
 import { Logo } from "@/assets/logo";
 import { NavList } from "@/assets/navlist";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -15,9 +16,16 @@ export const Header = () => {
         </div>
       </div>
       <div className="lg:flex hidden gap-[40px] text-[16px] text-[#3B3C4A] font-medium items-center">
-        <div>Home</div>
-        <div>Blog</div>
-        <div>Contact</div>
+        <Link href={`/`}>
+          {" "}
+          <div>Home</div>{" "}
+        </Link>
+        <Link href={`/blogs`}>
+          <div>Blog</div>
+        </Link>
+        <Link href={`/contact`}>
+          <div>Contact</div>
+        </Link>
       </div>
       <div className="lg:flex hidden items-center w-[166px] h-[36px] bg-[#F4F4F5] pt-[8px] pr-[8px] pb-[8px] pl-[16px]">
         <input
