@@ -18,6 +18,7 @@ export const Part3 = ({ data }) => {
       <div className="flex flex-wrap gap-[20px]">
         {data.slice(1, 10).map((item) => (
           <Acard
+            key={item.title}
             img={item.cover_image}
             title={item.title}
             description={item.description}
