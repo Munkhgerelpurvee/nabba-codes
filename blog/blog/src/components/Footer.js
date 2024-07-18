@@ -3,6 +3,7 @@ import { In } from "@/assets/in";
 import { Insta } from "@/assets/inst";
 import { Logo } from "@/assets/logo";
 import { Twitter } from "@/assets/twit";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -21,23 +22,37 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex flex-1 lg:flex-col gap-[8px] text-[16px] items-center text-[#3B3C4A] font-normal">
-          <div>Home</div>
-          <div>Blog</div>
-          <div>Contact</div>
+          <Link href={`/`}>
+            <div>Home</div>{" "}
+          </Link>
+          <Link href={`/blogs`}>
+            <div>Blog</div>{" "}
+          </Link>
+          <Link href={`/contact`}>
+            <div>Contact</div>
+          </Link>
         </div>
         <div className="flex flex-1 gap-[26.67px]">
-          <div>
-            <Fb />
-          </div>
-          <div>
-            <Twitter />
-          </div>
-          <div>
-            <Insta />
-          </div>
-          <div>
-            <In />
-          </div>
+          <Link target="blank" href={"https://www.facebook.com/"}>
+            <div>
+              <Fb />
+            </div>
+          </Link>
+          <Link target="blank" href={"https://www.twitter.com/"}>
+            <div>
+              <Twitter />
+            </div>
+          </Link>
+          <Link target="blank" href={"https://www.instagram.com/"}>
+            <div>
+              <Insta />
+            </div>
+          </Link>
+          <Link target="blank" href={"https://mn.linkedin.com/"}>
+            <div>
+              <In />
+            </div>
+          </Link>
         </div>
       </div>
       <div

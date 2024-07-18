@@ -44,18 +44,10 @@ const PerBlogPage = () => {
             src={data?.cover_image ?? image}
           />
         </div>
-        <p className="mt-[32px] text-[#3B3C4A] text-[32px] font-bold">
-          {data?.description}
-        </p>
-        <p className="mt-[32px] text-[#3B3C4A] text-[20px]">
-          {data?.description}
-        </p>
-        <p className="mt-[32px] text-[#3B3C4A] text-[20px] font-bold">
-          {data?.description}
-        </p>
-        <p className="mt-[32px] text-[#3B3C4A] text-[20px]">
-          {data?.description}
-        </p>
+        <div
+          className="mt-[32px] text-[#3B3C4A] text-[18px] flex flex-col items-start gap-6 [&>p]:text-[20px] [&>h3]:font-semibold [&>img]:self-center"
+          dangerouslySetInnerHTML={{ __html: data?.body_html }}
+        />
       </div>
       <Footer />
     </>

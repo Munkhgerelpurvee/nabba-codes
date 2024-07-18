@@ -4,16 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { format } from "date-fns";
 
-const categories = [
-  "All",
-  "React",
-  "JavaScript",
-  "Python",
-  "Web Development",
-  "Node.js",
-  "discuss",
-  "Programming",
-];
+const categories = ["All", "React", "JavaScript", "Python", "Web Development"];
 
 export const AllBlogs = () => {
   const [loading, setLoading] = useState(true);
@@ -59,7 +50,7 @@ export const AllBlogs = () => {
     "https://plus.unsplash.com/premium_photo-1673306778968-5aab577a7365?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fHww";
 
   return (
-    <div className="flex flex-col gap-8 lg:w-[1220px] m-auto py-8">
+    <div className="flex flex-col gap-8 lg:w-[1220px] w-[390px] m-auto py-8">
       <h1 className="font-bold text-2xl">All Blog Post</h1>
 
       <div className="flex gap-5 justify-between ">
@@ -79,13 +70,13 @@ export const AllBlogs = () => {
         </div>
         <Link href={`/blogs`}>
           {" "}
-          <div className="flex items-center text-[#495057] text-[12px] font-bold ">
+          <div className=" hidden lg:flex items-center text-[#495057] text-[12px] font-bold ">
             View All
           </div>
         </Link>
       </div>
 
-      <div className="w-full grid grid-cols-3 gap-[24px]">
+      <div className="lg:w-full lg:grid lg:grid-cols-3 lg:gap-[24px] grid gap-[20px]">
         {blogs.map((blog) => (
           <Link key={blog.id} href={`/blogs/${blog.id}`}>
             <BlogCard

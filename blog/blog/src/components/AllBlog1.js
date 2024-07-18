@@ -57,10 +57,10 @@ export const AllBlogs1 = () => {
   const image =
     "https://plus.unsplash.com/premium_photo-1673306778968-5aab577a7365?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fHww";
   return (
-    <div className="flex flex-col gap-8 lg:w-[1220px] m-auto py-8">
+    <div className="flex flex-col gap-8 lg:w-[1220px] w-[390px] m-auto py-8">
       <h1 className="font-bold text-2xl">All Blog Post</h1>
 
-      <div className="w-full grid grid-cols-3 gap-[24px]">
+      <div className="lg:w-full lg:grid lg:grid-cols-3 lg:gap-[24px] grid gap-[20px]">
         {blogs.map((blog) => (
           <Link key={blog.id} href={`/blogs/${blog.id}`}>
             <BlogCard
