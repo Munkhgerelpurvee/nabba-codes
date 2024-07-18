@@ -25,7 +25,7 @@ const PerBlogPage = () => {
     <>
       <Header />
       <div className="lg:w-[1220px] w-[390px] m-auto">
-        <h1 className="text-[#181A2A] text-[36px] font-semibold mb-[20px]">
+        <h1 className="text-[#181A2A] text-[38px] font-semibold mb-[20px]">
           {data?.title}
         </h1>
         <div className="flex items-center gap-[24px] mb-[32px]">
