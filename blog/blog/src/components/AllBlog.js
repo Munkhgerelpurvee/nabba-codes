@@ -58,7 +58,7 @@ export const AllBlogs = () => {
           {categories.map((item) => (
             <button
               key={item}
-              className="px-2 py-1 bg-gray-200 dark:bg-slate-800 rounded-md text-[#495057] text-[12px] items-center"
+              className="px-2 py-1 bg-gray-200 dark:bg-slate-800 hover:bg-green-400 duration-300 rounded-md text-[#495057] text-[12px] items-center"
               style={{
                 color: category === item ? "#4B6BFB" : "",
               }}
@@ -70,7 +70,7 @@ export const AllBlogs = () => {
         </div>
         <Link href={`/blogs`}>
           {" "}
-          <div className=" hidden lg:flex items-center text-[#495057] text-[12px] font-bold ">
+          <div className=" hidden lg:flex items-center text-[#495057] text-[12px] font-bold hover:scale-150 hover:pr-[20px] hover:text-green-600 duration-1000">
             View All
           </div>
         </Link>
@@ -91,7 +91,7 @@ export const AllBlogs = () => {
       </div>
 
       <button
-        className="m-auto w-[200px] py-2 bg-[#4B6BFB] text-white rounded-md"
+        className="m-auto w-[200px] py-2 bg-[#4B6BFB] text-white rounded-md hover:bg-green-500 duration-1000"
         onClick={handleLoadMore}
       >
         {loading ? <p>Loading...</p> : <p>Load More</p>}
@@ -112,7 +112,9 @@ const BlogCard = ({ image, title, date, tags }) => {
           ))}
         </div>
 
-        <h3 className="font-semibold text-2xl">{title}</h3>
+        <h3 className="font-semibold text-2xl h-[64px] overflow-hidden">
+          {title}
+        </h3>
 
         {date && <div>{format(date, "MMMM dd, yyyy")}</div>}
       </div>

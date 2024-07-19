@@ -69,6 +69,8 @@ export const AllBlogs1 = () => {
               title={blog.title}
               date={blog.published_at}
               tags={blog.tag_list}
+              profile={blog.user.profile_image}
+              name={blog.user.name}
             />
           </Link>
         ))}
@@ -84,7 +86,7 @@ export const AllBlogs1 = () => {
   );
 };
 
-const BlogCard = ({ image, title, date, tags }) => {
+const BlogCard = ({ image, title, date, tags, profile, name }) => {
   return (
     <div className="border p-4 flex flex-col gap-4 w-full rounded-md bg-white h-[440px] justify-between">
       <img src={image} alt="image" className="aspect-[2/1] w-full rounded-md" />
@@ -96,11 +98,21 @@ const BlogCard = ({ image, title, date, tags }) => {
           ))}
         </div>
 
-        <h3 className="font-semibold text-2xl">{title}</h3>
+        <h3 className="font-semibold text-2xl h-[64px] overflow-hidden">
+          {title}
+        </h3>
 
-        <p className="text-gray-500">
-          {date && <div>{format(date, "MMMM dd, yyyy")}</div>}
-        </p>
+        <div className="flex justify-between">
+          <img
+            className="w-[28px] h-[28px] rounded-full "
+            src={profile}
+            alt="Profile"
+          />
+          <p>{name}</p>
+          <p className="text-gray-500">
+            {date && <div>{format(date, "MMMM dd, yyyy")}</div>}
+          </p>
+        </div>
       </div>
     </div>
   );

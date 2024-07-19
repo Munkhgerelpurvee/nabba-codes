@@ -32,24 +32,24 @@ export const Footer = () => {
             <div>Contact</div>
           </Link>
         </div>
-        <div className="flex flex-1 gap-[26.67px]">
+        <div className="flex flex-1 gap-[26.67px] ">
           <Link target="blank" href={"https://www.facebook.com/"}>
-            <div>
+            <div className=" w-[40px] h-[40px] items-center flex justify-center hover:scale-[1.5] hover:bg-blue-600 duration-1000 rounded-lg">
               <Fb />
             </div>
           </Link>
           <Link target="blank" href={"https://www.twitter.com/"}>
-            <div>
+            <div className=" w-[40px] h-[40px] items-center flex justify-center hover:scale-[1.5] hover:bg-black duration-1000 rounded-lg">
               <Twitter />
             </div>
           </Link>
           <Link target="blank" href={"https://www.instagram.com/"}>
-            <div>
+            <div className=" w-[40px] h-[40px] items-center flex justify-center hover:scale-[1.5] hover:bg-red-400 duration-1000 rounded-lg">
               <Insta />
             </div>
           </Link>
           <Link target="blank" href={"https://mn.linkedin.com/"}>
-            <div>
+            <div className=" w-[40px] h-[40px] items-center flex justify-center hover:scale-[1.5] hover:bg-blue-600 duration-1000 rounded-lg">
               <In />
             </div>
           </Link>

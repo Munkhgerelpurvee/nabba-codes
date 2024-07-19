@@ -4,7 +4,7 @@ export const Button = ({ lai, textColor, bgColor }) => {
       {lai.map((item) => (
         <div
           key={lai}
-          className={`${bgColor} ${textColor} px-[10px] py-[4px] text-center rounded-md text-[14px] font-medium`}
+          className={`${bgColor} ${textColor} px-[10px] py-[4px] text-center rounded-md text-[14px] font-medium capitalize`}
         >
           {item}
         </div>
