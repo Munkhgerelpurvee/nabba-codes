@@ -26,6 +26,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { HomeIcon } from "@/assets/homeIcon";
 import { FoodIcon } from "@/assets/foodIcon";
+import { RecordsCard } from "./RecordsCard";
 
 const data = [
   { title: "Food & Drinks" },
@@ -42,36 +43,29 @@ const data = [
 ];
 const data1 = [
   {
-    icon: <HomeIcon />,
     title: "Lending & Renting",
-    time: "14:00",
-    amount: "-1,000₮",
-    textColor: "#F54949",
+    date: "14:00",
+    amount: -1000,
   },
   {
-    icon: <FoodIcon />,
     title: "Food & Drinks",
     time: "14:00",
-    amount: "-1,000₮",
-    textColor: "",
+    amount: 1000,
   },
   {
-    icon: <FoodIcon />,
     title: "Food & Drinks",
     time: "14:00",
-    amount: "-1,000₮",
+    amount: -1000,
   },
   {
-    icon: <FoodIcon />,
     title: "Food & Drinks",
     time: "14:00",
-    amount: "-1,000₮",
+    amount: 1000,
   },
   {
-    icon: <FoodIcon />,
     title: "Food & Drinks",
     time: "14:00",
-    amount: "-1,000₮",
+    amount: -1000,
   },
 ];
 
@@ -193,17 +187,11 @@ export const Records = () => {
             <div className="text-[16px] font-semibold">Today</div>
             <div className="flex flex-col gap-3 ">
               {data1.map((item) => (
-                <div className="flex justify-between bg-white items-center px-6 py-3 rounded-lg">
-                  <div className="flex gap-4 items-center">
-                    <Checkbox height={6} width={6} />
-                    <div>{item.icon}</div>
-                    <div>
-                      <div>{item.title}</div>
-                      <div>{item.time}</div>
-                    </div>
-                  </div>
-                  <div className="text-[#F54949]">{item.amount}</div>
-                </div>
+                <RecordsCard
+                  title={item.title}
+                  date={item.date}
+                  amount={item.amount}
+                />
               ))}
             </div>
           </div>
@@ -211,19 +199,11 @@ export const Records = () => {
             <div className="text-[16px] font-semibold">Yesterday</div>
             <div className="flex flex-col gap-3 ">
               {data1.map((item) => (
-                <div className="flex justify-between bg-white items-center px-6 py-3 rounded-lg">
-                  <div className="flex gap-4 items-center">
-                    <Checkbox height={6} width={6} />
-                    <div>{item.icon}</div>
-                    <div>
-                      <div>{item.title}</div>
-                      <div>{item.time}</div>
-                    </div>
-                  </div>
-                  <div className={`text-[${item.textColor ?? "#23E01F"}]`}>
-                    {item.amount}
-                  </div>
-                </div>
+                <RecordsCard
+                  title={item.title}
+                  date={item.date}
+                  amount={item.amount}
+                />
               ))}
             </div>
           </div>

@@ -12,7 +12,7 @@ export const Header = () => {
           <HeaderLogo />
         </div>
         <div>Dashboard</div>
-        <div>Records</div>
+        <div className="font-semibold">Records</div>
       </div>
       <div className="flex items-center gap-[24px]">
         <Button>
