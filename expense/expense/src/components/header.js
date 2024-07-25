@@ -3,16 +3,23 @@ import { HeaderLogo } from "@/assets/headerlogo";
 import { Plus } from "@/assets/plus";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const Header = () => {
   return (
     <div className="flex lg:w-[1220px] w-[390px] h-[72px] font-normal text-[16px] items-center justify-between m-auto">
       <div className="flex items-center gap-[24px]">
-        <div>
-          <HeaderLogo />
-        </div>
-        <div>Dashboard</div>
-        <div className="font-semibold">Records</div>
+        <Link href={`/logIn`}>
+          <div>
+            <HeaderLogo />
+          </div>
+        </Link>
+        <Link href={`/`}>
+          <div>Dashboard</div>
+        </Link>
+        <Link href={`/record`}>
+          <div>Records</div>
+        </Link>
       </div>
       <div className="flex items-center gap-[24px]">
         <Button>

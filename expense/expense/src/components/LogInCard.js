@@ -34,11 +34,15 @@ export const LogInCard = () => {
             placeholder="Password"
             type="password"
           ></input>
-          <Button>
-            <div className="flex items-center justify-center bg-[#0166FF] text-[16px]  text-[#FFFFFF] ">
-              Log in
-            </div>
-          </Button>
+          <div className="flex justify-center">
+            <Link href={`/geldCurrency`}>
+              <Button>
+                <div className="flex items-center justify-center bg-[#0166FF] text-[16px] w-[384px]  text-[#FFFFFF] ">
+                  Log in
+                </div>
+              </Button>
+            </Link>
+          </div>
         </div>
         <div className="flex gap-3 items-center justify-center">
           <div className="text-[#0F172A]">Don’t have account?</div>
