@@ -15,7 +15,7 @@ const Loading = () => {
             <HeaderLogo />
           </div>
         </Link>
-        <div className="text-2xl font-bold">Geld</div>
+        <div className="text-[64px] font-bold">Geld</div>
       </div>
       <div>
         <LoadingSpinner />
