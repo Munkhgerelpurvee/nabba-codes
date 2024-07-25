@@ -53,10 +53,10 @@ const chartConfig = {
 
 export const CircleChart = () => {
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Legend</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+    <Card className="flex flex-col ">
+      <CardHeader className="flex flex-row justify-between pb-[60px]">
+        <CardTitle>Income - Expense</CardTitle>
+        <CardDescription>Jun 1 - Nov 30</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer

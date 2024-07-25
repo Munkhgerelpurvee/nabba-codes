@@ -27,6 +27,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { CircleChart } from "./circleChart";
+import { RecordsCard1 } from "./RecordsCard1";
 
 export const Dashboard = () => {
   const chartData = [
@@ -48,8 +49,35 @@ export const Dashboard = () => {
     },
   };
 
+  const data1 = [
+    {
+      title: "Lending & Renting",
+      date: "3 hours ago",
+      amount: -1000,
+    },
+    {
+      title: "Lending & Renting",
+      date: "3 hours ago",
+      amount: 1000,
+    },
+    {
+      title: "Lending & Renting",
+      date: "3 hours ago",
+      amount: -1000,
+    },
+    {
+      title: "Lending & Renting",
+      date: "3 hours ago",
+      amount: 1000,
+    },
+    {
+      title: "Lending & Renting",
+      date: "3 hours ago",
+      amount: -1000,
+    },
+  ];
   return (
-    <div className="flex flex-col lg:w-[1220px] w-[390px] font-normal text-[16px] items-center justify-between m-auto pt-[32px] gap-6">
+    <div className="flex flex-col lg:w-[1220px] w-[390px] font-normal text-[16px] items-center justify-between m-auto pt-[32px] pb-[40px] gap-6">
       <div className="flex flex-row w-full gap-[24px]">
         <div className="flex-1 flex flex-col bg-[#0166FF] h-[216px] rounded-2xl px-[32px] py-[32px] justify-between">
           <div>
@@ -150,7 +178,19 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div></div>
+      <div className="flex w-full flex-col gap-3 bg-white py-[16px] px-[24px] rounded-lg">
+            <div className="text-[16px] font-semibold">Last Records</div>
+            <div className="flex flex-col gap-3 ">
+              {data1.map((item) => (
+                <RecordsCard1
+                  key={item.title}
+                  title={item.title}
+                  date={item.date}
+                  amount={item.amount}
+                />
+              ))}
+            </div>
+          </div>
     </div>
   );
 };
