@@ -67,15 +67,26 @@ const categoryData = [
 export const AddCategoryIconMap = () => {
   return (
     <SelectContent>
-      <div className="grid grid-cols-5">
-        {categoryData.map((item, index) => (
-          <SelectItem value={index}>
-            <div className=" p-0 items-center">
-              <div>{item.icon}</div>
-              <div className="text-[16px]">{item.title}</div>
-            </div>
-          </SelectItem>
-        ))}
+      <div className="flex flex-col gap-5">
+        <div className="grid grid-cols-5">
+          {categoryData.map((item, index) => (
+            <SelectItem value={index}>
+              <div className=" p-0 items-center">
+                <div>{item.icon}</div>
+                <div className="text-[16px]">{item.title}</div>
+              </div>
+            </SelectItem>
+          ))}
+        </div>
+        <div className="flex gap-4">
+          <div className="w-6 h-6 rounded-[50%] bg-[#0166FF]"></div>
+          <div className="w-6 h-6 rounded-[50%] bg-[#01B3FF]"></div>
+          <div className="w-6 h-6 rounded-[50%] bg-[#41CC00]"></div>
+          <div className="w-6 h-6 rounded-[50%] bg-[#F9D100]"></div>
+          <div className="w-6 h-6 rounded-[50%] bg-[#FF7B01]"></div>
+          <div className="w-6 h-6 rounded-[50%] bg-[#AE01FF]"></div>
+          <div className="w-6 h-6 rounded-[50%] bg-[#FF0101]"></div>
+        </div>
       </div>
     </SelectContent>
   );
