@@ -34,58 +34,120 @@ import { AddCategoryDialog } from "./AddCategoryDialog";
 
 const categoryData = [
   {
-    icon: <FaBus />,
+    icon: FaBus,
   },
   {
-    icon: <FaApple />,
+    icon: FaApple,
   },
   {
-    icon: <FaAndroid />,
+    icon: FaAndroid,
   },
   {
-    icon: <FaAngellist />,
+    icon: FaAngellist,
   },
   {
-    icon: <FaApplePay />,
+    icon: FaApplePay,
   },
   {
-    icon: <FaArchway />,
+    icon: FaArchway,
   },
   {
-    icon: <FaAppStore />,
+    icon: FaAppStore,
   },
   {
-    icon: <FaAtlas />,
+    icon: FaAtlas,
   },
   {
-    icon: <FaBabyCarriage />,
+    icon: FaBabyCarriage,
   },
   {
-    icon: <FaBasketballBall />,
+    icon: FaBasketballBall,
+  },
+  {
+    icon: FaBus,
+  },
+  {
+    icon: FaApple,
+  },
+  {
+    icon: FaAndroid,
+  },
+  {
+    icon: FaAngellist,
+  },
+  {
+    icon: FaApplePay,
+  },
+  {
+    icon: FaArchway,
+  },
+  {
+    icon: FaAppStore,
+  },
+  {
+    icon: FaAtlas,
+  },
+  {
+    icon: FaBabyCarriage,
+  },
+  {
+    icon: FaBasketballBall,
+  },
+];
+const ColorData = [
+  {
+    color: "#0166FF",
+  },
+  {
+    color: "#01B3FF",
+  },
+  {
+    color: "#41CC00",
+  },
+  {
+    color: "#F9D100",
+  },
+  {
+    color: "#FF7B01",
+  },
+  {
+    color: "#AE01FF",
+  },
+  {
+    color: "#FF0101",
   },
 ];
 export const AddCategoryIconMap = () => {
+  const [Color, setColor] = useState("");
+
   return (
     <SelectContent>
-      <div className="flex flex-col gap-5">
-        <div className="grid grid-cols-5">
-          {categoryData.map((item, index) => (
-            <SelectItem value={index}>
-              <div className=" p-0 items-center">
-                <div>{item.icon}</div>
-                <div className="text-[16px]">{item.title}</div>
-              </div>
-            </SelectItem>
-          ))}
-        </div>
-        <div className="flex gap-4">
-          <div className="w-6 h-6 rounded-[50%] bg-[#0166FF]"></div>
-          <div className="w-6 h-6 rounded-[50%] bg-[#01B3FF]"></div>
-          <div className="w-6 h-6 rounded-[50%] bg-[#41CC00]"></div>
-          <div className="w-6 h-6 rounded-[50%] bg-[#F9D100]"></div>
-          <div className="w-6 h-6 rounded-[50%] bg-[#FF7B01]"></div>
-          <div className="w-6 h-6 rounded-[50%] bg-[#AE01FF]"></div>
-          <div className="w-6 h-6 rounded-[50%] bg-[#FF0101]"></div>
+      <div className="px-6 py-6">
+        <div className="flex flex-col gap-5">
+          <div className="grid grid-cols-5">
+            {categoryData.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <SelectItem value={index}>
+                  <div className=" p-0 items-center">
+                    <Icon style={{ color: Color }} className="text-[20px]" />
+                    <div className="text-[16px]">{item.title}</div>
+                  </div>
+                </SelectItem>
+              );
+            })}
+          </div>
+          <div className="flex gap-4 border-t pt-6">
+            {ColorData.map((item, index) => (
+              <div
+                className="w-8 h-8 rounded-[50%] ${item.color}"
+                style={{ backgroundColor: item.color }}
+                onClick={() => {
+                  setColor(item.color);
+                }}
+              ></div>
+            ))}
+          </div>
         </div>
       </div>
     </SelectContent>

@@ -1,11 +1,14 @@
 "use client";
+
 import { HeaderLogo } from "@/assets/headerlogo";
 import { Plus } from "@/assets/plus";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const pathname = usePathname();
+
   return (
     <div className="flex lg:w-[1220px] w-[390px] h-[72px] font-normal text-[16px] items-center justify-between m-auto">
       <div className="flex items-center gap-[24px]">
@@ -15,10 +18,24 @@ export const Header = () => {
           </div>
         </Link>
         <Link href={`/`}>
-          <div>Dashboard</div>
+          <div
+            style={{
+              color: pathname === "/" ? "blue" : "black",
+              fontWeight: pathname === "/" ? "700" : "400",
+            }}
+          >
+            Dashboard
+          </div>
         </Link>
         <Link href={`/record`}>
-          <div>Records</div>
+          <div
+            style={{
+              color: pathname === "/record" ? "blue" : "black",
+              fontWeight: pathname === "/record" ? "700" : "400",
+            }}
+          >
+            Records
+          </div>
         </Link>
       </div>
       <div className="flex items-center gap-[24px]">

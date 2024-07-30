@@ -79,11 +79,15 @@ export const Dashboard = () => {
   return (
     <div className="flex flex-col lg:w-[1220px] w-[390px] font-normal text-[16px] items-center justify-between m-auto pt-[32px] pb-[40px] gap-6">
       <div className="flex flex-row w-full gap-[24px]">
-        <div className="flex-1 flex flex-col bg-[#0166FF] h-[216px] rounded-2xl px-[32px] py-[32px] justify-between">
-          <div>
+        <div className="flex-1 flex flex-col bg-[#0166FF] h-[216px] rounded-2xl px-[32px] py-[32px] justify-between relative">
+          <img
+            src="./noise.png"
+            className="absolute top-0 left-0 w-full h-full rounded-2xl"
+          />
+          <div className="">
             <CardLogo />
           </div>
-          <div className="flex justify-between ">
+          <div className="flex justify-between relative z-10 ">
             <div className="flex flex-col">
               <div className="text-white opacity-50">Cash</div>
               <div className=" text-white text-[24px] font-semibold">
@@ -179,18 +183,18 @@ export const Dashboard = () => {
         </div>
       </div>
       <div className="flex w-full flex-col gap-3 bg-white py-[16px] px-[24px] rounded-lg">
-            <div className="text-[16px] font-semibold">Last Records</div>
-            <div className="flex flex-col gap-3 ">
-              {data1.map((item) => (
-                <RecordsCard1
-                  key={item.title}
-                  title={item.title}
-                  date={item.date}
-                  amount={item.amount}
-                />
-              ))}
-            </div>
-          </div>
+        <div className="text-[16px] font-semibold">Last Records</div>
+        <div className="flex flex-col gap-3 ">
+          {data1.map((item) => (
+            <RecordsCard1
+              key={item.title}
+              title={item.title}
+              date={item.date}
+              amount={item.amount}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
