@@ -1,61 +1,6 @@
 [
   {
     "type": "exp",
-    "amount": "11111",
-    "category": {
-      "name": "Gift",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "cfe65e1f-7db4-455b-87c1-f3c39fad7283"
-  },
-  {
-    "type": "exp",
-    "amount": "11111",
-    "category": {
-      "name": "Gift",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "015460a9-38b8-4966-a286-ed22191682db"
-  },
-  {
-    "type": "exp",
-    "amount": "2222",
-    "category": {
-      "name": "Gift",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "51fff854-6789-41ed-9bb5-e2224cdc3a92"
-  },
-  {
-    "type": "exp",
-    "amount": "2222",
-    "category": {
-      "name": "Gift",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "2f4037e3-8f92-40c8-9edf-74e1345499e9"
-  },
-  {
-    "type": "exp",
-    "amount": "900",
-    "category": {
-      "name": "Taxi",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "2e731293-be58-4af6-a653-96979fc3cda3"
-  },
-  {
-    "type": "exp",
     "amount": "247",
     "category": {
       "name": "Drink",
@@ -67,57 +12,13 @@
   },
   {
     "type": "exp",
-    "amount": "247",
+    "amount": "2477777",
     "category": {
-      "name": "Drink",
+      "name": "Taxi",
       "img": "",
       "color": ""
     },
     "note": "",
-    "id": "7160ac67-2caf-4cf8-92a7-7022165950cb"
-  },
-  {
-    "type": "exp",
-    "amount": "247",
-    "category": {
-      "name": "Drink",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "8bed98f9-cffa-4660-8fc1-d1590607dbdd"
-  },
-  {
-    "type": "exp",
-    "amount": "247",
-    "category": {
-      "name": "Drink",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "6772dfbe-cecf-4e65-8179-71eeca412742"
-  },
-  {
-    "type": "exp",
-    "amount": "12301203",
-    "category": {
-      "name": "Food",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "aa668702-b0c1-4b42-a313-4908f472464a"
-  },
-  {
-    "type": "exp",
-    "amount": 0,
-    "category": {
-      "name": "",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "id": "c9e0c5a4-7f13-4b65-9db2-c2ce30ad474a"
+    "id": "b9c1f668-e5c3-4e50-aab8-bf1fe08d1cdf"
   }
 ]

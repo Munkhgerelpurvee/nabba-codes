@@ -46,6 +46,13 @@ export const ApiAddAccount = () => {
   };
   return (
     <div className="flex flex-col justify-center w-full">
+      <button
+        className="flex justify-end pr-[20px] items-center"
+        onClick={deleteAccount}
+        disabled={!selectedAccountId}
+      >
+        Delete
+      </button>
       {accounts.map((account) => (
         <div
           className="flex justify-between bg-white items-center px-6 py-3 rounded-lg"
@@ -58,7 +65,13 @@ export const ApiAddAccount = () => {
           }}
         >
           <div className="flex gap-4 items-center">
-            <Checkbox height={6} width={6} className=" border" />
+            <Checkbox
+              height={6}
+              width={6}
+              className=" border"
+              key={account.id}
+              onCheck={() => setSelectedAccountId(account.id)}
+            />
             <div>
               {account.title === "Food & Drinks" ? <FoodIcon /> : <HomeIcon />}
             </div>
