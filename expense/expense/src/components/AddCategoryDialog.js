@@ -1,7 +1,7 @@
 "use client";
 
 import { Plus } from "@/assets/plus";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Eye } from "@/assets/eye";
 import { RDirect } from "@/assets/rdirect";
 import { BluePlus } from "@/assets/blueplus";
@@ -42,6 +42,7 @@ import {
 import { AddCategory } from "./addCategory";
 import { AddHome } from "@/assets/addHome";
 import { AddCategoryIconMap } from "./AddCategoryIconMap";
+import { Axios } from "axios";
 
 const data = [
   { title: "Food & Drinks" },
@@ -86,40 +87,42 @@ const data1 = [
 
 export const AddCategoryDialog = () => {
   return (
-    <Dialog>
-      <DialogTrigger>
-        <div>
-          <div className="flex items-center gap-2">
-            <BluePlus /> Add Category
-          </div>
-        </div>
-      </DialogTrigger>
-      <DialogContent>
-        <div className=" flex flex-col bg-white gap-[20px]">
-          <div className="flex  pb-[20px] border-b-[1px] border-slate-400">
-            <div className="text-[20px] font-semibold">Add Category</div>
-          </div>
-          <div className="flex gap-4 ">
-            <div className="flex-1">
-              <Select>
-                <SelectTrigger className="w-[100%] h-12 ">
-                  <SelectValue placeholder={<AddHome />} />
-                </SelectTrigger>
-                <AddCategoryIconMap />
-              </Select>
-            </div>
-            <div className="flex-[3]">
-              <input
-                placeholder="Name"
-                className="bg-[#F9FAFB] text-[#D1D5DB] w-[100%] h-12 rounded-lg pl-4"
-              ></input>
+    <>
+      <Dialog>
+        <DialogTrigger>
+          <div>
+            <div className="flex items-center gap-2">
+              <BluePlus /> Add Category
             </div>
           </div>
-          <div className="text-white bg-[#16A34A] rounded-3xl flex justify-center items-center py-[8px]">
-            Add Category
+        </DialogTrigger>
+        <DialogContent>
+          <div className=" flex flex-col bg-white gap-[20px]">
+            <div className="flex  pb-[20px] border-b-[1px] border-slate-400">
+              <div className="text-[20px] font-semibold">Add Category</div>
+            </div>
+            <div className="flex gap-4 ">
+              <div className="flex-1">
+                <Select>
+                  <SelectTrigger className="w-[100%] h-12 ">
+                    <SelectValue placeholder={<AddHome />} />
+                  </SelectTrigger>
+                  <AddCategoryIconMap />
+                </Select>
+              </div>
+              <div className="flex-[3]">
+                <input
+                  placeholder="Name"
+                  className="bg-[#F9FAFB] text-[#D1D5DB] w-[100%] h-12 rounded-lg pl-4"
+                ></input>
+              </div>
+            </div>
+            <button className="text-white bg-[#16A34A] rounded-3xl flex justify-center items-center py-[8px]">
+              Add Category
+            </button>
           </div>
-        </div>
-      </DialogContent>
-    </Dialog>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };

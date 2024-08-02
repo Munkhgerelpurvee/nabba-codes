@@ -1,7 +1,7 @@
 "use client";
 import { HeaderLogo } from "@/assets/headerlogo";
 import { Plus } from "@/assets/plus";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { AddIcon } from "@/assets/addIcon";
@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { AddCategoryDialog } from "./AddCategoryDialog";
+import { AccountContext } from "./context";
 
 const categoryData = [
   {
@@ -49,19 +50,38 @@ const categoryData = [
   },
 ];
 export const AddCategory = () => {
+  const { newTransaction, setNewTransaction } = useContext(AccountContext);
+
+  const handleSelectChange = (event) => {
+    console.log("hellopo", event);
+    setNewTransaction({
+      ...newTransaction,
+      category: { ...newTransaction.category, name: event },
+    });
+
+    console.log("======", newTransaction);
+  };
   return (
-    <SelectContent className="flex flex-col">
-      <div className="flex px-4 py-4 gap-3 border-b">
-        <AddCategoryDialog />
-      </div>
-      {categoryData.map((item) => (
-        <SelectItem value={item.title}>
-          <div className="flex px-4 py-4 gap-3 items-center">
-            <div>{item.icon}</div>
-            <div className="text-[16px]">{item.title}</div>
-          </div>
-        </SelectItem>
-      ))}
-    </SelectContent>
+    <Select
+      onValueChange={handleSelectChange}
+      value={newTransaction.category.name}
+    >
+      <SelectTrigger className="">
+        <SelectValue placeholder="Choose category" />
+      </SelectTrigger>
+      <SelectContent className="flex flex-col">
+        <div className="flex px-4 py-4 gap-3 border-b">
+          <AddCategoryDialog />
+        </div>
+        {categoryData.map((item) => (
+          <SelectItem value={item.title}>
+            <div className="flex px-4 py-4 gap-3 items-center">
+              <div>{item.icon}</div>
+              <div className="text-[16px]">{item.title}</div>
+            </div>
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 };

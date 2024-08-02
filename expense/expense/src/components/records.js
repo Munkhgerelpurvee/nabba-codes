@@ -41,6 +41,8 @@ import {
 import { AddCategory } from "./addCategory";
 import { AddComponent } from "./AddComponent";
 import { AddCategoryDialog } from "./AddCategoryDialog";
+import { ApiAddAccount } from "./apiAddAccount";
+import { AddCategoryDialog2 } from "./AddCategoryDialog2";
 
 const data = [
   { title: "Food & Drinks" },
@@ -118,24 +120,7 @@ export const Records = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex justify-between">
-            <div className="text-[16px] font-semibold">Category</div>
-            <div className="text-[#1F2937] text-base opacity-20">clear</div>
-          </div>
-          <div className="flex flex-col gap-2">
-            {data.map((item) => (
-              <div className="flex justify-between">
-                <div className="flex gap-2">
-                  <div>{<Eye />}</div>
-                  <div>{item.title}</div>
-                </div>
-                <div>
-                  <RDirect />
-                </div>
-              </div>
-            ))}
-          </div>
-          <AddCategoryDialog />
+          <AddCategoryDialog2 />
         </div>
         <div className="flex flex-col gap-4">
           <div className="text-[16px] font-semibold">Amount Range</div>
@@ -195,13 +180,14 @@ export const Records = () => {
           <div className="flex flex-col gap-3">
             <div className="text-[16px] font-semibold">Today</div>
             <div className="flex flex-col gap-3 ">
-              {data1.map((item) => (
+              {/* {data1.map((item) => (
                 <RecordsCard
                   title={item.title}
                   date={item.date}
                   amount={item.amount}
                 />
-              ))}
+              ))} */}
+              <ApiAddAccount />
             </div>
           </div>
           <div className="flex flex-col gap-3">

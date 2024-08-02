@@ -1,7 +1,6 @@
 "use client";
 
 import { Plus } from "@/assets/plus";
-import { useState } from "react";
 import { Eye } from "@/assets/eye";
 import { RDirect } from "@/assets/rdirect";
 import { BluePlus } from "@/assets/blueplus";
@@ -12,13 +11,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { AddIcon } from "@/assets/addIcon";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -32,6 +26,7 @@ import { FoodIcon } from "@/assets/foodIcon";
 import { RecordsCard } from "./RecordsCard";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -39,6 +34,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { AddCategory } from "./addCategory";
+import { AccountContext } from "./context";
 
 const data = [
   { title: "Food & Drinks" },
@@ -82,9 +78,30 @@ const data1 = [
 ];
 
 export const AddComponent = () => {
+  const { newTransaction, setNewTransaction } = useContext(AccountContext);
+  const [accounts, setAccounts] = useState([]);
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
+  const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [activeButton, setActiveButton] = useState("expense");
   const handleButtonClick = (button) => {
     setActiveButton(button);
+  };
+
+  const createAccount = async () => {
+    // const newAccount = { title, amount, time, date };
+
+    const response = await axios.post(
+      "http://localhost:3001/accounts",
+      newTransaction
+    );
+    setAccounts([...accounts, response.data]);
+    setTitle("");
+    setAmount("");
+    setTime("");
+    setDate("");
   };
   return (
     <Dialog>
@@ -127,36 +144,60 @@ export const AddComponent = () => {
               <div className="border px-[16px] py-[12px] rounded-lg">
                 <div>Amount</div>
                 <div>
-                  <input placeholder="₮ 000.00"></input>
+                  <input
+                    placeholder="₮ 000.00"
+                    value={newTransaction.value}
+                    onChange={(event) =>
+                      setNewTransaction({
+                        ...newTransaction,
+                        amount: event.target.value,
+                      })
+                    }
+                  ></input>
                 </div>
               </div>
               <div>
                 <div>Category</div>
                 <div>
-                  <Select>
-                    <SelectTrigger className="">
-                      <SelectValue placeholder="Choose category" />
-                    </SelectTrigger>
-                    <AddCategory />
-                  </Select>
+                  <AddCategory />
                 </div>
               </div>
-              <div className=" flex gap-3">
+              <div className=" flex gap-6">
                 <div>
                   <div>Date</div>
                   <div>
-                    <input type="date" />
+                    <input
+                      type="date"
+                      placeholder="Date"
+                      value={date}
+                      onChange={(event) => setDate(event.target.value)}
+                    />
                   </div>
                 </div>
                 <div>
-                  <div>Date</div>
+                  <div>Time</div>
                   <div>
-                    <input type="time" />
+                    <input
+                      type="time"
+                      placeholder="Time"
+                      value={time}
+                      onChange={(event) => setTime(event.target.value)}
+                    />
                   </div>
                 </div>
               </div>
-              <div className="text-white bg-[#0166FF] rounded-3xl flex justify-center items-center py-[8px]">
-                Add Record
+              <div
+                className={`text-white bg-[#0166FF] rounded-3xl flex justify-center items-center py-[8px] ${
+                  activeButton === "income"
+                    ? "bg-green-600 text-white z-10 rounded-l-3xl"
+                    : "bg-[#0166FF]"
+                }`}
+              >
+                <DialogClose>
+                  <button type="submit" onClick={createAccount}>
+                    Add Record
+                  </button>
+                </DialogClose>
               </div>
             </div>
             <div className="flex-1 flex flex-col">
