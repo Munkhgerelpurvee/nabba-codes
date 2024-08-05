@@ -53,7 +53,6 @@ export const AddCategory = () => {
   const { newTransaction, setNewTransaction } = useContext(AccountContext);
 
   const handleSelectChange = (event) => {
-    console.log("hellopo", event);
     setNewTransaction({
       ...newTransaction,
       category: { ...newTransaction.category, name: event },

@@ -1,45 +1,55 @@
 "use client";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FoodIcon } from "@/assets/foodIcon";
 import { HomeIcon } from "@/assets/homeIcon";
+import { AccountContext } from "./context";
+import { AddHome } from "@/assets/addHome";
+import { AddGift } from "@/assets/addGift";
+import { AddFood } from "@/assets/addFood";
+import { AddDrink } from "@/assets/addDrink";
+import { AddTaxi } from "@/assets/addTaxi";
+import { AddShopping } from "@/assets/addShopping";
 
 export const ApiAddAccount = () => {
-  const [accounts, setAccounts] = useState([]);
+  // const [accounts, setAccounts] = useState([]);
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
   const [selectedAccountId, setSelectedAccountId] = useState(null);
+  // const { newTransaction, setNewTransaction } = useContext(AccountContext);
+  const { accounts, setAccounts } = useContext(AccountContext);
 
-  useEffect(() => {
-    const getData = async () => {
-      const response = await axios.get("http://localhost:3001/accounts");
-      setAccounts(response.data);
-    };
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const response = await axios.get("http://localhost:3001/accounts");
+  //     setAccounts(response.data);
+  //   };
+  //   getData();
+  //   // newTransaction.amount !== 0 ? accounts.push(newTransaction) : accounts;
+  // }, [newTransaction]);
 
-  const createAccount = async () => {
-    const newAccount = { title, amount, time, date };
-    const response = await axios.post(
-      "http://localhost:3001/accounts",
-      newAccount
-    );
-    setAccounts([...accounts, response.data]);
-    setTitle("");
-    setAmount("");
-    setTime("");
-    setDate("");
-  };
+  // const createAccount = async () => {
+  //   const newAccount = { title, amount, time, date };
+  //   const response = await axios.post(
+  //     "http://localhost:3001/accounts",
+  //     newAccount
+  //   );
+  //   setAccounts([...accounts, response.data]);
+  //   setTitle("");
+  //   setAmount("");
+  //   setTime("");
+  //   setDate("");
+  // };
 
   const deleteAccount = async () => {
     if (selectedAccountId) {
       await axios.delete(`http://localhost:3001/accounts/${selectedAccountId}`);
       setAccounts(
-        accounts.filter((account) => account.id !== selectedAccountId)
+        accounts?.filter((account) => account.id !== selectedAccountId)
       );
       setSelectedAccountId(null); // Clear selection after deletion
     }
@@ -53,7 +63,7 @@ export const ApiAddAccount = () => {
       >
         Delete
       </button>
-      {accounts.map((account) => (
+      {accounts?.map((account) => (
         <div
           className="flex justify-between bg-white items-center px-6 py-3 rounded-lg"
           key={account.id}
@@ -72,8 +82,22 @@ export const ApiAddAccount = () => {
               key={account.id}
               onCheck={() => setSelectedAccountId(account.id)}
             />
-            <div>
-              {account.title === "Food & Drinks" ? <FoodIcon /> : <HomeIcon />}
+            <div className="w-8 h-8">
+              {account.category?.name === "Home" ? (
+                <AddHome />
+              ) : account.category?.name === "Gift" ? (
+                <AddGift />
+              ) : account.category?.name === "Food" ? (
+                <AddFood />
+              ) : account.category?.name === "Drink" ? (
+                <AddDrink />
+              ) : account.category?.name === "Taxi" ? (
+                <AddTaxi />
+              ) : account.category?.name === "Shoppping" ? (
+                <AddShopping />
+              ) : (
+                <HomeIcon />
+              )}
             </div>
             <div>
               <div>{account.category.name}</div>

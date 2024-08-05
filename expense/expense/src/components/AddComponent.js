@@ -36,72 +36,30 @@ import {
 import { AddCategory } from "./addCategory";
 import { AccountContext } from "./context";
 
-const data = [
-  { title: "Food & Drinks" },
-  { title: "Shopping" },
-  { title: "Housing" },
-  { title: "Transportation" },
-  { title: "Vehicle" },
-  { title: "Life & Entertainment" },
-  { title: "Communication, PC" },
-  { title: "Financial expenses" },
-  { title: "Investments" },
-  { title: "Income" },
-  { title: "Others" },
-];
-const data1 = [
-  {
-    title: "Lending & Renting",
-    date: "14:00",
-    amount: -1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: 1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: -1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: 1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: -1000,
-  },
-];
-
 export const AddComponent = () => {
-  const { newTransaction, setNewTransaction } = useContext(AccountContext);
+  const { newTransaction, setNewTransaction, getAccounts } =
+    useContext(AccountContext);
   const [accounts, setAccounts] = useState([]);
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
-  const [time, setTime] = useState("");
-  const [date, setDate] = useState("");
+
   const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [activeButton, setActiveButton] = useState("expense");
-  const handleButtonClick = (button) => {
-    setActiveButton(button);
-  };
+  // const handleButtonClick = (button) => {
+  //   setActiveButton(button);
+  // };
 
   const createAccount = async () => {
     // const newAccount = { title, amount, time, date };
+
+    // activeButton !== "expense"
+    //   ? setNewTransaction({ ...newTransaction, type: "exp" })
+    //   : setNewTransaction({ ...newTransaction, type: "inc" });
 
     const response = await axios.post(
       "http://localhost:3001/accounts",
       newTransaction
     );
+    getAccounts();
     setAccounts([...accounts, response.data]);
-    setTitle("");
-    setAmount("");
-    setTime("");
-    setDate("");
   };
   return (
     <Dialog>
@@ -126,7 +84,10 @@ export const AddComponent = () => {
                       ? "bg-blue-600 text-white"
                       : "bg-gray-200 rounded-r-none"
                   }`}
-                  onClick={() => handleButtonClick("expense")}
+                  onClick={() => {
+                    setActiveButton("expense"),
+                      setNewTransaction({ ...newTransaction, type: "exp" });
+                  }}
                 >
                   Expense
                 </div>
@@ -136,7 +97,10 @@ export const AddComponent = () => {
                       ? "bg-green-600 text-white z-10 rounded-l-3xl"
                       : "bg-gray-200"
                   }`}
-                  onClick={() => handleButtonClick("income")}
+                  onClick={() => {
+                    setActiveButton("income"),
+                      setNewTransaction({ ...newTransaction, type: "inc" });
+                  }}
                 >
                   Income
                 </div>
@@ -169,8 +133,13 @@ export const AddComponent = () => {
                     <input
                       type="date"
                       placeholder="Date"
-                      value={date}
-                      onChange={(event) => setDate(event.target.value)}
+                      value={newTransaction.date}
+                      onChange={(event) =>
+                        setNewTransaction({
+                          ...newTransaction,
+                          date: event.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -180,8 +149,13 @@ export const AddComponent = () => {
                     <input
                       type="time"
                       placeholder="Time"
-                      value={time}
-                      onChange={(event) => setTime(event.target.value)}
+                      value={newTransaction.time}
+                      onChange={(event) =>
+                        setNewTransaction({
+                          ...newTransaction,
+                          time: event.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -210,7 +184,14 @@ export const AddComponent = () => {
               <div>
                 <div>Note</div>
                 <div>
-                  <Textarea />
+                  <Textarea
+                    onChange={(event) =>
+                      setNewTransaction({
+                        ...newTransaction,
+                        note: event.target.value,
+                      })
+                    }
+                  />
                 </div>
               </div>
             </div>

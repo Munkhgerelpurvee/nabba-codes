@@ -1,24 +1,67 @@
 [
   {
     "type": "exp",
-    "amount": "247",
+    "amount": 0,
+    "category": {
+      "name": "Gift",
+      "img": "",
+      "color": ""
+    },
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "aefe6f1b-ab3c-45ee-9307-f7b3703ba8a3"
+  },
+  {
+    "type": "exp",
+    "amount": 0,
+    "category": {
+      "name": "Food",
+      "img": "",
+      "color": ""
+    },
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "84aec5a2-c590-444d-b656-a4f445079ec3"
+  },
+  {
+    "type": "exp",
+    "amount": 0,
     "category": {
       "name": "Drink",
       "img": "",
       "color": ""
     },
     "note": "",
-    "id": "6b42b237-664d-405a-9da4-2bd1e86bcea0"
+    "date": "",
+    "time": "",
+    "id": "8763204c-468c-4402-be86-4429dea545e9"
   },
   {
     "type": "exp",
-    "amount": "2477777",
+    "amount": 0,
     "category": {
-      "name": "Taxi",
+      "name": "Home",
       "img": "",
       "color": ""
     },
     "note": "",
-    "id": "b9c1f668-e5c3-4e50-aab8-bf1fe08d1cdf"
+    "date": "",
+    "time": "",
+    "id": "854b0a37-5df1-4c0c-8b4d-88f9d406f464"
+  },
+  {
+    "type": "inc",
+    "amount": "247",
+    "category": {
+      "name": "Drink",
+      "img": "",
+      "color": ""
+    },
+    "note": "gerelee uuw",
+    "date": "2024-08-09",
+    "time": "23:35",
+    "id": "7c4f82b2-1182-4d42-809a-8b22dbec73f4"
   }
 ]
