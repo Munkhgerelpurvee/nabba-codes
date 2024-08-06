@@ -1,7 +1,7 @@
 "use client";
 
 import { Plus } from "@/assets/plus";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Eye } from "@/assets/eye";
 import { RDirect } from "@/assets/rdirect";
 import { BluePlus } from "@/assets/blueplus";
@@ -44,80 +44,49 @@ import { AddCategory } from "./addCategory";
 import { AddHome } from "@/assets/addHome";
 import { AddCategoryIconMap } from "./AddCategoryIconMap";
 import axios, { Axios } from "axios";
-
-const data = [
-  { title: "Food & Drinks" },
-  { title: "Shopping" },
-  { title: "Housing" },
-  { title: "Transportation" },
-  { title: "Vehicle" },
-  { title: "Life & Entertainment" },
-  { title: "Communication, PC" },
-  { title: "Financial expenses" },
-  { title: "Investments" },
-  { title: "Income" },
-  { title: "Others" },
-];
-const data1 = [
-  {
-    title: "Lending & Renting",
-    date: "14:00",
-    amount: -1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: 1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: -1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: 1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: -1000,
-  },
-];
+import { CategoryContext } from "./categoryContext";
 
 export const AddCategoryDialog2 = () => {
-  const [categories, setCategories] = useState([]);
-  const [title, setTitle] = useState("");
-  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+  // const [categories, setCategories] = useState([]);
+  // const [title, setTitle] = useState("");
+  // const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+  const {
+    newCategory,
+    SetNewCategory,
+    categories,
+    setCategories,
+    deleteCategory,
+    setSelectedCategoryId,
+    selectedCategoryId,
+  } = useContext(CategoryContext);
 
   useEffect(() => {
-    const getData = async () => {
+    const getCategories = async () => {
       const response = await axios.get("http://localhost:3001/categories");
       setCategories(response.data);
     };
-    getData();
+    getCategories();
   }, []);
   const createCategory = async () => {
-    const newCategory = { title };
+    // const newCategory = { title };
     const response = await axios.post(
       "http://localhost:3001/categories",
       newCategory
     );
-    setCategories([...categories, response.data]);
-    setTitle("");
+    // setCategories([...categories, response.data]);
+    // setTitle("");
   };
-  const deleteCategory = async () => {
-    if (selectedCategoryId) {
-      await axios.delete(
-        `http://localhost:3001/categories/${selectedCategoryId}`
-      );
-      setCategories(
-        categories.filter((category) => category.id !== selectedCategoryId)
-      );
-      setSelectedCategoryId(null); // Clear selection after deletion
-    }
-  };
+  // const deleteCategory = async () => {
+  //   if (selectedCategoryId) {
+  //     await axios.delete(
+  //       `http://localhost:3001/categories/${selectedCategoryId}`
+  //     );
+  //     setCategories(
+  //       categories.filter((category) => category.id !== selectedCategoryId)
+  //     );
+  //     setSelectedCategoryId(null); // Clear selection after deletion
+  //   }
+  // };
   return (
     <>
       <div className="flex justify-between">
@@ -176,7 +145,12 @@ export const AddCategoryDialog2 = () => {
               <div className="flex-[3]">
                 <input
                   placeholder="Name"
-                  onChange={(event) => setTitle(event.target.value)}
+                  onChange={(event) =>
+                    SetNewCategory({
+                      ...newCategory,
+                      title: event.target.value,
+                    })
+                  }
                   className="bg-[#F9FAFB] text-[#D1D5DB] w-[100%] h-12 rounded-lg pl-4"
                 ></input>
               </div>

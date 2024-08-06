@@ -1,27 +1,27 @@
 [
   {
-    "title": "Food & Drinks"
+    "title": "Home"
+  },
+  {
+    "title": "Gift"
+  },
+  {
+    "title": "Food"
+  },
+  {
+    "title": "Drink"
+  },
+  {
+    "title": "Taxi"
   },
   {
     "title": "Shopping"
   },
   {
-    "title": "Housing"
+    "title": "Communication"
   },
   {
-    "title": "Transportation"
-  },
-  {
-    "title": "Vehicle"
-  },
-  {
-    "title": "Life & Entertainment"
-  },
-  {
-    "title": "Communication, PC"
-  },
-  {
-    "title": "Financial expenses"
+    "title": "Financial-expenses"
   },
   {
     "title": "Investments"

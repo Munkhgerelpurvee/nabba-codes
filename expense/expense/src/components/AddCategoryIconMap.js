@@ -1,7 +1,7 @@
 "use client";
 import { HeaderLogo } from "@/assets/headerlogo";
 import { Plus } from "@/assets/plus";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { AddIcon } from "@/assets/addIcon";
@@ -13,6 +13,7 @@ import { AddDrink } from "@/assets/addDrink";
 import { AddTaxi } from "@/assets/addTaxi";
 import { AddShopping } from "@/assets/addShopping";
 import { AddHome } from "@/assets/addHome";
+
 import { FaBus } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaAndroid } from "react-icons/fa";
@@ -31,6 +32,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { AddCategoryDialog } from "./AddCategoryDialog";
+import { icons } from "lucide-react";
 
 const categoryData = [
   {

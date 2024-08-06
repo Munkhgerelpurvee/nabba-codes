@@ -4,12 +4,23 @@ import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export const AccountContext = createContext(null);
+
 export const AccountContextProvider = ({ children }) => {
+  const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [accounts, setAccounts] = useState([]);
 
   const getAccounts = async () => {
     const response = await axios.get("http://localhost:3001/accounts");
     setAccounts(response.data);
+  };
+  const deleteAccount = async () => {
+    if (selectedAccountId) {
+      await axios.delete(`http://localhost:3001/accounts/${selectedAccountId}`);
+      setAccounts(
+        accounts?.filter((account) => account.id !== selectedAccountId)
+      );
+      setSelectedAccountId(null); // Clear selection after deletion
+    }
   };
 
   useEffect(() => {
@@ -20,6 +31,7 @@ export const AccountContextProvider = ({ children }) => {
     type: "exp",
     amount: 0,
     category: { name: "", img: "", color: "" },
+    payee: "",
     note: "",
     date: "",
     time: "",
@@ -33,6 +45,9 @@ export const AccountContextProvider = ({ children }) => {
         accounts,
         getAccounts,
         setAccounts,
+        deleteAccount,
+        selectedAccountId,
+        setSelectedAccountId,
       }}
     >
       {children}

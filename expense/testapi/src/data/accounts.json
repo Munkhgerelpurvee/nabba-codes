@@ -3,32 +3,6 @@
     "type": "exp",
     "amount": 0,
     "category": {
-      "name": "Gift",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "date": "",
-    "time": "",
-    "id": "aefe6f1b-ab3c-45ee-9307-f7b3703ba8a3"
-  },
-  {
-    "type": "exp",
-    "amount": 0,
-    "category": {
-      "name": "Food",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "date": "",
-    "time": "",
-    "id": "84aec5a2-c590-444d-b656-a4f445079ec3"
-  },
-  {
-    "type": "exp",
-    "amount": 0,
-    "category": {
       "name": "Drink",
       "img": "",
       "color": ""
@@ -40,28 +14,43 @@
   },
   {
     "type": "exp",
-    "amount": 0,
+    "amount": "2500",
     "category": {
-      "name": "Home",
+      "name": "Food",
       "img": "",
       "color": ""
     },
-    "note": "",
-    "date": "",
-    "time": "",
-    "id": "854b0a37-5df1-4c0c-8b4d-88f9d406f464"
+    "note": "aa shit dahij iim zalraga gargahgvi ee\n",
+    "date": "2024-08-09",
+    "time": "23:35",
+    "id": "e72f08f7-89fb-4256-b74b-52f7427c51b4"
   },
   {
     "type": "inc",
-    "amount": "247",
+    "amount": "2000",
     "category": {
-      "name": "Drink",
+      "name": "Taxi",
       "img": "",
       "color": ""
     },
-    "note": "gerelee uuw",
+    "payee": "",
+    "note": "",
+    "date": "2024-08-06",
+    "time": "08:06",
+    "id": "877fef1f-d31e-490b-8c99-c389e9a9907e"
+  },
+  {
+    "type": "exp",
+    "amount": "23123",
+    "category": {
+      "name": "Taxi",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
     "date": "2024-08-09",
-    "time": "23:35",
-    "id": "7c4f82b2-1182-4d42-809a-8b22dbec73f4"
+    "time": "10:21",
+    "id": "66cb25ff-70bb-4b9c-b41f-8beb9dd2f515"
   }
 ]

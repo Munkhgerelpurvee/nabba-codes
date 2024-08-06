@@ -1,7 +1,7 @@
 "use client";
 import { HeaderLogo } from "@/assets/headerlogo";
 import { Plus } from "@/assets/plus";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { AddIcon } from "@/assets/addIcon";
@@ -22,43 +22,28 @@ import {
 } from "@/components/ui/select";
 import { AddCategoryDialog } from "./AddCategoryDialog";
 import { AccountContext } from "./context";
+import axios from "axios";
+import { Eye } from "@/assets/eye";
 
-const categoryData = [
-  {
-    title: "Home",
-    icon: <AddHome />,
-  },
-  {
-    title: "Gift",
-    icon: <AddGift />,
-  },
-  {
-    title: "Food",
-    icon: <AddFood />,
-  },
-  {
-    title: "Drink",
-    icon: <AddDrink />,
-  },
-  {
-    title: "Taxi",
-    icon: <AddTaxi />,
-  },
-  {
-    title: "Shoppping",
-    icon: <AddShopping />,
-  },
-];
 export const AddCategory = () => {
   const { newTransaction, setNewTransaction } = useContext(AccountContext);
+  const [categories, setCategories] = useState([]);
+  const [title, setTitle] = useState("");
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get("http://localhost:3001/categories");
+      setCategories(response.data);
+    };
+    getData();
+  }, []);
 
   const handleSelectChange = (event) => {
     setNewTransaction({
       ...newTransaction,
       category: { ...newTransaction.category, name: event },
     });
-
-    console.log("======", newTransaction);
   };
   return (
     <Select
@@ -72,11 +57,27 @@ export const AddCategory = () => {
         <div className="flex px-4 py-4 gap-3 border-b">
           <AddCategoryDialog />
         </div>
-        {categoryData.map((item) => (
-          <SelectItem value={item.title}>
+        {categories.map((category) => (
+          <SelectItem value={category.title}>
             <div className="flex px-4 py-4 gap-3 items-center">
-              <div>{item.icon}</div>
-              <div className="text-[16px]">{item.title}</div>
+              <div>
+                {category.title === "Home" ? (
+                  <AddHome />
+                ) : category.title === "Gift" ? (
+                  <AddGift />
+                ) : category.title === "Food" ? (
+                  <AddFood />
+                ) : category.title === "Drink" ? (
+                  <AddDrink />
+                ) : category.title === "Taxi" ? (
+                  <AddTaxi />
+                ) : category.title === "Shopping" ? (
+                  <AddShopping />
+                ) : (
+                  <Eye />
+                )}
+              </div>
+              <div className="text-[16px]">{category.title}</div>
             </div>
           </SelectItem>
         ))}

@@ -39,7 +39,7 @@ import { AccountContext } from "./context";
 export const AddComponent = () => {
   const { newTransaction, setNewTransaction, getAccounts } =
     useContext(AccountContext);
-  const [accounts, setAccounts] = useState([]);
+  // const [accounts, setAccounts] = useState([]);
 
   const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [activeButton, setActiveButton] = useState("expense");
@@ -50,16 +50,12 @@ export const AddComponent = () => {
   const createAccount = async () => {
     // const newAccount = { title, amount, time, date };
 
-    // activeButton !== "expense"
-    //   ? setNewTransaction({ ...newTransaction, type: "exp" })
-    //   : setNewTransaction({ ...newTransaction, type: "inc" });
-
     const response = await axios.post(
       "http://localhost:3001/accounts",
       newTransaction
     );
     getAccounts();
-    setAccounts([...accounts, response.data]);
+    // setAccounts([...accounts, response.data]);
   };
   return (
     <Dialog>
@@ -178,7 +174,14 @@ export const AddComponent = () => {
               <div>
                 <div>Payee</div>
                 <div>
-                  <Input />
+                  <Input
+                    onChange={(event) =>
+                      setNewTransaction({
+                        ...newTransaction,
+                        payee: event.target.value,
+                      })
+                    }
+                  />
                 </div>
               </div>
               <div>

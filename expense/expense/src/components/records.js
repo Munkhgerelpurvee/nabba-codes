@@ -44,47 +44,6 @@ import { AddCategoryDialog } from "./AddCategoryDialog";
 import { ApiAddAccount } from "./apiAddAccount";
 import { AddCategoryDialog2 } from "./AddCategoryDialog2";
 
-const data = [
-  { title: "Food & Drinks" },
-  { title: "Shopping" },
-  { title: "Housing" },
-  { title: "Transportation" },
-  { title: "Vehicle" },
-  { title: "Life & Entertainment" },
-  { title: "Communication, PC" },
-  { title: "Financial expenses" },
-  { title: "Investments" },
-  { title: "Income" },
-  { title: "Others" },
-];
-const data1 = [
-  {
-    title: "Lending & Renting",
-    date: "14:00",
-    amount: -1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: 1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: -1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: 1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: -1000,
-  },
-];
-
 export const Records = () => {
   return (
     <div className="flex flex-row lg:w-[1220px] w-[390px] font-normal m-auto pt-6 pb-6 gap-[100px]">
@@ -180,26 +139,13 @@ export const Records = () => {
           <div className="flex flex-col gap-3">
             <div className="text-[16px] font-semibold">Today</div>
             <div className="flex flex-col gap-3 ">
-              {/* {data1.map((item) => (
-                <RecordsCard
-                  title={item.title}
-                  date={item.date}
-                  amount={item.amount}
-                />
-              ))} */}
               <ApiAddAccount />
             </div>
           </div>
           <div className="flex flex-col gap-3">
             <div className="text-[16px] font-semibold">Yesterday</div>
             <div className="flex flex-col gap-3 ">
-              {data1.map((item) => (
-                <RecordsCard
-                  title={item.title}
-                  date={item.date}
-                  amount={item.amount}
-                />
-              ))}
+              <ApiAddAccount />
             </div>
           </div>
         </div>

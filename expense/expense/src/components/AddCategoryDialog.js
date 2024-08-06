@@ -1,7 +1,7 @@
 "use client";
 
 import { Plus } from "@/assets/plus";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Eye } from "@/assets/eye";
 import { RDirect } from "@/assets/rdirect";
 import { BluePlus } from "@/assets/blueplus";
@@ -38,54 +38,29 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 import { AddCategory } from "./addCategory";
 import { AddHome } from "@/assets/addHome";
 import { AddCategoryIconMap } from "./AddCategoryIconMap";
-import { Axios } from "axios";
-
-const data = [
-  { title: "Food & Drinks" },
-  { title: "Shopping" },
-  { title: "Housing" },
-  { title: "Transportation" },
-  { title: "Vehicle" },
-  { title: "Life & Entertainment" },
-  { title: "Communication, PC" },
-  { title: "Financial expenses" },
-  { title: "Investments" },
-  { title: "Income" },
-  { title: "Others" },
-];
-const data1 = [
-  {
-    title: "Lending & Renting",
-    date: "14:00",
-    amount: -1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: 1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: -1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: 1000,
-  },
-  {
-    title: "Food & Drinks",
-    time: "14:00",
-    amount: -1000,
-  },
-];
+import axios, { Axios } from "axios";
+import { CategoryContext } from "./categoryContext";
 
 export const AddCategoryDialog = () => {
+  // const [categories, setCategories] = useState([]);
+  const { newCategory, SetNewCategory, getCategories } =
+    useContext(CategoryContext);
+  // const [title, setTitle] = useState("");
+  const createCategory = async () => {
+    // const newCategory = { title };
+    const response = await axios.post(
+      "http://localhost:3001/categories",
+      newCategory
+    );
+    getCategories();
+    // setCategories([...categories, response.data]);
+    // setTitle("");
+  };
   return (
     <>
       <Dialog>
@@ -113,13 +88,24 @@ export const AddCategoryDialog = () => {
               <div className="flex-[3]">
                 <input
                   placeholder="Name"
+                  onChange={(event) =>
+                    SetNewCategory({
+                      ...newCategory,
+                      title: event.target.value,
+                    })
+                  }
                   className="bg-[#F9FAFB] text-[#D1D5DB] w-[100%] h-12 rounded-lg pl-4"
                 ></input>
               </div>
             </div>
-            <button className="text-white bg-[#16A34A] rounded-3xl flex justify-center items-center py-[8px]">
-              Add Category
-            </button>
+            <DialogClose>
+              <button
+                className="text-white bg-[#16A34A] w-full rounded-3xl flex justify-center items-center py-[8px]"
+                onClick={createCategory}
+              >
+                Add Category
+              </button>
+            </DialogClose>
           </div>
         </DialogContent>
       </Dialog>
