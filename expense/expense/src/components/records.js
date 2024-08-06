@@ -45,11 +45,17 @@ import { ApiAddAccount } from "./apiAddAccount";
 import { AddCategoryDialog2 } from "./AddCategoryDialog2";
 
 export const Records = () => {
+  const [filterType, setFilterType] = useState("all");
+  const [totalAmount, setTotalAmount] = useState(0);
+
+  const handleTotalAmountChange = (amount) => {
+    setTotalAmount(amount);
+  };
   return (
     <div className="flex flex-row lg:w-[1220px] w-[390px] font-normal m-auto pt-6 pb-6 gap-[100px]">
       <div className="flex-1 flex flex-col gap-[24px]  bg-white pl-4 pr-4 rounded-xl border pb-6">
         <div className="text-[24px] font-semibold">Records</div>
-        <AddComponent />
+        <AddComponent name="Records" />
 
         <div>
           <input
@@ -61,18 +67,22 @@ export const Records = () => {
           <div className="flex flex-col gap-4">
             <div className="text-[16px] font-semibold">Types</div>
             <div className="flex-col gap-1">
-              <RadioGroup defaultValue="option-one">
+              <RadioGroup
+                defaultValue="all"
+                value={filterType}
+                onValueChange={(value) => setFilterType(value)}
+              >
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="option-one" id="option-one" />
-                  <Label htmlFor="option-one">All</Label>
+                  <RadioGroupItem value="all" id="all" />
+                  <Label htmlFor="all">All</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="option-two" id="option-two" />
-                  <Label htmlFor="option-two">Income</Label>
+                  <RadioGroupItem value="inc" id="income" />
+                  <Label htmlFor="income">Income</Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="option-three" id="option-three" />
-                  <Label htmlFor="option-two">Expences</Label>
+                  <RadioGroupItem value="exp" id="expenses" />
+                  <Label htmlFor="expences">Expences</Label>
                 </div>
               </RadioGroup>
             </div>
@@ -134,18 +144,23 @@ export const Records = () => {
               </div>
               <div>Select all</div>
             </div>
-            <div className="text-slate-400">-35,500₮</div>
+            <div className="text-slate-400" id="sumAccounts">
+              {totalAmount}₮
+            </div>
           </div>
           <div className="flex flex-col gap-3">
             <div className="text-[16px] font-semibold">Today</div>
             <div className="flex flex-col gap-3 ">
-              <ApiAddAccount />
+              <ApiAddAccount
+                filterType={filterType}
+                onTotalAmountChange={handleTotalAmountChange}
+              />
             </div>
           </div>
           <div className="flex flex-col gap-3">
             <div className="text-[16px] font-semibold">Yesterday</div>
             <div className="flex flex-col gap-3 ">
-              <ApiAddAccount />
+              {/* <ApiAddAccount filterType={filterType} /> */}
             </div>
           </div>
         </div>

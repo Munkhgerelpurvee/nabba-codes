@@ -13,6 +13,7 @@ import { AddDrink } from "@/assets/addDrink";
 import { AddTaxi } from "@/assets/addTaxi";
 import { AddShopping } from "@/assets/addShopping";
 import { AddHome } from "@/assets/addHome";
+import { FaCashRegister } from "react-icons/fa";
 import {
   Select,
   SelectContent,
@@ -73,6 +74,8 @@ export const AddCategory = () => {
                   <AddTaxi />
                 ) : category.title === "Shopping" ? (
                   <AddShopping />
+                ) : category.title === "Financial-expenses" ? (
+                  <FaCashRegister />
                 ) : (
                   <Eye />
                 )}

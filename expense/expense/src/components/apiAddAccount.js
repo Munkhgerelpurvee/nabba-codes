@@ -14,7 +14,7 @@ import { AddTaxi } from "@/assets/addTaxi";
 import { AddShopping } from "@/assets/addShopping";
 import { Eye } from "@/assets/eye";
 
-export const ApiAddAccount = () => {
+export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
   // const [accounts, setAccounts] = useState([]);
   // const [selectedAccountId, setSelectedAccountId] = useState(null);
   // const { newTransaction, setNewTransaction } = useContext(AccountContext);
@@ -26,6 +26,20 @@ export const ApiAddAccount = () => {
     setSelectedAccountId,
   } = useContext(AccountContext);
 
+  const filteredAccounts = accounts.filter((account) => {
+    if (filterType === "all") return true;
+    return account.type === filterType;
+  });
+  // Calculate the total amount of filtered accounts
+  const totalAmount = filteredAccounts.reduce(
+    (acc, account) => acc + account.amount,
+    0
+  );
+
+  // Notify the parent component of the total amount
+  useEffect(() => {
+    if (onTotalAmountChange) onTotalAmountChange(totalAmount);
+  }, [totalAmount, onTotalAmountChange]);
   return (
     <div className="flex flex-col justify-center w-full">
       <button
@@ -36,7 +50,7 @@ export const ApiAddAccount = () => {
         Delete
       </button>
       <div className="flex flex-col gap-5">
-        {accounts?.map((account) => (
+        {filteredAccounts?.map((account) => (
           <div
             className="flex justify-between bg-white items-center px-6 py-3 rounded-lg"
             key={account.id}

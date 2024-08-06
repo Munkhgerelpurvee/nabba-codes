@@ -5,6 +5,7 @@ import { Plus } from "@/assets/plus";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AddComponent } from "./AddComponent";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -39,14 +40,7 @@ export const Header = () => {
         </Link>
       </div>
       <div className="flex items-center gap-[24px]">
-        <Button>
-          <div className="flex items-center bg-[#0166FF] text-[16px] text-[#FFFFFF] gap-[8px]">
-            <div>
-              <Plus />
-            </div>
-            <div>Record</div>
-          </div>
-        </Button>
+        <AddComponent name="Header" />
         <div>
           <img
             className="shadow-about w-[40px] h-[40px]  rounded-[20px]"

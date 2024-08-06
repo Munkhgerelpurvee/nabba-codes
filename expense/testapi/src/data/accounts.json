@@ -1,56 +1,198 @@
 [
   {
     "type": "exp",
-    "amount": 0,
+    "amount": 300,
     "category": {
-      "name": "Drink",
-      "img": "",
-      "color": ""
-    },
-    "note": "",
-    "date": "",
-    "time": "",
-    "id": "8763204c-468c-4402-be86-4429dea545e9"
-  },
-  {
-    "type": "exp",
-    "amount": "2500",
-    "category": {
-      "name": "Food",
-      "img": "",
-      "color": ""
-    },
-    "note": "aa shit dahij iim zalraga gargahgvi ee\n",
-    "date": "2024-08-09",
-    "time": "23:35",
-    "id": "e72f08f7-89fb-4256-b74b-52f7427c51b4"
-  },
-  {
-    "type": "inc",
-    "amount": "2000",
-    "category": {
-      "name": "Taxi",
+      "name": "Financial-expenses",
       "img": "",
       "color": ""
     },
     "payee": "",
     "note": "",
     "date": "2024-08-06",
-    "time": "08:06",
-    "id": "877fef1f-d31e-490b-8c99-c389e9a9907e"
+    "time": "19:06",
+    "id": "4c3c2486-8baf-4958-8dfa-38159049a017"
   },
   {
     "type": "exp",
-    "amount": "23123",
+    "amount": 4,
     "category": {
-      "name": "Taxi",
+      "name": "",
       "img": "",
       "color": ""
     },
     "payee": "",
     "note": "",
-    "date": "2024-08-09",
-    "time": "10:21",
-    "id": "66cb25ff-70bb-4b9c-b41f-8beb9dd2f515"
+    "date": "",
+    "time": "",
+    "id": "f4f071a1-b6c0-4ea1-8802-b92cc2ce22e3"
+  },
+  {
+    "type": "exp",
+    "amount": -2000,
+    "category": {
+      "name": "",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "55142225-3285-4402-ba08-f79eae87bf1c"
+  },
+  {
+    "type": "exp",
+    "amount": 2,
+    "category": {
+      "name": "",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "dd4728e1-cbe7-4b5e-b383-5022a131d763"
+  },
+  {
+    "type": "exp",
+    "amount": 5,
+    "category": {
+      "name": "",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "5fe4c602-c1ad-44a0-b109-8570610e52f6"
+  },
+  {
+    "type": "exp",
+    "amount": -15,
+    "category": {
+      "name": "",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "ca1cd697-b38f-41b4-afb9-e3eb27684e80"
+  },
+  {
+    "type": "inc",
+    "amount": 21123,
+    "category": {
+      "name": "",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "23749bc1-0ff7-4f9f-b47d-12e3d9d74ae1"
+  },
+  {
+    "type": "inc",
+    "amount": 21123,
+    "category": {
+      "name": "Gift",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "523d61d0-92eb-49b8-b87c-c223dcc1fa98"
+  },
+  {
+    "type": "inc",
+    "amount": 21123,
+    "category": {
+      "name": "Gift",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "7f7b5992-9496-45b8-a328-cb12f28fa551"
+  },
+  {
+    "type": "inc",
+    "amount": 2,
+    "category": {
+      "name": "Gift",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "90597819-dbdd-44cc-b435-6ae3ba45176d"
+  },
+  {
+    "type": "exp",
+    "amount": 111,
+    "category": {
+      "name": "",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "0ffe3028-10b4-4169-8222-cb476ee2f247"
+  },
+  {
+    "type": "exp",
+    "amount": 0,
+    "category": {
+      "name": "Shopping",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "00a5a264-ea36-43d7-9b51-d9aa7690fe02"
+  },
+  {
+    "type": "exp",
+    "amount": 0,
+    "category": {
+      "name": "Drink",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "e35e2b52-a8c5-4ad2-921e-f471c2ee97ae"
+  },
+  {
+    "type": "exp",
+    "amount": 0,
+    "category": {
+      "name": "ddd",
+      "img": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "c99e2734-a697-483a-b9c4-8e98420dc117"
   }
 ]

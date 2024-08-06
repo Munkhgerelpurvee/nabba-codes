@@ -36,7 +36,7 @@ import {
 import { AddCategory } from "./addCategory";
 import { AccountContext } from "./context";
 
-export const AddComponent = () => {
+export const AddComponent = ({ name }) => {
   const { newTransaction, setNewTransaction, getAccounts } =
     useContext(AccountContext);
   // const [accounts, setAccounts] = useState([]);
@@ -62,7 +62,7 @@ export const AddComponent = () => {
       <DialogTrigger>
         <div>
           <div className="flex items-center justify-center gap-[8px] w-[250px] bg-[#0166FF] text-[16px]  text-[#FFFFFF] rounded-3xl py-2 ">
-            <Plus /> Add
+            <Plus /> {name === "Records" ? "Add" : "Record"}
           </div>
         </div>
       </DialogTrigger>
@@ -107,10 +107,11 @@ export const AddComponent = () => {
                   <input
                     placeholder="₮ 000.00"
                     value={newTransaction.value}
+                    type="number"
                     onChange={(event) =>
                       setNewTransaction({
                         ...newTransaction,
-                        amount: event.target.value,
+                        amount: Number(event.target.value),
                       })
                     }
                   ></input>
