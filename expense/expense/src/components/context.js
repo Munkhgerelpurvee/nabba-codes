@@ -30,7 +30,7 @@ export const AccountContextProvider = ({ children }) => {
   const [newTransaction, setNewTransaction] = useState({
     type: "exp",
     amount: 0,
-    category: { name: "", img: "", color: "" },
+    category: { name: "", title: "", color: "" },
     payee: "",
     note: "",
     date: "",

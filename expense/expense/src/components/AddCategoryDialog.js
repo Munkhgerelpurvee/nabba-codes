@@ -78,12 +78,7 @@ export const AddCategoryDialog = () => {
             </div>
             <div className="flex gap-4 ">
               <div className="flex-1">
-                <Select>
-                  <SelectTrigger className="w-[100%] h-12 ">
-                    <SelectValue placeholder={<AddHome />} />
-                  </SelectTrigger>
-                  <AddCategoryIconMap />
-                </Select>
+                <AddCategoryIconMap />
               </div>
               <div className="flex-[3]">
                 <input

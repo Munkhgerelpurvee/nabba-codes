@@ -58,6 +58,7 @@ export const AddCategoryDialog2 = () => {
     deleteCategory,
     setSelectedCategoryId,
     selectedCategoryId,
+    getCategories,
   } = useContext(CategoryContext);
 
   useEffect(() => {
@@ -65,7 +66,6 @@ export const AddCategoryDialog2 = () => {
       const response = await axios.get("http://localhost:3001/categories");
       setCategories(response.data);
     };
-    getCategories();
   }, []);
   const createCategory = async () => {
     // const newCategory = { title };
@@ -73,6 +73,8 @@ export const AddCategoryDialog2 = () => {
       "http://localhost:3001/categories",
       newCategory
     );
+    getCategories();
+
     // setCategories([...categories, response.data]);
     // setTitle("");
   };
@@ -135,12 +137,7 @@ export const AddCategoryDialog2 = () => {
             </div>
             <div className="flex gap-4 ">
               <div className="flex-1">
-                <Select>
-                  <SelectTrigger className="w-[100%] h-12 ">
-                    <SelectValue placeholder={<AddHome />} />
-                  </SelectTrigger>
-                  <AddCategoryIconMap />
-                </Select>
+                <AddCategoryIconMap />
               </div>
               <div className="flex-[3]">
                 <input

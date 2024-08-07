@@ -13,6 +13,7 @@ import { AddDrink } from "@/assets/addDrink";
 import { AddTaxi } from "@/assets/addTaxi";
 import { AddShopping } from "@/assets/addShopping";
 import { Eye } from "@/assets/eye";
+import * as Icons from "react-icons/fa";
 
 export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
   // const [accounts, setAccounts] = useState([]);
@@ -36,7 +37,6 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
     0
   );
 
-  // Notify the parent component of the total amount
   useEffect(() => {
     if (onTotalAmountChange) onTotalAmountChange(totalAmount);
   }, [totalAmount, onTotalAmountChange]);
@@ -50,57 +50,61 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
         Delete
       </button>
       <div className="flex flex-col gap-5">
-        {filteredAccounts?.map((account) => (
-          <div
-            className="flex justify-between bg-white items-center px-6 py-3 rounded-lg"
-            key={account.id}
-            onClick={() => setSelectedAccountId(account.id)}
-            style={{
-              cursor: "pointer",
-              backgroundColor:
-                selectedAccountId === account.id ? "#f0f0f0" : "white",
-            }}
-          >
-            <div className="flex gap-4 items-center">
-              <Checkbox
-                height={6}
-                width={6}
-                className=" border"
-                key={account.id}
-                onCheck={() => setSelectedAccountId(account.id)}
-              />
-              <div className="w-8 h-8 flex justify-center items-center bg-teal-50 rounded-lg">
-                {account.category?.name === "Home" ? (
-                  <AddHome />
-                ) : account.category?.name === "Gift" ? (
-                  <AddGift />
-                ) : account.category?.name === "Food" ? (
-                  <AddFood />
-                ) : account.category?.name === "Drink" ? (
-                  <AddDrink />
-                ) : account.category?.name === "Taxi" ? (
-                  <AddTaxi />
-                ) : account.category?.name === "Shoppping" ? (
-                  <AddShopping />
-                ) : (
-                  <Eye />
-                )}
-              </div>
-              <div>
-                <div>{account.category.name}</div>
-                <div>{account.time}</div>
-                <div>{account.date}</div>
-              </div>
-            </div>
+        {filteredAccounts?.map((account) => {
+          const Icon = Icons[account.category?.icon];
+          return (
             <div
-              className={`${
-                account.type === "inc" ? "text-[#23E01F]" : "text-[#F54949]"
-              }`}
+              className="flex justify-between bg-white items-center px-6 py-3 rounded-lg"
+              key={account.id}
+              onClick={() => setSelectedAccountId(account.id)}
+              style={{
+                cursor: "pointer",
+                backgroundColor:
+                  selectedAccountId === account.id ? "#f0f0f0" : "white",
+              }}
             >
-              {account.amount}₮
+              <div className="flex gap-4 items-center">
+                <Checkbox
+                  height={6}
+                  width={6}
+                  className=" border"
+                  key={account.id}
+                  onCheck={() => setSelectedAccountId(account.id)}
+                />
+                <div className="w-8 h-8 flex justify-center items-center bg-teal-50 rounded-lg">
+                  {account.category?.name === "Home" ? (
+                    <AddHome />
+                  ) : account.category?.name === "Gift" ? (
+                    <AddGift />
+                  ) : account.category?.name === "Food" ? (
+                    <AddFood />
+                  ) : account.category?.name === "Drink" ? (
+                    <AddDrink />
+                  ) : account.category?.name === "Taxi" ? (
+                    <AddTaxi />
+                  ) : account.category?.name === "Shoppping" ? (
+                    <AddShopping />
+                  ) : (
+                    // <Eye />
+                    <Icon color={account.category?.color} />
+                  )}
+                </div>
+                <div>
+                  <div>{account.category.name}</div>
+                  <div>{account.time}</div>
+                  <div>{account.date}</div>
+                </div>
+              </div>
+              <div
+                className={`${
+                  account.type === "inc" ? "text-[#23E01F]" : "text-[#F54949]"
+                }`}
+              >
+                {account.amount}₮
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ import { AddTaxi } from "@/assets/addTaxi";
 import { AddShopping } from "@/assets/addShopping";
 import { AddHome } from "@/assets/addHome";
 import { FaCashRegister } from "react-icons/fa";
+import * as Icons from "react-icons/fa";
 import {
   Select,
   SelectContent,
@@ -34,7 +35,7 @@ export const AddCategory = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get("http://localhost:3001/categories");
+      const response = await axios?.get("http://localhost:3001/categories");
       setCategories(response.data);
     };
     getData();
@@ -43,13 +44,13 @@ export const AddCategory = () => {
   const handleSelectChange = (event) => {
     setNewTransaction({
       ...newTransaction,
-      category: { ...newTransaction.category, name: event },
+      category: event,
     });
   };
   return (
     <Select
-      onValueChange={handleSelectChange}
-      value={newTransaction.category.name}
+      onValueChange={(event) => handleSelectChange(event)}
+      // value={newTransaction.category.name}
     >
       <SelectTrigger className="">
         <SelectValue placeholder="Choose category" />
@@ -58,32 +59,33 @@ export const AddCategory = () => {
         <div className="flex px-4 py-4 gap-3 border-b">
           <AddCategoryDialog />
         </div>
-        {categories.map((category) => (
-          <SelectItem value={category.title}>
-            <div className="flex px-4 py-4 gap-3 items-center">
-              <div>
-                {category.title === "Home" ? (
-                  <AddHome />
-                ) : category.title === "Gift" ? (
-                  <AddGift />
-                ) : category.title === "Food" ? (
-                  <AddFood />
-                ) : category.title === "Drink" ? (
-                  <AddDrink />
-                ) : category.title === "Taxi" ? (
-                  <AddTaxi />
-                ) : category.title === "Shopping" ? (
-                  <AddShopping />
-                ) : category.title === "Financial-expenses" ? (
-                  <FaCashRegister />
-                ) : (
-                  <Eye />
-                )}
+        {categories.map((category) => {
+          const Icon = Icons[category.icon];
+          return (
+            <SelectItem value={category}>
+              <div className="flex px-4 py-4 gap-3 items-center">
+                <div>
+                  {category.title === "Home" ? (
+                    <AddHome />
+                  ) : category.title === "Gift" ? (
+                    <AddGift />
+                  ) : category.title === "Food" ? (
+                    <AddFood />
+                  ) : category.title === "Drink" ? (
+                    <AddDrink />
+                  ) : category.title === "Taxi" ? (
+                    <AddTaxi />
+                  ) : category.title === "Shopping" ? (
+                    <AddShopping />
+                  ) : (
+                    <Icon color={category.color} />
+                  )}
+                </div>
+                <div className="text-[16px]">{category.title}</div>
               </div>
-              <div className="text-[16px]">{category.title}</div>
-            </div>
-          </SelectItem>
-        ))}
+            </SelectItem>
+          );
+        })}
       </SelectContent>
     </Select>
   );
