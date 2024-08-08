@@ -1,17 +1,32 @@
 [
   {
-    "type": "exp",
-    "amount": 0,
+    "type": "inc",
+    "amount": 2222,
     "category": {
-      "title": "zoririiii",
-      "icon": "FaApplePay",
+      "title": "Zolboo",
+      "icon": "FaAndroid",
       "color": "#01B3FF",
-      "id": "6923fbb4-5ab2-428b-9438-ba662faed710"
+      "id": "a368c078-ca5a-4698-991b-367491cdc1a5"
     },
-    "payee": "",
-    "note": "",
-    "date": "",
-    "time": "",
-    "id": "9ba6adc6-1a83-41fd-9d54-b839874d9dfe"
+    "payee": "ww",
+    "note": "wwww",
+    "date": "2024-08-08",
+    "time": "09:40",
+    "id": "ea4a4d55-fcba-4223-9505-d1d81e32db4f"
+  },
+  {
+    "type": "exp",
+    "amount": -2000,
+    "category": {
+      "title": "naba",
+      "icon": "FaAtlas",
+      "color": "#41CC00",
+      "id": "7c701dba-69be-4922-b817-b22225841d8b"
+    },
+    "payee": "aa",
+    "note": "aaaaa",
+    "date": "2024-08-08",
+    "time": "09:40",
+    "id": "50b2ccff-058c-4d94-9321-cd701b00518c"
   }
 ]

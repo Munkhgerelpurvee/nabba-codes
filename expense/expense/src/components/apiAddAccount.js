@@ -72,22 +72,7 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
                   onCheck={() => setSelectedAccountId(account.id)}
                 />
                 <div className="w-8 h-8 flex justify-center items-center bg-teal-50 rounded-lg">
-                  {account.category?.name === "Home" ? (
-                    <AddHome />
-                  ) : account.category?.name === "Gift" ? (
-                    <AddGift />
-                  ) : account.category?.name === "Food" ? (
-                    <AddFood />
-                  ) : account.category?.name === "Drink" ? (
-                    <AddDrink />
-                  ) : account.category?.name === "Taxi" ? (
-                    <AddTaxi />
-                  ) : account.category?.name === "Shoppping" ? (
-                    <AddShopping />
-                  ) : (
-                    // <Eye />
-                    <Icon color={account.category?.color} />
-                  )}
+                  {<Icon color={account.category?.color} />}
                 </div>
                 <div>
                   <div>{account.category.name}</div>

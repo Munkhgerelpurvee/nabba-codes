@@ -64,23 +64,7 @@ export const AddCategory = () => {
           return (
             <SelectItem value={category}>
               <div className="flex px-4 py-4 gap-3 items-center">
-                <div>
-                  {category.title === "Home" ? (
-                    <AddHome />
-                  ) : category.title === "Gift" ? (
-                    <AddGift />
-                  ) : category.title === "Food" ? (
-                    <AddFood />
-                  ) : category.title === "Drink" ? (
-                    <AddDrink />
-                  ) : category.title === "Taxi" ? (
-                    <AddTaxi />
-                  ) : category.title === "Shopping" ? (
-                    <AddShopping />
-                  ) : (
-                    <Icon color={category.color} />
-                  )}
-                </div>
+                <div>{<Icon color={category.color} />}</div>
                 <div className="text-[16px]">{category.title}</div>
               </div>
             </SelectItem>

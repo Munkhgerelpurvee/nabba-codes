@@ -45,6 +45,8 @@ import { AddHome } from "@/assets/addHome";
 import { AddCategoryIconMap } from "./AddCategoryIconMap";
 import axios, { Axios } from "axios";
 import { CategoryContext } from "./categoryContext";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 export const AddCategoryDialog2 = () => {
   // const [categories, setCategories] = useState([]);
@@ -113,7 +115,13 @@ export const AddCategoryDialog2 = () => {
             }}
           >
             <div className="flex gap-2">
-              <div>{<Eye />}</div>
+              <div className="flex items-center">
+                {selectedCategoryId === category.id ? (
+                  <FaEyeSlash />
+                ) : (
+                  <FaEye />
+                )}
+              </div>
               <div>{category.title}</div>
             </div>
             <div>

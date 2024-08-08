@@ -1,38 +1,32 @@
 [
   {
-    "title": "Home"
+    "title": "Home",
+    "icon": "FaArchway",
+    "color": "#AE01FF",
+    "id": "5a627197-beb4-4200-92bf-d32e3abe2b78"
   },
   {
-    "title": "Gift"
+    "title": "Bus and Taxi",
+    "icon": "FaBus",
+    "color": "#AE01FF",
+    "id": "3dfe7f74-f163-4451-9f8c-837f858ef3f5"
   },
   {
-    "title": "Food"
-  },
-  {
-    "title": "Drink"
-  },
-  {
-    "title": "Taxi"
-  },
-  {
-    "title": "Shopping"
-  },
-  {
-    "title": "aa",
+    "title": "Phone",
     "icon": "FaApple",
-    "color": "#41CC00",
-    "id": "3929e66d-04a9-4cf7-915b-0c09c9e5c635"
+    "color": "#AE01FF",
+    "id": "662b626a-ba6d-4c9c-9080-ec7b20b13330"
   },
   {
-    "title": "wwww",
-    "icon": "FaAppStore",
-    "color": "#FF7B01",
-    "id": "26f861a2-9486-4def-86c2-ee4249df2611"
+    "title": "Party",
+    "icon": "FaAngellist",
+    "color": "#AE01FF",
+    "id": "dbbedea1-04f4-4022-8d04-ca5f71ee796c"
   },
   {
-    "title": "zoririiii",
+    "title": "Bank",
     "icon": "FaApplePay",
-    "color": "#01B3FF",
-    "id": "6923fbb4-5ab2-428b-9438-ba662faed710"
+    "color": "#0166FF",
+    "id": "77489f74-3787-4d93-ba0e-84851652aa4d"
   }
 ]
