@@ -16,5 +16,11 @@
     "icon": "FaApple",
     "color": "#AE01FF",
     "id": "662b626a-ba6d-4c9c-9080-ec7b20b13330"
+  },
+  {
+    "title": "Bank",
+    "icon": "FaApplePay",
+    "color": "#FF0101",
+    "id": "98faf90b-8356-476e-8556-03f6b4a084c6"
   }
 ]
