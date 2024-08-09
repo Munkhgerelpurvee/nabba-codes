@@ -14,6 +14,7 @@ import { AddTaxi } from "@/assets/addTaxi";
 import { AddShopping } from "@/assets/addShopping";
 import { Eye } from "@/assets/eye";
 import * as Icons from "react-icons/fa";
+import { CategoryContext } from "./categoryContext";
 
 export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
   // const [accounts, setAccounts] = useState([]);
@@ -26,14 +27,18 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
     selectedAccountId,
     setSelectedAccountId,
   } = useContext(AccountContext);
+  const { selectedCategoryIds } = useContext(CategoryContext);
 
-  const filteredAccounts = accounts.filter((account) => {
-    if (filterType === "all") return true;
-    return account.type === filterType;
-  });
+  const filteredAccounts = accounts
+    .filter((account) => {
+      if (filterType === "all") return true;
+      return account.type === filterType;
+    })
+    .filter((account) => !selectedCategoryIds.includes(account.category?.id));
   // Calculate the total amount of filtered accounts
   const totalAmount = filteredAccounts.reduce(
-    (acc, account) => acc + account.amount,
+    (acc, account) =>
+      acc + (account.type === "exp" ? -account.amount : account.amount),
     0
   );
 
@@ -72,7 +77,7 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
                   onCheck={() => setSelectedAccountId(account.id)}
                 />
                 <div className="w-8 h-8 flex justify-center items-center bg-teal-50 rounded-lg">
-                  {<Icon color={account.category?.color} />}
+                  {Icon ? <Icon color={account.category?.color} /> : <Eye />}
                 </div>
                 <div>
                   <div>{account.category.name}</div>
@@ -85,7 +90,7 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
                   account.type === "inc" ? "text-[#23E01F]" : "text-[#F54949]"
                 }`}
               >
-                {account.amount}₮
+                {account.type === "exp" ? -account.amount : account.amount}₮
               </div>
             </div>
           );

@@ -1,32 +1,62 @@
 [
   {
-    "type": "inc",
-    "amount": 2222,
+    "type": "exp",
+    "amount": 612313,
     "category": {
-      "title": "Zolboo",
-      "icon": "FaAndroid",
-      "color": "#01B3FF",
-      "id": "a368c078-ca5a-4698-991b-367491cdc1a5"
+      "title": "Bus and Taxi",
+      "icon": "FaBus",
+      "color": "#AE01FF",
+      "id": "3dfe7f74-f163-4451-9f8c-837f858ef3f5"
     },
-    "payee": "ww",
-    "note": "wwww",
-    "date": "2024-08-08",
-    "time": "09:40",
-    "id": "ea4a4d55-fcba-4223-9505-d1d81e32db4f"
+    "payee": "",
+    "note": "",
+    "date": "2024-08-09",
+    "time": "11:58",
+    "id": "2abd2ce2-e957-4e14-b5eb-84c5721d2d2c"
   },
   {
-    "type": "exp",
-    "amount": -2000,
+    "type": "inc",
+    "amount": 1111,
     "category": {
-      "title": "naba",
-      "icon": "FaAtlas",
-      "color": "#41CC00",
-      "id": "7c701dba-69be-4922-b817-b22225841d8b"
+      "title": "Home",
+      "icon": "FaArchway",
+      "color": "#AE01FF",
+      "id": "5a627197-beb4-4200-92bf-d32e3abe2b78"
     },
-    "payee": "aa",
-    "note": "aaaaa",
-    "date": "2024-08-08",
-    "time": "09:40",
-    "id": "50b2ccff-058c-4d94-9321-cd701b00518c"
+    "payee": "",
+    "note": "",
+    "date": "2024-08-09",
+    "time": "11:58",
+    "id": "86b9c919-944d-44e2-a5b7-950e0ec60251"
+  },
+  {
+    "type": "inc",
+    "amount": 111111,
+    "category": {
+      "title": "Phone",
+      "icon": "FaApple",
+      "color": "#AE01FF",
+      "id": "662b626a-ba6d-4c9c-9080-ec7b20b13330"
+    },
+    "payee": "",
+    "note": "",
+    "date": "2024-08-09",
+    "time": "11:58",
+    "id": "71ac6ae6-6fb4-46c6-8a37-e6a03f0c08fa"
+  },
+  {
+    "type": "inc",
+    "amount": 3333333,
+    "category": {
+      "title": "Party",
+      "icon": "FaAngellist",
+      "color": "#AE01FF",
+      "id": "dbbedea1-04f4-4022-8d04-ca5f71ee796c"
+    },
+    "payee": "",
+    "note": "",
+    "date": "2024-08-09",
+    "time": "11:58",
+    "id": "e6e2eb45-4022-41d8-8ee1-2a5dff02e72a"
   }
 ]

@@ -49,18 +49,16 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
 export const AddCategoryDialog2 = () => {
-  // const [categories, setCategories] = useState([]);
-  // const [title, setTitle] = useState("");
-  // const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const {
     newCategory,
     SetNewCategory,
     categories,
     setCategories,
     deleteCategory,
-    setSelectedCategoryId,
-    selectedCategoryId,
     getCategories,
+    selectedCategoryIds,
+    setSelectedCategoryIds,
+    handleCategoryClick,
   } = useContext(CategoryContext);
 
   useEffect(() => {
@@ -76,21 +74,8 @@ export const AddCategoryDialog2 = () => {
       newCategory
     );
     getCategories();
-
-    // setCategories([...categories, response.data]);
-    // setTitle("");
   };
-  // const deleteCategory = async () => {
-  //   if (selectedCategoryId) {
-  //     await axios.delete(
-  //       `http://localhost:3001/categories/${selectedCategoryId}`
-  //     );
-  //     setCategories(
-  //       categories.filter((category) => category.id !== selectedCategoryId)
-  //     );
-  //     setSelectedCategoryId(null); // Clear selection after deletion
-  //   }
-  // };
+
   return (
     <>
       <div className="flex justify-between">
@@ -106,17 +91,18 @@ export const AddCategoryDialog2 = () => {
         {categories.map((category) => (
           <div
             className="flex justify-between"
-            onClick={() => setSelectedCategoryId(category.id)}
-            key={category.id}
+            onClick={() => handleCategoryClick(category.id)}
             style={{
               cursor: "pointer",
-              backgroundColor:
-                selectedCategoryId === category.id ? "#f0f0f0" : "white",
+              backgroundColor: selectedCategoryIds.includes(category.id)
+                ? "lightblue"
+                : "white",
             }}
+            key={category.id}
           >
             <div className="flex gap-2">
               <div className="flex items-center">
-                {selectedCategoryId === category.id ? (
+                {selectedCategoryIds.includes(category.id) ? (
                   <FaEyeSlash />
                 ) : (
                   <FaEye />

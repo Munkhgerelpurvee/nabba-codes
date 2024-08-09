@@ -16,17 +16,5 @@
     "icon": "FaApple",
     "color": "#AE01FF",
     "id": "662b626a-ba6d-4c9c-9080-ec7b20b13330"
-  },
-  {
-    "title": "Party",
-    "icon": "FaAngellist",
-    "color": "#AE01FF",
-    "id": "dbbedea1-04f4-4022-8d04-ca5f71ee796c"
-  },
-  {
-    "title": "Bank",
-    "icon": "FaApplePay",
-    "color": "#0166FF",
-    "id": "77489f74-3787-4d93-ba0e-84851652aa4d"
   }
 ]
