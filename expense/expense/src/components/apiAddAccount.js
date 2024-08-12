@@ -80,8 +80,8 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
                   {Icon ? <Icon color={account.category?.color} /> : <Eye />}
                 </div>
                 <div>
-                  <div>{account.category.name}</div>
-                  <div>{account.time}</div>
+                  <div>{account.category.title}</div>
+                  {/* <div>{account.time}</div> */}
                   <div>{account.date}</div>
                 </div>
               </div>

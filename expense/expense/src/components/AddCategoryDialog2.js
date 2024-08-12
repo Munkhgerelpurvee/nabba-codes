@@ -79,12 +79,17 @@ export const AddCategoryDialog2 = () => {
   return (
     <>
       <div className="flex justify-between">
-        <div className="text-[16px] font-semibold">Category</div>
+        <div
+          className="text-[16px] font-semibold"
+          onClick={() => setSelectedCategoryIds([])}
+        >
+          Category
+        </div>
         <button
           className="text-[#1F2937] text-base opacity-20"
           onClick={deleteCategory}
         >
-          clear
+          Delete
         </button>
       </div>
       <div className="flex flex-col gap-2">

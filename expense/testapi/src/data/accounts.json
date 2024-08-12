@@ -73,5 +73,35 @@
     "date": "2024-08-09",
     "time": "12:34",
     "id": "97e6f5ed-7a9d-4c81-b5e1-10e9f085d122"
+  },
+  {
+    "type": "exp",
+    "amount": 0,
+    "category": {
+      "title": "Phone",
+      "icon": "FaApple",
+      "color": "#AE01FF",
+      "id": "662b626a-ba6d-4c9c-9080-ec7b20b13330"
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "1140b741-2c2c-4897-8645-61829f8c2755"
+  },
+  {
+    "type": "exp",
+    "amount": 222,
+    "category": {
+      "title": "Home",
+      "icon": "FaArchway",
+      "color": "#AE01FF",
+      "id": "5a627197-beb4-4200-92bf-d32e3abe2b78"
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "3e787147-70a5-4274-a468-5f0930a22b80"
   }
 ]
