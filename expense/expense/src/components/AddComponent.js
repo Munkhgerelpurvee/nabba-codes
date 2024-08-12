@@ -1,29 +1,12 @@
 "use client";
 
 import { Plus } from "@/assets/plus";
-import { Eye } from "@/assets/eye";
-import { RDirect } from "@/assets/rdirect";
-import { BluePlus } from "@/assets/blueplus";
-import { Slider } from "@/components/ui/slider";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { AddIcon } from "@/assets/addIcon";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import { HomeIcon } from "@/assets/homeIcon";
-import { FoodIcon } from "@/assets/foodIcon";
-import { RecordsCard } from "./RecordsCard";
+
 import {
   Dialog,
   DialogClose,
