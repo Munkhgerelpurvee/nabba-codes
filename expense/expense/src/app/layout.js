@@ -3,6 +3,11 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { AccountContextProvider } from "@/components/context";
 import { CategoryContextProvider } from "@/components/categoryContext";
+import { AuthProvider } from "@/components/providers/AuthProvider";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,14 +19,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <CategoryContextProvider>
-        <AccountContextProvider>
-          <body className={inter.className}>
-            <Header />
-            {children}
-          </body>
-        </AccountContextProvider>
-      </CategoryContextProvider>
+      <AuthProvider>
+        <CategoryContextProvider>
+          <AccountContextProvider>
+            <body className={inter.className}>
+              <Header />
+              {children}
+              <ToastContainer />
+            </body>
+          </AccountContextProvider>
+        </CategoryContextProvider>
+      </AuthProvider>
     </html>
   );
 }

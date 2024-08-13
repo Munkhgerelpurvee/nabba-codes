@@ -31,7 +31,6 @@ export const AddCategory = () => {
   const { newTransaction, setNewTransaction } = useContext(AccountContext);
   const [categories, setCategories] = useState([]);
   const [title, setTitle] = useState("");
-  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
