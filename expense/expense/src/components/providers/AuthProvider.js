@@ -6,7 +6,7 @@ import { useEffect, useState, createContext, useContext } from "react";
 import { toast } from "react-toastify";
 
 const AuthContext = createContext();
-const authPaths = ["/login", "/register"];
+const authPaths = ["/login", "/signUp"];
 
 export const AuthProvider = ({ children }) => {
   const router = useRouter();
@@ -16,16 +16,16 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isReady, setIsReady] = useState(false);
   //   const [isChecking, setIsChecking] = useState(true);
-  const [newUser, setNewUser] = useState({
-    name: "",
-    email: "",
-    password: 0,
-  });
+  // const [newUser, setNewUser] = useState({
+  //   name: "",
+  //   email: "",
+  //   password: 0,
+  // });
 
-  const register = async ({ email, name, password }) => {
+  const createUser = async ({ email, name, password }) => {
     try {
       await api.post("/auth/register", {
-        username,
+        name,
         email,
         password,
       });
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
       router.push("/login");
     } catch (err) {
       console.log(err);
-      toast.error(err.response.data.message);
+      toast.error(err.response?.data.message ?? err.message);
     }
     // const response = await api.post("/auth/register", {
     //   email,
@@ -115,7 +115,13 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ setUser, user, login, newUser, setNewUser, register }}
+      value={{
+        setUser,
+        user,
+        login,
+
+        createUser,
+      }}
     >
       {children}
     </AuthContext.Provider>

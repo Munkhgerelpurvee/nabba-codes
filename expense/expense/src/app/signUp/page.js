@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useAuth } from "@/components/providers/AuthProvider";
 const SignUp = () => {
-  const { createUser, newUser, setNewUser } = useAuth();
+  const { createUser } = useAuth();
   // Define validation schema
   const FormSchema = yup.object().shape({
     name: yup.string().required("Neree oruulna uu"),
@@ -51,9 +51,9 @@ const SignUp = () => {
   return (
     <main className="">
       {/* <SignUpCard /> */}
-      <form
+      <div
         className="flex flex-row lg:w-screen w-[390px] font-normal m-auto h-screen"
-        onSubmit={formik.handleSubmit}
+        // onSubmit={formik.handleSubmit}
       >
         <div className="flex-1 flex flex-col h-full w-fit items-center justify-center gap-[40px] pr-[126px] pl-[222px] border">
           <div className="flex items-center justify-center gap-3">
@@ -129,7 +129,7 @@ const SignUp = () => {
           </div>
         </div>
         <div className="flex-1 bg-[#0166FF] w-full h-full border"></div>
-      </form>
+      </div>
     </main>
   );
 };

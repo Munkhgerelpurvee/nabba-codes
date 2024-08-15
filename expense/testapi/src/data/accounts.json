@@ -103,5 +103,19 @@
     "date": "",
     "time": "",
     "id": "3e787147-70a5-4274-a468-5f0930a22b80"
+  },
+  {
+    "type": "exp",
+    "amount": 11,
+    "category": {
+      "name": "",
+      "title": "",
+      "color": ""
+    },
+    "payee": "",
+    "note": "",
+    "date": "",
+    "time": "",
+    "id": "9594f0f2-deaa-4b88-9901-cd0478345bb7"
   }
 ]
