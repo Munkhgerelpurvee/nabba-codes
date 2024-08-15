@@ -44,6 +44,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const res = await api.post("/auth/login", { email, password });
+      // toast.success(response.data.message);
 
       localStorage.setItem("token", res.data.token); // token aa browser deeree hadgalsan
 
@@ -52,14 +53,14 @@ export const AuthProvider = ({ children }) => {
       router.replace("/"); //home ruugaa vsergene
 
       //   const response = await api.post("/auth/login", { email, password });
-      //   toast.success(response.data.message);
+      // toast.success(response.data.message);
       //   setIsLoggedIn(true);
       //   localStorage.setItem("token", "token");
       //   router.push("/");
     } catch (error) {
       //   console.log(err);
       toast.error(error.message);
-      //   toast.error(error.response.data.message);
+      // toast.error(error.response.data.message);
     }
   };
   useEffect(() => {
