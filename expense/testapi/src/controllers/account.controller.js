@@ -7,6 +7,10 @@ const getAllAccounts = async (req, res) => {
     const filePath = path.join(__dirname, "..", "data", "accounts.json");
     const rawData = fs.readFileSync(filePath);
     const accounts = JSON.parse(rawData);
+
+    // const userAccounts = accounts.filter((item = item.userId === req.user.id));
+    // res.json(userAccounts);// iim baidlaar ashiglaad bi hereglegch tus bvriin medeelliig awah bolomjtoi bolno
+
     res.json(accounts);
   } catch (error) {
     console.error("Error reading accounts:", error);

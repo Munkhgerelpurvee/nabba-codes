@@ -55,7 +55,12 @@ export const AddCategoryDialog = () => {
     // const newCategory = { title };
     const response = await axios.post(
       "http://localhost:3001/categories",
-      newCategory
+      newCategory,
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
     );
     getCategories();
     // setCategories([...categories, response.data]);

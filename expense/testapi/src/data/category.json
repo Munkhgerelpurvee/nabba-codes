@@ -22,5 +22,17 @@
     "icon": "FaApplePay",
     "color": "#FF0101",
     "id": "98faf90b-8356-476e-8556-03f6b4a084c6"
+  },
+  {
+    "title": "aaaa",
+    "icon": "FaApple",
+    "color": "#F9D100",
+    "id": "d20954e1-8a1c-4f6a-99ff-9b10aa5f82fa"
+  },
+  {
+    "title": "aa",
+    "icon": "FaAngellist",
+    "color": "",
+    "id": "4de9d881-b301-48d7-af8e-16f14cc31a5a"
   }
 ]

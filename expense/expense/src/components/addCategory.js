@@ -34,7 +34,11 @@ export const AddCategory = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios?.get("http://localhost:3001/categories");
+      const response = await axios?.get("http://localhost:3001/categories", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       setCategories(response.data);
     };
     getData();

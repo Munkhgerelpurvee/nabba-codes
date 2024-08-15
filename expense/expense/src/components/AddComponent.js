@@ -35,7 +35,12 @@ export const AddComponent = ({ name }) => {
 
     const response = await axios.post(
       "http://localhost:3001/accounts",
-      newTransaction
+      newTransaction,
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
     );
     getAccounts();
     // setAccounts([...accounts, response.data]);

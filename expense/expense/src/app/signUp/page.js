@@ -17,11 +17,11 @@ const SignUp = () => {
       .required("Email ee oruulna uu"),
     password: yup
       .string()
-      .min(8, "Password 8-aas deesh temdegt aguulsan baih yostoi")
-      .matches(/[0-9]/, "Password aa oruulna uu")
-      .matches(/[a-z]/, "Password jijig vseg zaawal awsan bh yostoi")
-      .matches(/[A-Z]/, "Password tom vseg zaawal awsan bh yostoi")
-      .matches(/[^\w]/, "Password temdegt zaawal awsan bh yostoi")
+      // .min(8, "Password 8-aas deesh temdegt aguulsan baih yostoi")
+      // .matches(/[0-9]/, "Password aa oruulna uu")
+      // .matches(/[a-z]/, "Password jijig vseg zaawal awsan bh yostoi")
+      // .matches(/[A-Z]/, "Password tom vseg zaawal awsan bh yostoi")
+      // .matches(/[^\w]/, "Password temdegt zaawal awsan bh yostoi")
       .required("Password aa oruulna uu"),
 
     repassword: yup

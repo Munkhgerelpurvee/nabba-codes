@@ -21,7 +21,11 @@ export const CategoryContextProvider = ({ children }) => {
   };
 
   const getCategories = async () => {
-    const response = await axios.get("http://localhost:3001/categories");
+    const response = await axios.get("http://localhost:3001/categories", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
     setCategories(response.data);
   };
 
@@ -33,7 +37,11 @@ export const CategoryContextProvider = ({ children }) => {
     if (selectedCategoryIds.length > 0) {
       await Promise.all([
         selectedCategoryIds.map((id) =>
-          axios.delete(`http://localhost:3001/categories/${id}`)
+          axios.delete(`http://localhost:3001/categories/${id}`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
         ),
       ]);
 

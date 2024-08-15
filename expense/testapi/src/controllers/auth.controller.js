@@ -1,45 +1,68 @@
-const { readJson } = require("../utils");
+const { readJson, saveJson } = require("../utils");
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const { v4 } = require("uuid");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+console.log(process.env.JWT_SECRET);
 
 const login = async (req, res) => {
-  const { email, password } = req.body;
-  const users = readJson("users.json");
+  const { email, password } = req.body; // ene hoyr utgiig requstiin bodygoos awch irj bga
+  const users = readJson("users.json"); //ooriin users.jhson file-iig unshij bga, duudaj bga
 
   const user = users.find(
     (user) => user.email === email && user.password === password
-  );
+  ); // utguudtai taarah vr dvn bga esehiig shalgaj bga
 
-  if (user) {
-    res.status(200).json({ message: "Login successful" });
-  } else {
-    res.status(401).json({ message: "Invalid credentials" });
-  }
+  if (!user) res.status(401).json({ message: "Nuuts vg buruu bna" }); // herwee taarah utga bhgvi oldohgvi bol ene utgiig butsaana
+
+  const token = jwt.sign(
+    //token vvsgej bga vildel generateleh
+    {
+      // username: user.name,
+      email: user.email,
+      id: user.id,
+    }, //payload hiih yumaa bichih heseg
+    process.env.JWT_SECRET // .env(git rvv push hiigdehgvi  bh yostoi) deer hadgalsan nuuts vgiig nuutsalsan baidlaar oruulj irj bga
+  );
+  res.json({
+    token,
+    user: {
+      // username: user.username,
+      email: user.email,
+      id: user.id,
+    },
+  });
+
+  // if (user) {
+  //   res.status(200).json({ message: "Login successful" });
+  // } else {
+  //   res.status(401).json({ message: "Invalid credentials" });
+  // }
 };
 const createUser = async (req, res) => {
-  try {
-    const filePath = path.join(__dirname, "..", "data", "users.json");
-    const rawData = fs.readFileSync(filePath);
-    const users = JSON.parse(rawData);
+  const { name, email, password } = req.body;
+  const users = readJson("users.json");
 
-    const { name, email, password } = req.body;
+  const user = users.find((user) => user.email === email); // iim emailtai user bvrtgeltei bga esehiig shalgaj bga
 
-    const newUser = {
-      id: uuidv4(),
-      name,
-      email,
-      password,
-    };
-    // const newUser = { ...req.body, id: uuidv4() };
-    users.push(newUser);
+  if (user)
+    return res.status(400).json({ message: "Ene email bvrtgeltei bna" }); // herwee oldohiig ene email bvrtgeltei bna gesen aldaa butsaay
 
-    fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
-    res.status(201).json(newUser);
-  } catch (error) {
-    console.error("Error creating user:", error);
-    res.status(500).json({ error: "Internal server error" });
-  }
+  const newUser = {
+    // oldohgvi bhin bol shine hereglegch vvsgeed id nemj ogood
+    id: v4(),
+    name,
+    email,
+    password,
+  };
+
+  users.push(newUser); // user lvvgee hiij hadgalah
+
+  saveJson("users.json", users); // hadgalah
+
+  res.json(newUser); // shine hereglegch geed butsaah
 };
 
 module.exports = { login, createUser };

@@ -103,20 +103,5 @@
     "date": "",
     "time": "",
     "id": "3e787147-70a5-4274-a468-5f0930a22b80"
-  },
-  {
-    "type": "inc",
-    "amount": 22222,
-    "category": {
-      "title": "Bank",
-      "icon": "FaApplePay",
-      "color": "#FF0101",
-      "id": "98faf90b-8356-476e-8556-03f6b4a084c6"
-    },
-    "payee": "aa",
-    "note": "aaaa",
-    "date": "2024-08-01",
-    "time": "20:19",
-    "id": "cf9528da-074c-4552-b589-bd579efad975"
   }
 ]
