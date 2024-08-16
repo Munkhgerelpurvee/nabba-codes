@@ -49,8 +49,10 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("token", res.data.token); // token aa browser deeree hadgalsan
 
       setUser(res.data.user); // user gedeg state neg bol null bdag vgvi bol useriin medeelel hadgalana. useriin medeelel hadgalsan bwal bi newtersen gej vgvi
+      // toast.success("You have been logged in successfully.");
 
       router.replace("/"); //home ruugaa vsergene
+      // toast.success("You have been logged in successfully.");
 
       //   const response = await api.post("/auth/login", { email, password });
       // toast.success(response.data.message);
@@ -63,6 +65,21 @@ export const AuthProvider = ({ children }) => {
       // toast.error(error.response.data.message);
     }
   };
+
+  const logout = async () => {
+    try {
+      localStorage?.removeItem("token");
+
+      // await router.push("/login");
+
+      // toast.success("You have been logged out successfully.");
+      // await router.push("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+      toast.error("LogOut hiihed aldaa garlaa");
+    }
+  };
+
   useEffect(() => {
     const loadUser = async () => {
       try {
@@ -120,6 +137,7 @@ export const AuthProvider = ({ children }) => {
         setUser,
         user,
         login,
+        logout,
 
         createUser,
       }}

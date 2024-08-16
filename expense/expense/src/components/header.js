@@ -6,9 +6,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AddComponent } from "./AddComponent";
+import { LogOut } from "lucide-react";
+import { useAuth } from "./providers/AuthProvider";
 
 export const Header = () => {
   const pathname = usePathname();
+  const { logout } = useAuth();
 
   return (
     <div className="flex lg:w-[1220px] w-[390px] h-[72px] font-normal text-[16px] items-center justify-between m-auto">
@@ -47,6 +50,11 @@ export const Header = () => {
             src="/Placeholder.png"
           />
         </div>
+        <Link href={`/loginaa`}>
+          <button className="cursor-pointer" onClick={logout}>
+            Out
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -15,12 +15,13 @@ const login = async (req, res) => {
     (user) => user.email === email && user.password === password
   ); // utguudtai taarah vr dvn bga esehiig shalgaj bga
 
-  if (!user) res.status(401).json({ message: "Nuuts vg buruu bna" }); // herwee taarah utga bhgvi oldohgvi bol ene utgiig butsaana
-
+  if (!user) {
+    return res.status(401).json({ message: "Nuuts vg buruu bna" });
+  } // herwee taarah utga bhgvi oldohgvi bol ene utgiig butsaana return nemj ogsonoor end vildel duusaj bga bogood daraagiin vildeliig hiihgvi tul back unahgvi ee
   const token = jwt.sign(
     //token vvsgej bga vildel generateleh
     {
-      // username: user.name,
+      username: user.name,
       email: user.email,
       id: user.id,
     }, //payload hiih yumaa bichih heseg
@@ -29,7 +30,7 @@ const login = async (req, res) => {
   res.json({
     token,
     user: {
-      // username: user.username,
+      username: user.name,
       email: user.email,
       id: user.id,
     },
