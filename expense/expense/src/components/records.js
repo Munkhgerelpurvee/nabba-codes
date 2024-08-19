@@ -33,6 +33,7 @@ import { useAuth } from "./providers/AuthProvider";
 export const Records = () => {
   const [filterType, setFilterType] = useState("all");
   const [totalAmount, setTotalAmount] = useState(0);
+  const [sortOrder, setSortOrder] = useState("Newest First");
   const { user } = useAuth();
 
   const handleTotalAmountChange = (amount) => {
@@ -112,7 +113,7 @@ export const Records = () => {
             </Carousel>
           </div>
           <div>
-            <Select>
+            <Select onValueChange={(value) => setSortOrder(value)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Newest First" />
               </SelectTrigger>
@@ -137,20 +138,21 @@ export const Records = () => {
             </div>
           </div>
           <div className="flex flex-col gap-3">
-            <div className="text-[16px] font-semibold">Today</div>
+            <div className="text-[16px] font-semibold">History</div>
             <div className="flex flex-col gap-3 ">
               <ApiAddAccount
                 filterType={filterType}
                 onTotalAmountChange={handleTotalAmountChange}
+                sortOrder={sortOrder}
               />
             </div>
           </div>
-          <div className="flex flex-col gap-3">
+          {/* <div className="flex flex-col gap-3">
             <div className="text-[16px] font-semibold">Yesterday</div>
             <div className="flex flex-col gap-3 ">
-              {/* <ApiAddAccount filterType={filterType} /> */}
+              <ApiAddAccount filterType={filterType} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

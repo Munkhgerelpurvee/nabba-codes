@@ -16,7 +16,11 @@ import { Eye } from "@/assets/eye";
 import * as Icons from "react-icons/fa";
 import { CategoryContext } from "./categoryContext";
 
-export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
+export const ApiAddAccount = ({
+  filterType,
+  onTotalAmountChange,
+  sortOrder,
+}) => {
   // const [accounts, setAccounts] = useState([]);
   // const [selectedAccountId, setSelectedAccountId] = useState(null);
   // const { newTransaction, setNewTransaction } = useContext(AccountContext);
@@ -34,8 +38,42 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
       if (filterType === "all") return true;
       return account.type === filterType;
     })
-    .filter((account) => !selectedCategoryIds.includes(account.category?.id));
-  // Calculate the total amount of filtered accounts
+    .filter((account) => !selectedCategoryIds.includes(account.category?.id))
+    .sort((a, b) => {
+      const dateA = new Date(a.date || "1900-01-01");
+      const dateB = new Date(b.date || "1900-01-01");
+
+      if (sortOrder === "Newest First") {
+        return dateB - dateA;
+      } else {
+        return dateA - dateB;
+      }
+    });
+  // .sort((a, b) => {
+  //   // Convert date strings to Date objects
+  //   const dateA = new Date(a.date || "1900-01-01"); // Default to a past date if no date is available
+  //   const dateB = new Date(b.date || "1900-01-01");
+
+  //   // If dates are the same, compare times
+  //   if (dateA.getTime() === dateB.getTime()) {
+  //     // Convert time strings to minutes since start of the day
+  //     const timeToMinutes = (time) => {
+  //       if (!time) return 0;
+  //       const [hours, minutes] = time.split(":").map(Number);
+  //       return hours * 60 + minutes;
+  //     };
+
+  //     const timeA = timeToMinutes(a.time);
+  //     const timeB = timeToMinutes(b.time);
+
+  //     // For descending order, reverse the comparison
+  //     return timeB - timeA; // Change to `timeA - timeB` for ascending order
+  //   }
+
+  //   // If dates are different, compare dates
+  //   return dateB - dateA; // Change to `dateA - dateB` for ascending order
+  // });
+
   const totalAmount = filteredAccounts.reduce(
     (acc, account) =>
       acc + (account.type === "exp" ? -account.amount : account.amount),
@@ -81,7 +119,7 @@ export const ApiAddAccount = ({ filterType, onTotalAmountChange }) => {
                 </div>
                 <div>
                   <div>{account.category.title}</div>
-                  {/* <div>{account.time}</div> */}
+                  <div>{account.time}</div>
                   <div>{account.date}</div>
                 </div>
               </div>
