@@ -1,17 +1,12 @@
 "use client";
 
-import { Plus } from "@/assets/plus";
 import { useState } from "react";
-import { Eye } from "@/assets/eye";
-import { RDirect } from "@/assets/rdirect";
-import { BluePlus } from "@/assets/blueplus";
+
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { AddIcon } from "@/assets/addIcon";
+
 import {
   Carousel,
   CarouselContent,
@@ -26,27 +21,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import { HomeIcon } from "@/assets/homeIcon";
-import { FoodIcon } from "@/assets/foodIcon";
-import { RecordsCard } from "./RecordsCard";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+
 import { AddCategory } from "./addCategory";
 import { AddComponent } from "./AddComponent";
 import { AddCategoryDialog } from "./AddCategoryDialog";
 import { ApiAddAccount } from "./apiAddAccount";
 import { AddCategoryDialog2 } from "./AddCategoryDialog2";
 
+import { useAuth } from "./providers/AuthProvider";
+
 export const Records = () => {
   const [filterType, setFilterType] = useState("all");
   const [totalAmount, setTotalAmount] = useState(0);
+  const { user } = useAuth();
 
   const handleTotalAmountChange = (amount) => {
     setTotalAmount(amount);
@@ -55,6 +42,7 @@ export const Records = () => {
     <div className="flex flex-row lg:w-[1220px] w-[390px] font-normal m-auto pt-6 pb-6 gap-[100px]">
       <div className="flex-1 flex flex-col gap-[24px]  bg-white pl-4 pr-4 rounded-xl border pb-6">
         <div className="text-[24px] font-semibold">Records</div>
+        <div>{user.username}</div>
         <AddComponent name="Records" />
 
         <div>

@@ -31,9 +31,12 @@ export const AuthProvider = ({ children }) => {
       });
 
       router.push("/login");
+      toast.success("account created");
     } catch (err) {
       console.log(err);
-      toast.error(err.response?.data.message ?? err.message);
+      toast.error(
+        err.response?.data.message ?? "Ta email eswel passwordoo shalgana uu"
+      );
     }
     // const response = await api.post("/auth/register", {
     //   email,
@@ -50,6 +53,7 @@ export const AuthProvider = ({ children }) => {
 
       setUser(res.data.user); // user gedeg state neg bol null bdag vgvi bol useriin medeelel hadgalana. useriin medeelel hadgalsan bwal bi newtersen gej vgvi
       // toast.success("You have been logged in successfully.");
+      // toast.success("logged in ");
 
       router.replace("/"); //home ruugaa vsergene
       // toast.success("You have been logged in successfully.");
@@ -60,19 +64,19 @@ export const AuthProvider = ({ children }) => {
       //   localStorage.setItem("token", "token");
       //   router.push("/");
     } catch (error) {
+      toast.error(error.response?.data.message ?? "hahaha");
       //   console.log(err);
-      toast.error(error.message);
+      // toast.error(error.message);
       // toast.error(error.response.data.message);
     }
   };
 
   const logout = async () => {
     try {
-      localStorage?.removeItem("token");
+      localStorage.removeItem("token");
+      toast.success("You have been logged out successfully.");
+      await router.push("/login");
 
-      // await router.push("/login");
-
-      // toast.success("You have been logged out successfully.");
       // await router.push("/login");
     } catch (error) {
       console.error("Logout error:", error);

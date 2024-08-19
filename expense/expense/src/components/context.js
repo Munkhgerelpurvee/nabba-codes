@@ -2,10 +2,12 @@
 
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+// const { readJson, saveJson } = require("../../../testapi/src/utils");
 
 export const AccountContext = createContext(null);
 
-export const AccountContextProvider = ({ children }) => {
+export const AccountContextProvider = ({ children, userId }) => {
+  // const users = readJson("users.json");
   const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [accounts, setAccounts] = useState([]);
 
@@ -46,6 +48,7 @@ export const AccountContextProvider = ({ children }) => {
     note: "",
     date: "",
     time: "",
+    userId,
   });
 
   return (

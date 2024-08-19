@@ -1,36 +1,10 @@
 "use client";
 
-import { Plus } from "@/assets/plus";
 import { useState, useEffect, useContext } from "react";
-import { Eye } from "@/assets/eye";
+
 import { RDirect } from "@/assets/rdirect";
 import { BluePlus } from "@/assets/blueplus";
-import { Slider } from "@/components/ui/slider";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { AddIcon } from "@/assets/addIcon";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-import { HomeIcon } from "@/assets/homeIcon";
-import { FoodIcon } from "@/assets/foodIcon";
-import { RecordsCard } from "./RecordsCard";
 import {
   Dialog,
   DialogClose,
@@ -69,16 +43,20 @@ export const AddCategoryDialog2 = () => {
   }, []);
   const createCategory = async () => {
     // const newCategory = { title };
-    const response = await axios.post(
-      "http://localhost:3001/categories",
-      newCategory,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
-    getCategories();
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/categories",
+        newCategory,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      getCategories();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

@@ -50,11 +50,11 @@ export const Header = () => {
             src="/Placeholder.png"
           />
         </div>
-        <Link href={`/loginaa`}>
-          <button className="cursor-pointer" onClick={logout}>
-            Out
-          </button>
-        </Link>
+        {/* <Link href={`/loginaa`}> */}
+        <button className="cursor-pointer" onClick={logout}>
+          Out
+        </button>
+        {/* </Link> */}
       </div>
     </div>
   );
