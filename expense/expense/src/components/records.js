@@ -34,7 +34,30 @@ export const Records = () => {
   const [filterType, setFilterType] = useState("all");
   const [totalAmount, setTotalAmount] = useState(0);
   const [sortOrder, setSortOrder] = useState("Newest First");
+  const [timePeriod, setTimePeriod] = useState("Last 10 Days");
+
   const { user } = useAuth();
+
+  const [index, setIndex] = useState(0);
+
+  const timePeriods = ["Last 10 Days", "Last 20 Days", "Last 30 Days"];
+
+  const next = () => {
+    setIndex((prevIndex) => {
+      const newIndex = (prevIndex + 1) % timePeriods.length; // Wrap around using modulo
+      setTimePeriod(timePeriods[newIndex]);
+      return newIndex;
+    });
+  };
+
+  const prev = () => {
+    setIndex((prevIndex) => {
+      const newIndex =
+        (prevIndex - 1 + timePeriods.length) % timePeriods.length; // Wrap around
+      setTimePeriod(timePeriods[newIndex]);
+      return newIndex;
+    });
+  };
 
   const handleTotalAmountChange = (amount) => {
     setTotalAmount(amount);
@@ -103,13 +126,23 @@ export const Records = () => {
         <div className="flex justify-between  ">
           <div className="w-[160px] pl-[48px]">
             <Carousel>
-              <CarouselContent>
-                <CarouselItem>Last 10 Days</CarouselItem>
-                <CarouselItem>Last 20 Days</CarouselItem>
-                <CarouselItem>Last 30 Days</CarouselItem>
+              <CarouselContent className="cursor-pointer border-green-400 border">
+                <CarouselItem onClick={() => setTimePeriod("Last 10 Days")}>
+                  Last 10 Days
+                </CarouselItem>
+                <CarouselItem onClick={() => setTimePeriod("Last 20 Days")}>
+                  Last 20 Days
+                </CarouselItem>
+                <CarouselItem onClick={() => setTimePeriod("Last 30 Days")}>
+                  Last 30 Days
+                </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <div onClick={prev}>
+                <CarouselPrevious />
+              </div>
+              <div onClick={next}>
+                <CarouselNext />
+              </div>
             </Carousel>
           </div>
           <div>
@@ -121,6 +154,7 @@ export const Records = () => {
                 <SelectItem value="Newest First">Newest First</SelectItem>
                 <SelectItem value="Oldest First">Oldest First</SelectItem>
                 <SelectItem value="Highest First">Highest First</SelectItem>
+                <SelectItem value="Lowest First">Lowest First</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -144,6 +178,7 @@ export const Records = () => {
                 filterType={filterType}
                 onTotalAmountChange={handleTotalAmountChange}
                 sortOrder={sortOrder}
+                timePeriod={timePeriod}
               />
             </div>
           </div>

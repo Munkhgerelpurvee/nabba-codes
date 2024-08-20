@@ -20,6 +20,7 @@ export const ApiAddAccount = ({
   filterType,
   onTotalAmountChange,
   sortOrder,
+  timePeriod,
 }) => {
   // const [accounts, setAccounts] = useState([]);
   // const [selectedAccountId, setSelectedAccountId] = useState(null);
@@ -33,22 +34,76 @@ export const ApiAddAccount = ({
   } = useContext(AccountContext);
   const { selectedCategoryIds } = useContext(CategoryContext);
 
+  const getDateRange = (days) => {
+    const endDate = new Date();
+    const startDate = new Date();
+    startDate.setDate(endDate.getDate() - days);
+    return { startDate, endDate };
+  };
+
+  // Calculate the date range based on the selected time period
+  const { startDate, endDate } = (() => {
+    switch (timePeriod) {
+      case "Last 10 Days":
+        return getDateRange(10);
+      case "Last 20 Days":
+        return getDateRange(20);
+      case "Last 30 Days":
+        return getDateRange(30);
+      default:
+        return { startDate: new Date(0), endDate: new Date() }; // Default to all time if no period selected
+    }
+  })();
+
   const filteredAccounts = accounts
     .filter((account) => {
       if (filterType === "all") return true;
       return account.type === filterType;
     })
     .filter((account) => !selectedCategoryIds.includes(account.category?.id))
+    .filter((account) => {
+      const accountDate = new Date(account.date || "1900-01-01");
+      return accountDate >= startDate && accountDate <= endDate;
+    })
     .sort((a, b) => {
-      const dateA = new Date(a.date || "1900-01-01");
-      const dateB = new Date(b.date || "1900-01-01");
+      if (sortOrder === "Newest First" || sortOrder === "Oldest First") {
+        const dateA = new Date(a.date || "1900-01-01");
+        const dateB = new Date(b.date || "1900-01-01");
 
-      if (sortOrder === "Newest First") {
-        return dateB - dateA;
-      } else {
-        return dateA - dateB;
+        if (sortOrder === "Newest First") {
+          return dateB - dateA;
+        } else {
+          // Oldest First
+          return dateA - dateB;
+        }
+      } else if (
+        sortOrder === "Highest First" ||
+        sortOrder === "Lowest First"
+      ) {
+        const amountA = a.amount || 0; // Replace `value` with the actual property name
+        const amountB = b.amount || 0; // Replace `value` with the actual property name
+
+        if (sortOrder === "Highest First") {
+          return amountB - amountA;
+        } else {
+          // Lowest First
+          return amountA - amountB;
+        }
       }
+
+      // Default case, could be an error or a fallback sort order
+      return 0;
     });
+  // .sort((a, b) => {
+  //   const dateA = new Date(a.date || "1900-01-01");
+  //   const dateB = new Date(b.date || "1900-01-01");
+
+  //   if (sortOrder === "Newest First") {
+  //     return dateB - dateA;
+  //   } else {
+  //     return dateA - dateB;
+  //   }
+  // });
   // .sort((a, b) => {
   //   // Convert date strings to Date objects
   //   const dateA = new Date(a.date || "1900-01-01"); // Default to a past date if no date is available
