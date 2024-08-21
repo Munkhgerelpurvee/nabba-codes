@@ -10,7 +10,7 @@ export const AccountContextProvider = ({ children, userId }) => {
   // const users = readJson("users.json");
   const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [accounts, setAccounts] = useState([]);
-
+  console.log(accounts);
   const getAccounts = async () => {
     const response = await axios.get("http://localhost:3001/accounts", {
       headers: {

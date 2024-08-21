@@ -11,7 +11,7 @@ const authPaths = ["/login", "/signUp"];
 export const AuthProvider = ({ children }) => {
   const router = useRouter();
   const pathname = usePathname();
-
+  const [totalAmount, setTotalAmount] = useState(0);
   //   const [isLoggedIn, setIsLoggedIn] = useState(false); // hereglegch newtersen esehiig shalgaj bga state
   const [user, setUser] = useState(null);
   const [isReady, setIsReady] = useState(false);
@@ -142,7 +142,8 @@ export const AuthProvider = ({ children }) => {
         user,
         login,
         logout,
-
+        totalAmount,
+        setTotalAmount,
         createUser,
       }}
     >

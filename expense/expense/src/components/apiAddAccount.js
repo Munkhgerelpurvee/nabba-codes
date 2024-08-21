@@ -44,12 +44,12 @@ export const ApiAddAccount = ({
   // Calculate the date range based on the selected time period
   const { startDate, endDate } = (() => {
     switch (timePeriod) {
-      case "Last 10 Days":
-        return getDateRange(10);
+      case "All History":
+        return getDateRange(365);
       case "Last 20 Days":
         return getDateRange(20);
-      case "Last 30 Days":
-        return getDateRange(30);
+      case "Last 10 Days":
+        return getDateRange(10);
       default:
         return { startDate: new Date(0), endDate: new Date() }; // Default to all time if no period selected
     }

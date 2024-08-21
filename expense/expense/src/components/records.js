@@ -32,15 +32,15 @@ import { useAuth } from "./providers/AuthProvider";
 
 export const Records = () => {
   const [filterType, setFilterType] = useState("all");
-  const [totalAmount, setTotalAmount] = useState(0);
+  // const [totalAmount, setTotalAmount] = useState(0);
   const [sortOrder, setSortOrder] = useState("Newest First");
-  const [timePeriod, setTimePeriod] = useState("Last 10 Days");
+  const [timePeriod, setTimePeriod] = useState("All History");
 
-  const { user } = useAuth();
+  const { user, totalAmount, setTotalAmount } = useAuth();
 
   const [index, setIndex] = useState(0);
 
-  const timePeriods = ["Last 10 Days", "Last 20 Days", "Last 30 Days"];
+  const timePeriods = ["All History", "Last 20 Days", "Last 10 Days"];
 
   const next = () => {
     setIndex((prevIndex) => {
@@ -126,15 +126,15 @@ export const Records = () => {
         <div className="flex justify-between  ">
           <div className="w-[160px] pl-[48px]">
             <Carousel>
-              <CarouselContent className="cursor-pointer border-green-400 border">
-                <CarouselItem onClick={() => setTimePeriod("Last 10 Days")}>
-                  Last 10 Days
+              <CarouselContent className="cursor-pointer">
+                <CarouselItem onClick={() => setTimePeriod("All History")}>
+                  All History
                 </CarouselItem>
                 <CarouselItem onClick={() => setTimePeriod("Last 20 Days")}>
                   Last 20 Days
                 </CarouselItem>
-                <CarouselItem onClick={() => setTimePeriod("Last 30 Days")}>
-                  Last 30 Days
+                <CarouselItem onClick={() => setTimePeriod("Last 10 Days")}>
+                  Last 10 Days
                 </CarouselItem>
               </CarouselContent>
               <div onClick={prev}>
