@@ -2,6 +2,7 @@
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
+import Image from "next/image";
 import Link from "next/link";
 
 const Hutulbur = () => {
@@ -9,57 +10,83 @@ const Hutulbur = () => {
     <main className="bg-[#202C6A]">
       <div className="w-[90%] m-auto flex flex-col   items-center h-max py-[40px] gap-[24px]">
         <div className="flex justify-between w-[80%]">
-          <div className="text-white bg-[#080062] w-[126px] h-[34px] rounded-lg items-center flex justify-center border  border-[#007EF2]">
-            Танилцуулга
-          </div>
-          <div className="text-white bg-[#080062] w-[126px] h-[34px] rounded-lg items-center flex justify-center border  border-[#007EF2]">
-            Хөтөлбөр
-          </div>
+          <Link href={`/`}>
+            <div className="cursor-pointer text-white bg-[#080062] w-[126px] h-[34px] rounded-lg items-center flex justify-center border  border-[#007EF2]">
+              Танилцуулга
+            </div>
+          </Link>
+          <Link href={`/hutulbur`}>
+            <div className="cursor-pointer text-white bg-[#080062] w-[126px] h-[34px] rounded-lg items-center flex justify-center border  border-[#007EF2]">
+              Хөтөлбөр
+            </div>
+          </Link>
         </div>
+
         <div className="flex flex-col items-start justify-start">
-          <h1 className="flex w-full justify-center text-center text-2xl font-extrabold text-[#FFCF54] dark:text-[#F9FAFB]">
-            Монгол Улсын Начин
-          </h1>
-          <h1 className="text-2xl w-full justify-center text-center text-white font-extrabold dark:text-[#F9FAFB]">
-            Галбадрахын Дармаажанцан
-          </h1>
-        </div>
-        <div className="flex flex-col lg:flex-row lg:flex gap-8">
-          <div className="flex flex-1 items-center justify-center">
-            <img className="w-full rounded-[20px]" src="/me.png" />
+          <div className="relative h-[250px]">
+            <div className="absolute flex flex-1 items-center justify-center">
+              <Image
+                className="w-full rounded-[20px] opacity-60"
+                src="/alag.jpg"
+                alt="Background image"
+                width={500} // Replace with actual width
+                height={500} // Replace with actual height
+              />
+            </div>
+            <h1 className="h-full text-xl opacity-100 w-full justify-center text-center text-[#FFCF54] font-extrabold dark:text-[#F9FAFB] relative  mt-[80px]">
+              Монгол Улсын Начин Галбадрахын Дармаажанцангийн цолны мялаалга
+              наадмын хөтөлбөр
+            </h1>
           </div>
-          <div className="flex-1 flex flex-col gap-[48px]">
-            <div className="flex flex-col gap-[8px] text-white">
-              <div>Төрсөн өдөр: 2000 он 03 сар 29 өдөр </div>
+          <div className="relative text-white flex flex-col gap-2">
+            <div className="flex gap-4">
+              <div>06:00</div>
               <div>
-                Харьяалал: "Ховд" дэвжээ, "Алдар" спорт хороо, ЗХ-034 анги,
-                Бүрэн Минж Транс ХХК, УСУГ
-              </div>
-              <div className="text-white dark:text-[#F9FAFB] text-justify">
-                {" "}
-                Ховд аймгийн Дөргөн суманд төрж өссөн.
-              </div>
-              <div>
-                2020 онд Ховд аймгийн баяр наадамд зургаа давж, аймгийн арслан
-                Ц.Төмөрцоожид өвдөг шороодон үзүүрлэж " Аймгийн заан " цол
-                хүртсэн.
-              </div>
-              <div>
-                2022 онд Ховд аймгийн баяр наадамд аймгийн арслан
-                Б.Даваадалайгаар долоо даван түрүүлж " Аймгийн арслан " цол
-                хүртсэн.
-              </div>
-              <div>
-                2024 онд АХ-ын 103 жилийн ойн баяр наадамд улсын харцага
-                Г.Бадрахаар дөрөв, цэргийн арслан Г.Жамбалдоржоор тав давж "
-                Монгол улсын начин " цолыг хүртсэн.
+                <div className="font-bold">Хурдан морины уралдаан</div>
+                <div className="ml-2 font-extralight">Азарга</div>
+                <div className="ml-2 font-extralight">Их нас</div>
+                <div className="ml-2 font-extralight">Даага</div>
               </div>
             </div>
+            <div className="flex gap-4">
+              <div>11:00</div>
+              <div className="font-bold">Баяр наадмын нээлт</div>
+            </div>
+            <div className="flex gap-4">
+              <div>12:00</div>
+              <div>
+                <div className="font-bold">Хүчит бөхийн барилдаан</div>
+                <div className="ml-2 font-extralight">Нэгийн даваа</div>
+                <div className="ml-2 font-extralight">Хоёрын даваа</div>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div>14:00</div>
+              <div className="font-bold">
+                Ёслол хүндэтгэлийн мялаалга өргөх арга хэмжээ
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div>15:00</div>
+              <div className="font-bold">Хүчит бөхийн барилдаан үргэлжлэл</div>
+            </div>
+            <div className="flex gap-4">
+              <div>17:00</div>
+              <div className="font-bold">Шагнал гардуулах ёслол</div>
+            </div>
+            <div className="flex gap-4">
+              <div>19:00</div>
+              <div className="font-bold">Хүндэтгэлийн цэнгүүн</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:flex gap-8">
+          <div className="flex-1 flex flex-col gap-[48px]">
+            <div></div>
 
             <div className="flex gap-[40px] items-center justify-center">
               <FaFacebookSquare className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
               <FaInstagram className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
-              <BiLogoGmail className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
             </div>
           </div>
         </div>
