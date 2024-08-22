@@ -11,7 +11,7 @@ export const Landig = () => {
     <div className="w-[90%] m-auto flex flex-col   items-center h-max py-[40px] gap-[24px]">
       <div className="flex justify-between w-[80%]">
         <Link href={`/`}>
-          <div className="cursor-pointer text-white bg-[#080062] w-[126px] h-[34px] rounded-lg items-center flex justify-center border  border-[#007EF2]">
+          <div className="cursor-pointer text-white bg-[#080062] w-[126px] h-[34px] rounded-lg items-center flex justify-center border-[3px]  border-[#007EF2]">
             Танилцуулга
           </div>
         </Link>

@@ -16,7 +16,7 @@ const Hutulbur = () => {
             </div>
           </Link>
           <Link href={`/hutulbur`}>
-            <div className="cursor-pointer text-white bg-[#080062] w-[126px] h-[34px] rounded-lg items-center flex justify-center border  border-[#007EF2]">
+            <div className="cursor-pointer text-white bg-[#080062] w-[126px] h-[34px] rounded-lg items-center flex justify-center border-[3px]  border-[#007EF2]">
               Хөтөлбөр
             </div>
           </Link>
@@ -26,19 +26,19 @@ const Hutulbur = () => {
           <div className="relative h-[250px]">
             <div className="absolute flex flex-1 items-center justify-center">
               <Image
-                className="w-full rounded-[20px] opacity-60"
+                className="w-full rounded-[20px] opacity-70"
                 src="/alag.jpg"
                 alt="Background image"
                 width={500} // Replace with actual width
                 height={500} // Replace with actual height
               />
             </div>
-            <h1 className="h-full text-xl opacity-100 w-full justify-center text-center text-[#FFCF54] font-extrabold dark:text-[#F9FAFB] relative  mt-[80px]">
+            <h1 className="h-full text-xl opacity-100 w-full justify-center text-center text-red font-extrabold dark:text-[#F9FAFB] relative  mt-[20px]">
               Монгол Улсын Начин Галбадрахын Дармаажанцангийн цолны мялаалга
               наадмын хөтөлбөр
             </h1>
           </div>
-          <div className="relative text-white flex flex-col gap-2">
+          <div className="relative text-white flex flex-col gap-2 mt-[60px]">
             <div className="flex gap-4">
               <div>06:00</div>
               <div>
