@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Hutulbur = () => {
   return (
-    <main className="bg-[#202C6A]">
+    <main className="bg-[#202C6A] min-w-[420px] lg:max-w-[1440px] m-auto ">
       <div className="w-[90%] m-auto flex flex-col   items-center h-max py-[40px] gap-[24px]">
         <div className="flex justify-between w-[80%]">
           <Link href={`/`}>
