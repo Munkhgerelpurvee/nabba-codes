@@ -19,30 +19,30 @@ import {
   ChartLegendContent,
 } from "@/components/ui/chart";
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
+  { browser: "Bus", Categories: 275, fill: "var(--color-Bus)" },
+  { browser: "Baby", Categories: 200, fill: "var(--color-Baby)" },
+  { browser: "Phone", Categories: 187, fill: "var(--color-Phone)" },
+  { browser: "Apple", Categories: 173, fill: "var(--color-Apple)" },
+  { browser: "other", Categories: 90, fill: "var(--color-other)" },
 ];
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  Categories: {
+    label: "Categories",
   },
-  chrome: {
-    label: "Chrome",
+  Bus: {
+    label: "Bus",
     color: "hsl(var(--chart-1))",
   },
-  safari: {
-    label: "Safari",
+  Baby: {
+    label: "Baby",
     color: "hsl(var(--chart-2))",
   },
-  firefox: {
-    label: "Firefox",
+  Phone: {
+    label: "Phone",
     color: "hsl(var(--chart-3))",
   },
-  edge: {
-    label: "Edge",
+  Apple: {
+    label: "Apple",
     color: "hsl(var(--chart-4))",
   },
   other: {
@@ -64,7 +64,7 @@ export const CircleChart = () => {
           className="mx-auto aspect-square max-h-[300px]"
         >
           <PieChart>
-            <Pie data={chartData} dataKey="visitors" />
+            <Pie data={chartData} dataKey="Categories" />
             <ChartLegend
               content={<ChartLegendContent nameKey="browser" />}
               className="-translate-y-2 flex-wrap gap-2 [&>*]:basis-1/4 [&>*]:justify-center"

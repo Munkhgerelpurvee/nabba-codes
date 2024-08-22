@@ -76,6 +76,9 @@ export default function Home() {
     .filter((account) => account.type === "inc") // Filter accounts where type is "inc"
     .reduce((acc, account) => acc + (account.amount || 0), 0); // Sum the amount of filtered accounts
 
+  const expenseSumLastMonth = lastMonthAccounts
+    .filter((account) => account.type === "exp") // Filter accounts where type is "inc"
+    .reduce((acc, account) => acc + (account.amount || 0), 0);
   const expenseSum = thisMonthAccounts
     .filter((account) => account.type === "exp") // Filter accounts where type is "inc"
     .reduce((acc, account) => acc + (account.amount || 0), 0); // Sum the amount of filtered accounts
@@ -84,7 +87,10 @@ export default function Home() {
     ((incomeSum - incomeSumLastMonth) / incomeSumLastMonth) *
     100
   ).toFixed(2);
-
+  const expPercentage = (
+    ((expenseSum - expenseSumLastMonth) / expenseSumLastMonth) *
+    100
+  ).toFixed(2);
   const last5Accounts = accounts
     .slice(-5) // Get the last 5 elements
     .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -105,21 +111,23 @@ export default function Home() {
   const formattedexpenseSum = formatter.format(expenseSum);
 
   const chartData = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
+    // { month: "January", Income: 186, Expense: 80 },
+    // { month: "February", Income: 305, Expense: 200 },
+    // { month: "March", Income: 237, Expense: 120 },
+    { month: "April", Income: 2730, Expense: 1900 },
+    { month: "May", Income: 2000, Expense: 1300 },
+    { month: "June", Income: 3500, Expense: 4000 },
+    { month: "July", Income: incomeSumLastMonth, Expense: expenseSumLastMonth },
+    { month: "August", Income: incomeSum, Expense: expenseSum },
   ];
   const chartConfig = {
-    desktop: {
-      label: "Desktop",
-      color: "hsl(var(--chart-1))",
-    },
-    mobile: {
-      label: "Mobile",
+    Income: {
+      label: "Income",
       color: "hsl(var(--chart-2))",
+    },
+    Expense: {
+      label: "Expense",
+      color: "hsl(var(--chart-1))",
     },
   };
   return (
@@ -164,9 +172,7 @@ export default function Home() {
                   Your Income Amount
                 </div>
                 <div className="flex gap-2">
-                  <div>
-                    <GreenUp />
-                  </div>
+                  <div>{incPercentage < 0 ? <GreenDown /> : <GreenUp />}</div>
                   <div className="text-[18px]">
                     {incPercentage}% from last month
                   </div>
@@ -188,10 +194,10 @@ export default function Home() {
                   Your Income Amount
                 </div>
                 <div className="flex gap-2">
-                  <div>
-                    <GreenDown />
+                  <div>{expPercentage < 0 ? <GreenDown /> : <GreenUp />}</div>
+                  <div className="text-[18px]">
+                    {expPercentage}% from last month
                   </div>
-                  <div className="text-[18px]">32% from last month</div>
                 </div>
               </div>
             </div>
@@ -219,13 +225,13 @@ export default function Home() {
                           content={<ChartTooltipContent indicator="dashed" />}
                         />
                         <Bar
-                          dataKey="desktop"
-                          fill="var(--color-desktop)"
+                          dataKey="Income"
+                          fill="var(--color-Income)"
                           radius={4}
                         />
                         <Bar
-                          dataKey="mobile"
-                          fill="var(--color-mobile)"
+                          dataKey="Expense"
+                          fill="var(--color-Expense)"
                           radius={4}
                         />
                       </BarChart>
