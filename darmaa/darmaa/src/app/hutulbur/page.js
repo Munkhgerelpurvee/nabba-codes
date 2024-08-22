@@ -39,6 +39,9 @@ const Hutulbur = () => {
             </h1>
           </div>
           <div className="relative text-white flex flex-col gap-2 mt-[60px]">
+            <div className="font-bold text-xl">
+              2024 оны 08 сарын 25-ны өдөр
+            </div>
             <div className="flex gap-4">
               <div>06:00</div>
               <div>
