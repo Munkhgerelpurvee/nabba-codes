@@ -66,6 +66,26 @@ export const Landig = () => {
           </div>
         </div>
       </div>
+      <div className="flex flex-col lg:flex-row lg:flex gap-8">
+        <div className="flex-1 flex flex-col gap-[48px]">
+          <div className="flex gap-[40px] items-center justify-center">
+            <Link
+              href={"https://www.facebook.com/g.darmaajantsan"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookSquare className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
+            </Link>
+            <Link
+              href={"https://www.instagram.com/g.darmaajantsan/"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

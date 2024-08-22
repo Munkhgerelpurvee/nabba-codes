@@ -23,17 +23,17 @@ const Hutulbur = () => {
         </div>
 
         <div className="flex flex-col items-start justify-start">
-          <div className="relative h-[250px]">
-            <div className="absolute flex flex-1 items-center justify-center">
+          <div className="relative ">
+            {/* <div className="absolute flex flex-1 items-center justify-center">
               <Image
                 className="w-full rounded-[20px] opacity-70"
-                src="/alag.jpg"
-                alt="Background image"
+                src="/"
+                alt="Description of the image"
                 width={500} // Replace with actual width
                 height={500} // Replace with actual height
               />
-            </div>
-            <h1 className="h-full text-xl opacity-100 w-full justify-center text-center text-red font-extrabold dark:text-[#F9FAFB] relative  mt-[20px]">
+            </div> */}
+            <h1 className="h-full text-xl opacity-100 w-full justify-center text-center text-[#FFCF54] font-extrabold dark:text-[#F9FAFB] relative  mt-[20px]">
               Монгол Улсын Начин Галбадрахын Дармаажанцангийн цолны мялаалга
               наадмын хөтөлбөр
             </h1>
@@ -82,11 +82,21 @@ const Hutulbur = () => {
         </div>
         <div className="flex flex-col lg:flex-row lg:flex gap-8">
           <div className="flex-1 flex flex-col gap-[48px]">
-            <div></div>
-
             <div className="flex gap-[40px] items-center justify-center">
-              <FaFacebookSquare className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
-              <FaInstagram className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
+              <Link
+                href={"https://www.facebook.com/g.darmaajantsan"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebookSquare className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
+              </Link>
+              <Link
+                href={"https://www.instagram.com/g.darmaajantsan/"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="w-[24px] h-[24px] dark:text-[#F9FAFB] text-[#F9FAFB]" />
+              </Link>
             </div>
           </div>
         </div>
