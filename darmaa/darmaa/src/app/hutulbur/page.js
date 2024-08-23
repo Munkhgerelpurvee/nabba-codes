@@ -52,7 +52,7 @@ const Hutulbur = () => {
               </div>
             </div>
             <div className="flex gap-4">
-              <div>10:00</div>
+              <div>09:00</div>
               <div className="font-bold">Баяр наадмын нээлт</div>
             </div>
             <div className="flex gap-4">
