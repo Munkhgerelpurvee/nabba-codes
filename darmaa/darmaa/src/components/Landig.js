@@ -67,6 +67,12 @@ export const Landig = () => {
               Г.Бадрахаар дөрөв, цэргийн арслан Г.Жамбалдоржоор тав давж
               &quot;Монгол улсын начин&quot; цолыг хүртсэн.
             </div>
+            <div>
+              <video className="rounded-[20px] w-full h-auto" controls>
+                <source src="/dawaa.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </div>
