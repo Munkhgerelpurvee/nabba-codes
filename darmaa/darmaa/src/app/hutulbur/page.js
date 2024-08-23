@@ -9,7 +9,7 @@ const Hutulbur = () => {
   return (
     <main className="bg-[#202C6A] min-w-[420px] lg:max-w-[1440px] m-auto ">
       <div className="w-[90%] m-auto flex flex-col   items-center h-max py-[40px] gap-[24px] ">
-        <div className="flex justify-between gap-4 w-[80%] m-auto">
+        <div className="flex justify-between gap-4 w-[100%] m-auto">
           <Link href={`/`}>
             <div className="cursor-pointer text-white bg-[#080062] w-[112px] h-[34px] rounded-lg items-center flex justify-center border  border-[#007EF2]">
               Танилцуулга
