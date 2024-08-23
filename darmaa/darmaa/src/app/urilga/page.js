@@ -64,6 +64,15 @@ const Urilga = () => {
             <h1 className="h-full text-xl opacity-100 w-full justify-center text-center text-[#FFCF54] font-extrabold dark:text-[#F9FAFB] relative  ">
               Галбадрахын Дармаажанцан
             </h1>
+            <div className="font-bold text-[12px] text-center mt-[16px]">
+              Баяр наадам
+            </div>
+            <div className="font-bold text-[12px] text-center">
+              2024 оны 8-р сарын 25-ны өдөр
+            </div>
+            <div className="font-bold text-[12px] text-center">
+              Ховд аймгийн Дөргөн сумын төвд болно.
+            </div>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row lg:flex gap-8">
