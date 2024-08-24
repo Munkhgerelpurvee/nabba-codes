@@ -18,6 +18,6 @@ app.use("/accounts", accountsRouter);
 app.use("/users", usersRouter);
 app.use("/categories", categoriesRouter);
 
-app.listen(3002, () => {
-  console.log("Server is running on port 3002");
+app.listen(3001, () => {
+  console.log("Server is running on port 3001");
 });

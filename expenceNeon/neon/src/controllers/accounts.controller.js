@@ -2,7 +2,7 @@ import { db } from "../database/index.js";
 import { accounts } from "../database/schema.js";
 
 // Get all accounts with their associated categories
-export const getAccounts = async (_, res) => {
+export const getAllAccounts = async (_, res) => {
   try {
     const allAccounts = await db.query.accounts.findMany({
       with: {
@@ -17,7 +17,7 @@ export const getAccounts = async (_, res) => {
 };
 
 // Create a new account
-export const createAccounts = async (req, res) => {
+export const createAccount = async (req, res) => {
   const { amount, categoryId, userId, payee, note, date, time } = req.body;
 
   try {
