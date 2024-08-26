@@ -26,9 +26,11 @@ import { AddCategoryDialog } from "./AddCategoryDialog";
 import { AccountContext } from "./context";
 import axios from "axios";
 import { Eye } from "@/assets/eye";
+import { LogIn } from "lucide-react";
 
 export const AddCategory = () => {
-  const { newTransaction, setNewTransaction } = useContext(AccountContext);
+  const { newTransaction, setNewTransaction, setCategoryId } =
+    useContext(AccountContext);
   const [categories, setCategories] = useState([]);
   const [title, setTitle] = useState("");
 
@@ -47,12 +49,13 @@ export const AddCategory = () => {
   const handleSelectChange = (event) => {
     setNewTransaction({
       ...newTransaction,
-      category: event,
+      categoryId: event.id,
     });
   };
   return (
     <Select
       onValueChange={(event) => handleSelectChange(event)}
+
       // value={newTransaction.category.name}
     >
       <SelectTrigger className="">

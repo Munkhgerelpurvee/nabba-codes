@@ -6,7 +6,7 @@ import { Payway } from "@/assets/payWay";
 import { GreenDot } from "@/assets/greenDot";
 import { GreenUp } from "@/assets/greenUp";
 import { GreenDown } from "@/assets/greenDown";
-import { TrendingUp } from "lucide-react";
+import { Eye, TrendingUp } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import * as Icons from "react-icons/fa";
 
@@ -259,7 +259,7 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="font-semibold">
-                          {item.category.title}
+                          {/* {item.category.title} */}
                         </div>
                         <div className="text-[12px] text-[#6B7280]">
                           {item.date}

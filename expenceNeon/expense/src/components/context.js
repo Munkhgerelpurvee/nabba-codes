@@ -10,6 +10,7 @@ export const AccountContextProvider = ({ children, userId }) => {
   // const users = readJson("users.json");
   const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [accounts, setAccounts] = useState([]);
+  const [categoryId, setCategoryId] = useState(0);
   console.log(accounts);
   const getAccounts = async () => {
     const response = await axios.get("http://localhost:3001/accounts", {
@@ -43,7 +44,6 @@ export const AccountContextProvider = ({ children, userId }) => {
   const [newTransaction, setNewTransaction] = useState({
     type: "exp",
     amount: 0,
-    category: { name: "", title: "", color: "" },
     payee: "",
     note: "",
     date: "",
@@ -62,6 +62,7 @@ export const AccountContextProvider = ({ children, userId }) => {
         deleteAccount,
         selectedAccountId,
         setSelectedAccountId,
+        setCategoryId,
       }}
     >
       {children}

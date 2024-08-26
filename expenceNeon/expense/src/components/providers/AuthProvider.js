@@ -33,6 +33,7 @@ export const AuthProvider = ({ children }) => {
       router.push("/login");
       toast.success("account created");
     } catch (err) {
+      console.log(email, name, password);
       console.log(err);
       toast.error(
         err.response?.data.message ?? "Ta email eswel passwordoo shalgana uu"
@@ -64,7 +65,7 @@ export const AuthProvider = ({ children }) => {
       //   localStorage.setItem("token", "token");
       //   router.push("/");
     } catch (error) {
-      toast.error(error.response?.data.message ?? "hahaha");
+      toast.error(error.response?.data.message ?? error.message);
       //   console.log(err);
       // toast.error(error.message);
       // toast.error(error.response.data.message);

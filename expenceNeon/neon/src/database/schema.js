@@ -11,6 +11,7 @@ export const users = pgTable("users", {
 export const accounts = pgTable("accounts", {
   id: serial("id").primaryKey(),
   amount: integer("amount"),
+  type: varchar("type", { length: 256 }),
   categoryId: integer("categoryId"),
   userId: integer("userId"),
   payee: varchar("payee", { length: 256 }),
@@ -46,8 +47,8 @@ export const accountsRelations = relations(accounts, ({ one }) => ({
 export const categoriesRelations = relations(categories, ({ many, one }) => ({
   accounts: many(accounts),
 
-  user: one(users, {
-    fields: [categories.userId],
-    references: [users.id],
-  }),
+  // user: one(users, {
+  //   fields: [categories.userId],
+  //   references: [users.id],
+  // }),
 }));

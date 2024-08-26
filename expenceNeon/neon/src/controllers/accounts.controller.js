@@ -18,12 +18,13 @@ export const getAllAccounts = async (_, res) => {
 
 // Create a new account
 export const createAccount = async (req, res) => {
-  const { amount, categoryId, userId, payee, note, date, time } = req.body;
+  const { amount, categoryId, userId, payee, note, date, time, type } =
+    req.body;
 
   try {
     const [newAccount] = await db
       .insert(accounts)
-      .values({ amount, categoryId, userId, payee, note, date, time })
+      .values({ amount, categoryId, userId, payee, note, date, time, type })
       .returning(); // Ensure to get the newly created account
 
     res.status(201).json(newAccount);
