@@ -40,6 +40,7 @@ export const AddComponent = ({ name }) => {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
+        
       }
     );
     getAccounts();

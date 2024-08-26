@@ -3,7 +3,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 // const { readJson, saveJson } = require("../../../testapi/src/utils");
-
+import { useAuth } from "../components/providers/AuthProvider";
 export const AccountContext = createContext(null);
 
 export const AccountContextProvider = ({ children, userId }) => {
@@ -11,6 +11,7 @@ export const AccountContextProvider = ({ children, userId }) => {
   const [selectedAccountId, setSelectedAccountId] = useState(null);
   const [accounts, setAccounts] = useState([]);
   const [categoryId, setCategoryId] = useState(0);
+  const { user } = useAuth();
   console.log(accounts);
   const getAccounts = async () => {
     const response = await axios.get("http://localhost:3001/accounts", {
@@ -48,7 +49,6 @@ export const AccountContextProvider = ({ children, userId }) => {
     note: "",
     date: "",
     time: "",
-    userId,
   });
 
   return (

@@ -66,7 +66,9 @@ export const Records = () => {
     <div className="flex flex-row lg:w-[1220px] w-[390px] font-normal m-auto pt-6 pb-6 gap-[100px]">
       <div className="flex-1 flex flex-col gap-[24px]  bg-white pl-4 pr-4 rounded-xl border pb-6">
         <div className="text-[24px] font-semibold">Records</div>
-        <div>{user.username}</div>
+        <div>
+          {user.username} {user.id}
+        </div>
         <AddComponent name="Records" />
 
         <div>
